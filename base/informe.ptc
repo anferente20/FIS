@@ -3,6 +3,7 @@
 \babel@toc {spanish}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {I}{Proyecto}}{7}{part.1}% 
+\ttl@starttoc {default@1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Caso de Estudio}{9}{chapter.1}% 
 \defcounter {refsection}{0}\relax 
@@ -25,6 +26,8 @@
 \contentsline {subsection}{\numberline {2.1.1}M\IeC {\'o}dulos}{12}{subsection.2.1.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {II}{DISE\IeC {\~N}O}}{13}{part.2}% 
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Requerimientos}{15}{chapter.3}% 
 \defcounter {refsection}{0}\relax 
@@ -61,6 +64,8 @@
 \contentsline {section}{\numberline {10.1}Introducci\IeC {\'o}n}{29}{section.10.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {III}{REFLEXIONES}}{31}{part.3}% 
+\ttl@stoptoc {default@2}
+\ttl@starttoc {default@3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {11}Conclusiones}{33}{chapter.11}% 
 \defcounter {refsection}{0}\relax 
