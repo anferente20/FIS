@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  9 APR 2019 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  9 APR 2019 20:32
 entering extended mode
 **./informe.tex
 (informe.tex
@@ -1555,7 +1555,7 @@ ion <1.7>, but at most version <1.5> allowed
 File: Pictures/1.pdf Graphic file (type pdf)
 <use Pictures/1.pdf>
 Package pdftex.def Info: Pictures/1.pdf  used on input line 88.
-(pdftex.def)             Requested size: 597.50787pt x 773.2529pt.
+(pdftex.def)             Requested size: 597.5136pt x 845.07408pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
 LaTeX Font Info:    Try loading font information for T1+pag on input line 89.
@@ -1726,14 +1726,19 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 
 (proyecto/caso/caso.tex
 Cap\'{\i }tulo 1.
-File: Pictures/4.pdf Graphic file (type pdf)
-<use Pictures/4.pdf>
-Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
+
+
+pdfTeX warning: pdflatex (file ./Pictures/2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<Pictures/2.pdf, id=171, 472.8325pt x 234.91063pt>
+File: Pictures/2.pdf Graphic file (type pdf)
+<use Pictures/2.pdf>
+Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 296.85995pt.
 [9
 
 
-])
+ <./Pictures/2.pdf>])
 LaTeX Info: Redefining \. on input line 149.
 LaTeX Info: Redefining \% on input line 149.
  [10]
@@ -1745,7 +1750,7 @@ File: Pictures/5.pdf Graphic file (type pdf)
 <use Pictures/5.pdf>
 Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
-<proyecto/proceso/imgs/prototipo.png, id=184, 363.60844pt x 185.94469pt>
+<proyecto/proceso/imgs/prototipo.png, id=187, 363.60844pt x 185.94469pt>
 File: proyecto/proceso/imgs/prototipo.png Graphic file (type png)
 <use proyecto/proceso/imgs/prototipo.png>
 Package pdftex.def Info: proyecto/proceso/imgs/prototipo.png  used on input lin
@@ -1772,14 +1777,19 @@ LaTeX Info: Redefining \% on input line 3.
 
 (diseno/requerimientos/requerimientos.tex
 Cap\'{\i }tulo 3.
-File: Pictures/4.pdf Graphic file (type pdf)
-<use Pictures/4.pdf>
-Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
+
+
+pdfTeX warning: pdflatex (file ./Pictures/3.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<Pictures/3.pdf, id=241, 524.78358pt x 268.79118pt>
+File: Pictures/3.pdf Graphic file (type pdf)
+<use Pictures/3.pdf>
+Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 306.056pt.
 [15
 
 
-])
+ <./Pictures/3.pdf>])
 \openout2 = `diseno/interaccion/interaccion.aux'.
 
  (diseno/interaccion/interaccion.tex [16
@@ -1788,10 +1798,10 @@ Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
 
 ]
 Cap\'{\i }tulo 4.
-File: Pictures/5.pdf Graphic file (type pdf)
-<use Pictures/5.pdf>
-Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
+File: Pictures/4.pdf Graphic file (type pdf)
+<use Pictures/4.pdf>
+Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
 [17])
 \openout2 = `diseno/clases/clases.aux'.
 
@@ -1801,10 +1811,10 @@ Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
 
 ]
 Cap\'{\i }tulo 5.
-File: Pictures/4.pdf Graphic file (type pdf)
-<use Pictures/4.pdf>
-Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
+File: Pictures/2.pdf Graphic file (type pdf)
+<use Pictures/2.pdf>
+Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 296.85995pt.
 [19])
 \openout2 = `diseno/patrones/patrones.aux'.
 
@@ -1819,7 +1829,7 @@ File: Pictures/5.pdf Graphic file (type pdf)
 Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
 [21]
-<diseno/patrones/imgs/prototipo.pdf, id=267, 562.1pt x 228.855pt>
+<diseno/patrones/imgs/prototipo.pdf, id=273, 562.1pt x 228.855pt>
 File: diseno/patrones/imgs/prototipo.pdf Graphic file (type pdf)
 <use diseno/patrones/imgs/prototipo.pdf>
 Package pdftex.def Info: diseno/patrones/imgs/prototipo.pdf  used on input line
@@ -1833,10 +1843,10 @@ LaTeX Info: Redefining \% on input line 164.
 
  (diseno/estados/estados.tex
 Cap\'{\i }tulo 7.
-File: Pictures/4.pdf Graphic file (type pdf)
-<use Pictures/4.pdf>
-Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
+File: Pictures/3.pdf Graphic file (type pdf)
+<use Pictures/3.pdf>
+Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 306.056pt.
 [23
 
 
@@ -1850,10 +1860,10 @@ Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
 
 ]
 Cap\'{\i }tulo 8.
-File: Pictures/5.pdf Graphic file (type pdf)
-<use Pictures/5.pdf>
-Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
+File: Pictures/4.pdf Graphic file (type pdf)
+<use Pictures/4.pdf>
+Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
 [25])
 \openout2 = `diseno/nodos/nodos.aux'.
 
@@ -1863,10 +1873,10 @@ Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
 
 ]
 Cap\'{\i }tulo 9.
-File: Pictures/4.pdf Graphic file (type pdf)
-<use Pictures/4.pdf>
-Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
+File: Pictures/2.pdf Graphic file (type pdf)
+<use Pictures/2.pdf>
+Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 296.85995pt.
 [27])
 \openout2 = `diseno/actividades/actividades.aux'.
 
@@ -1893,10 +1903,10 @@ LaTeX Info: Redefining \% on input line 3.
 
  (reflexiones/conclusiones/conclusiones.tex
 Cap\'{\i }tulo 11.
-File: Pictures/5.pdf Graphic file (type pdf)
-<use Pictures/5.pdf>
-Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
-(pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
+File: Pictures/3.pdf Graphic file (type pdf)
+<use Pictures/3.pdf>
+Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 306.056pt.
 [33
 
 
@@ -1924,10 +1934,10 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37525 strings out of 492945
- 711525 string characters out of 3126253
+ 37535 strings out of 492945
+ 711733 string characters out of 3126253
  1170728 words of memory out of 3000000
- 40644 multiletter control sequences out of 15000+200000
+ 40652 multiletter control sequences out of 15000+200000
  616168 words of font info for 182 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,972b,2955s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1936,9 +1946,9 @@ Here is how much of TeX's memory you used:
 d8a.pfb><C:/Users/anfer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/avant
 gar/uagk8a.pfb><C:/Users/anfer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
 w/times/utmr8a.pfb>
-Output written on informe.pdf (33 pages, 464081 bytes).
+Output written on informe.pdf (33 pages, 489799 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
+ 471 PDF objects out of 1000 (max. 8388607)
  74 named destinations out of 1000 (max. 500000)
- 43798 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 43808 words of extra memory for PDF output out of 51595 (max. 10000000)
 
