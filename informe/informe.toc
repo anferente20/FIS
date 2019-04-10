@@ -23,4 +23,6 @@
 \contentsline {section}{\numberline {2.1}Implementaci\IeC {\'o}n}{9}{section.2.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}M\IeC {\'o}dulos}{10}{subsection.2.1.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Diagrama de Gantt}{11}{section.2.2}% 
 \contentsfinish 
