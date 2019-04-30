@@ -7,6 +7,53 @@
 
 /* Create Tables */
 
+CREATE TABLE Cine
+(
+	idCine SERIAL primary key,
+	nombreCine text NOT NULL,
+	direccion text NOT NULL
+)
+;
+
+
+
+CREATE TABLE Empleado
+(
+	idEmpleado integer primary key,
+	nombreEmpleado text NOT NULL,
+	apellidoEmpleado text NOT NULL,
+	identificacionEmpleado integer unique NOT NULL,
+	idCine integer NOT NULL
+)
+;
+
+
+ALTER TABLE Empleado 
+ADD CONSTRAINT FK_Empleado_Cine FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action,;
+
+create table TipoUsuario(
+	idTipoUsuario SERIAL primary key,
+	descripcion text NOT NULL
+);
+
+create table Usuario(
+	idUsuario text primary key,
+	contrasena text NOT NULL,
+	idEmpleado integer NOT NULL,
+	idTipoUsuario SERIAL NOT NULL,
+	idCineEncargado SERIAL
+);
+
+alter table Usuario
+add constraint fk_usuario_empleado foreign key (idEmpleado) references Empleado (idEmpleado) on delete no action on update no action,
+add constraint fk_usuario_tipoUsuario foreign key (idTipoUsuario) references TipoUsuario (idTipoUsuario) on delete no action on update no action,
+add constraint fk_usuario_cine foreign key (idCineEncargado) references Cine (idCine) on delete no action on update no action;
+
+
+
+
+
+
 CREATE TABLE TipoSuscripcion
 (
 	ipSuscripcion SERIAL primary key,
@@ -132,22 +179,7 @@ ALTER TABLE Funcion ADD CONSTRAINT FK_Funcion_Sala
 ;
 
 
-CREATE TABLE Empleado
-(
-	idEmpleado integer primary key,
-	nombreEmpleado text NOT NULL,
-	apellidoEmpleado text NOT NULL,
-	identificacionEmpleado integer NOT NULL,
-	idCine integer NOT NULL,
-	idTipoEmpleado integer NOT NULL
-)
-;
 
-
-ALTER TABLE Empleado 
-ADD CONSTRAINT FK_Empleado_Cine FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action
-add constraint fk_empleado_tipoEmpleado foreign key (idTipoEmpleado) references TipoEmpleado (idTipoEmpleado) ON DELETE No Action ON UPDATE No Action
-;
 
 CREATE TABLE Compra
 (
@@ -211,17 +243,7 @@ ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
 	FOREIGN KEY (ipSuscripcion) REFERENCES TipoSuscripcion (ipSuscripcion) ON DELETE No Action ON UPDATE No Action
 ;
 
-CREATE TABLE Cine
-(
-	idCine SERIAL primary key,
-	nombreCine integer NOT NULL,
-	direccion integer NOT NULL,
-	idAdministrador text NOT NULL
-)
-;
 
-alter table cine
-add constraint fk_cine_usuario foreign key (idAdministrador) references Usuario (idUsuario) on delete no action on update no accion;
 
 CREATE TABLE Boleta
 (
@@ -246,27 +268,9 @@ ALTER TABLE Boleta ADD CONSTRAINT FK_Boleta_HistoricoPreciosBoleta
 	FOREIGN KEY (idHistoricoBoleta) REFERENCES HistoricoPreciosBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action
 ;
 
-create table TipoUsuario(
-	idTipoUsuario SERIAL primary key,
-	descripcion text NOT NULL
-);
-
-create table Usuario(
-	idUsuario text primary key,
-	contrasena text NOT NULL,
-	idEmpleado integer NOT NULL,
-	idTipoUsuario SERIAL NOT NULL
-);
-
-alter table Usuario
-add constraint fk_usuario_empleado foreign key (idEmpleado) references Empleado (idEmpleado) on delete no action on update no accion
-add constraint fk_usuario_tipoUsuario foreign key (idTipoUsuario) references TipoUsuario (idTipoUsuario) on delete no action on update no accion;
 
 
-create table TipoEmpleado(
-	idTipoEmpleado serial primary key,
-	descripcion text NOT NULL
-);
+
 
 
 

@@ -2,7 +2,10 @@ package persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 
 public class GestorDB {
 	
@@ -15,18 +18,18 @@ public class GestorDB {
 	
 	private static GestorDB gestor;
 	//Patrón singleton
-	public static GestorDB getInstance() {
+	public static GestorDB getInstance() throws SQLException {
 		if(gestor==null) {
 			gestor = new GestorDB();
 		}
 		return gestor;
 	}
 	//Constructor
-	private GestorDB() {
+	private GestorDB() throws SQLException {
 		conectarBD();
 	}
 	//Devuelve el conector con el que se harán todas las operaciones sobre la base de datos
-	public static Connection getConector() {
+	public Connection getConector() {
 		return conector;
 	}
 	//Se conecta  la base de datos instanciando al 'conector'
@@ -39,7 +42,5 @@ public class GestorDB {
 		} catch (SQLException sqle) {
 			System.out.println("Descripción del error al crear la base de datos: " + sqle.getMessage());
 		}
-
-}
-
+	}
 }
