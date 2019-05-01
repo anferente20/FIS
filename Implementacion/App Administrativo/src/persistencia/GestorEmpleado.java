@@ -12,8 +12,8 @@ public class GestorEmpleado extends Gestor{
 	}
 	
 	public void insertarEmpleado(Empleado empleado) throws SQLException {
-		String consulta = "insert into Empleado (idEmpleado,nombreEmpleado,apellidoEmpleado,identificacionEmpleado,idCine) values"
-				+ "(?,?,?,?,?);";
+		String consulta = "insert into Empleado (idEmpleado,nombreEmpleado,apellidoEmpleado,identificacionEmpleado,idCine,estado,idTipoEmpleado) values"
+				+ "(?,?,?,?,?,1,2);";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, empleado.getIdEmpleado());
 		sentencia.setString(2, empleado.getNombresEmpleado());
@@ -27,7 +27,7 @@ public class GestorEmpleado extends Gestor{
 	public ResultSet autoCompletarEmpleado(String nombreApellido) {
 		ResultSet empleados = null;
 		String consulta = "select idEmpleado || ' - '|| nombreEmpleado || ' ' || apellidoEmpleado from Empleado where lower(nombreEmpleado) like ? || '%' or lower(apellidoEmpleado) like "
-				+ "? || '%';";
+				+ "? || '%' and estado = 1;";
 		try {
 			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 			sentencia.setString(1, nombreApellido.toLowerCase());
@@ -43,7 +43,7 @@ public class GestorEmpleado extends Gestor{
 	public ResultSet autoCompletarEmpleado(int id) {
 		ResultSet empleados = null;
 		String consulta = "select idEmpleado || ' - '|| nombreEmpleado || ' ' || apellidoEmpleado from Empleado where CAST(idEmpleado as text) like ? || '%' or "
-				+ "CAST(identificacionEmpleado as text) like ? || '%';";
+				+ "CAST(identificacionEmpleado as text) like ? || '%'  and estado = 1;";
 		try {
 			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 			sentencia.setString(1,String.valueOf(id));
@@ -57,7 +57,7 @@ public class GestorEmpleado extends Gestor{
 	
 	public ResultSet consultarEmpleadoByID(int id) throws SQLException {
 		String consulta = "select empleado.nombreEmpleado as nombres, empleado.apellidoEmpleado as apellidos, empleado.identificacionEmpleado as identificacion,"
-				+ "Cine.nombreCine as cine from Empleado, Cine where  Empleado.idEmpleado = ? and Empleado.idCine = Cine.idCine";
+				+ "Cine.nombreCine as cine from Empleado, Cine where  Empleado.idEmpleado = ? and Empleado.idCine = Cine.idCine  and estado = 1";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, id);
 		return sentencia.executeQuery();	
@@ -72,5 +72,14 @@ public class GestorEmpleado extends Gestor{
 		sentencia.setInt(4, empleado.getIdEmpleado());
 		sentencia.execute();	
 	}
+	
+	public ResultSet consultarEmpleadoByCine(int idCine) throws SQLException {
+		String consulta = "select empleado.idEmpleado as id , empleado.nombreEmpleado as nombres, empleado.apellidoEmpleado as apellidos, empleado.identificacionEmpleado as identificacion,\r\n" + 
+				"				tipoEmpleado.descripcion as tipoEmpleado from empleado, tipoEmpleado" + 
+				"				where empleado.idTipoEmpleado = tipoEmpleado.idTipoEmpleado and empleado.idCine = ? and estado = 1 order by empleado.idTipoEmpleado asc;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCine);
+		return sentencia.executeQuery();	
+	} 
 
 }

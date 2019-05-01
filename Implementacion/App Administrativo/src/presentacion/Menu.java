@@ -68,6 +68,19 @@ public class Menu extends JFrame {
 		mnEmpleados.add(menuDarBaja);
 		
 		JMenuItem menuConsultaEmpl = new JMenuItem("Consultar empleados");
+		menuConsultaEmpl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarEmplByCine frame;
+				try {
+					frame = new ConsultarEmplByCine();
+					frame.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		mnEmpleados.add(menuConsultaEmpl);
 		
 		JMenuItem menuNuevoAdmin = new JMenuItem("Asignar un nuevo administrador a un cine");

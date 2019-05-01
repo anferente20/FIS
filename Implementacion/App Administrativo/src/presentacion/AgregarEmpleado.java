@@ -154,6 +154,7 @@ public class AgregarEmpleado extends JFrame {
 			}
 			catch(SQLException sqle) {
 				JOptionPane.showMessageDialog(null, "Error, el ID o la identificación ya están registrados con otro usuario");
+				System.out.println(sqle.getMessage());
 			}
 		}
 	}

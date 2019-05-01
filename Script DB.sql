@@ -15,7 +15,10 @@ CREATE TABLE Cine
 )
 ;
 
-
+create table tipoEmpleado(
+	idTipoEmpleado serial primary key,
+	descripcion text not null
+);
 
 CREATE TABLE Empleado
 (
@@ -23,13 +26,16 @@ CREATE TABLE Empleado
 	nombreEmpleado text NOT NULL,
 	apellidoEmpleado text NOT NULL,
 	identificacionEmpleado integer unique NOT NULL,
-	idCine integer NOT NULL
+	idCine integer,
+	estado integer not null,
+	idTipoEmpleado integer not null
 )
 ;
 
 
 ALTER TABLE Empleado 
 ADD CONSTRAINT FK_Empleado_Cine FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action;
+add constraint fk_empleado_tipoEmpleado foreign key (idTipoEmpleado) references tipoEmpleado (idTipoEmpleado) on delete no action on update no action;
 
 create table TipoUsuario(
 	idTipoUsuario SERIAL primary key,

@@ -41,5 +41,9 @@ public class FachadaEmpleado{
 	public void actualizarEmpleado(Empleado empleado) throws SQLException {
 		gestorE.actualizarEmpleado(empleado);
 	}
+	
+	public ResultSet consultarEmplByCine(int idCine) throws SQLException {
+		return gestorE.consultarEmpleadoByCine(idCine);
+	}
 
 }
