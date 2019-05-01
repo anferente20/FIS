@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 import logica.Empleado;
 import logica.FachadaCine;
 import logica.FachadaEmpleado;
-import logica.validaciones;
+import logica.Validaciones;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -113,18 +113,19 @@ public class AgregarEmpleado extends JFrame {
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				hide();
+				dispose();
 			}
 		});
 		btnSalir.setBounds(222, 298, 97, 37);
 		contentPane.add(btnSalir);
 		setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
 	//se cargan los cines que estén registrados en el combo box
 	private void cargarCines(){
 		try {
-			ResultSet cines = FachadaCine.consultarCines();
+			ResultSet cines = FachadaCine.getInstance().consultarCines();
 			this.cbCine.addItem("");
 			while(cines.next()) {
 				this.cbCine.addItem((cines.getObject(1)).toString());
@@ -147,11 +148,9 @@ public class AgregarEmpleado extends JFrame {
 			empleado.setIdentificacionEmpl(Integer.parseInt(txtIdentificacion.getText()));
 			empleado.setIdCine(cbCine.getSelectedIndex());
 			try {
-				FachadaEmpleado.insertarEmpleado(empleado);
+				FachadaEmpleado.getInstance().insertarEmpleado(empleado);
 				JOptionPane.showMessageDialog(null,"¡EMPLEADO INSERTADO CON ÉXITO");
 				this.dispose();
-				AgregarEmpleado frame = new AgregarEmpleado();
-				frame.setVisible(true);
 			}
 			catch(SQLException sqle) {
 				JOptionPane.showMessageDialog(null, "Error, el ID o la identificación ya están registrados con otro usuario");
@@ -160,8 +159,8 @@ public class AgregarEmpleado extends JFrame {
 	}
 	
 	private boolean validarVacio() {
-		if(validaciones.validarVacio(txtID.getText()) ||validaciones.validarVacio(txtNombres.getText()) || validaciones.validarVacio(txtApellidos.getText()) ||
-				validaciones.validarVacio(txtIdentificacion.getText()) || validaciones.validarVacio(cbCine.getSelectedItem().toString())) {
+		if(Validaciones.validarVacio(txtID.getText()) ||Validaciones.validarVacio(txtNombres.getText()) || Validaciones.validarVacio(txtApellidos.getText()) ||
+				Validaciones.validarVacio(txtIdentificacion.getText()) || Validaciones.validarVacio(cbCine.getSelectedItem().toString())) {
 			return true;
 		}
 		return false;

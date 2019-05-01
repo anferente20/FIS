@@ -56,6 +56,12 @@ public class Menu extends JFrame {
 		mnEmpleados.add(menuAgregaEmpl);
 		
 		JMenuItem menuModificaEmpl = new JMenuItem("Modificar infomaci\u00F3n de un empleado");
+		menuModificaEmpl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ModificarEmpleado frame = new ModificarEmpleado();
+				frame.setVisible(true);
+			}
+		});
 		mnEmpleados.add(menuModificaEmpl);
 		
 		JMenuItem menuDarBaja = new JMenuItem("Dar de Baja a un empleado");

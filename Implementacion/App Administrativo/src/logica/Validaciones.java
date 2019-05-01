@@ -1,6 +1,6 @@
 package logica;
 
-public class validaciones {
+public class Validaciones {
 
 	//Función que valida si un campo está vacío
 	public static boolean validarVacio(String campo) {

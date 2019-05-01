@@ -29,7 +29,7 @@ CREATE TABLE Empleado
 
 
 ALTER TABLE Empleado 
-ADD CONSTRAINT FK_Empleado_Cine FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action,;
+ADD CONSTRAINT FK_Empleado_Cine FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action;
 
 create table TipoUsuario(
 	idTipoUsuario SERIAL primary key,
