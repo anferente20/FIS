@@ -40,7 +40,7 @@ public class GestorDB {
 		} catch (ClassNotFoundException cnf) {
 			System.out.println("Clase no encontrada: " + cnf.getMessage());
 		} catch (SQLException sqle) {
-			System.out.println("Descripción del error al crear la base de datos: " + sqle.getMessage());
+			System.out.println("Descripción del error al conectarsea la base de datos: " + sqle.getMessage());
 		}
 	}
 }

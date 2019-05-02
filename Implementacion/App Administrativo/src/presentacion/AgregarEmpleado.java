@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 import logica.Empleado;
 import logica.FachadaCine;
 import logica.FachadaEmpleado;
-import logica.Validaciones;
+import logica.Funciones;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -132,7 +132,7 @@ public class AgregarEmpleado extends JFrame {
 			}
 		}
 		catch(SQLException sqle) {
-			System.out.print(sqle.getMessage());
+			System.out.print("Clase AgregarEmpleado: "+sqle.getMessage());
 		}
 	}
 	//inserta un nuevo empleado
@@ -154,14 +154,14 @@ public class AgregarEmpleado extends JFrame {
 			}
 			catch(SQLException sqle) {
 				JOptionPane.showMessageDialog(null, "Error, el ID o la identificación ya están registrados con otro usuario");
-				System.out.println(sqle.getMessage());
+				System.out.println("Clase AgregarEmpleado: "+sqle.getMessage());
 			}
 		}
 	}
 	
 	private boolean validarVacio() {
-		if(Validaciones.validarVacio(txtID.getText()) ||Validaciones.validarVacio(txtNombres.getText()) || Validaciones.validarVacio(txtApellidos.getText()) ||
-				Validaciones.validarVacio(txtIdentificacion.getText()) || Validaciones.validarVacio(cbCine.getSelectedItem().toString())) {
+		if(Funciones.validarVacio(txtID.getText()) ||Funciones.validarVacio(txtNombres.getText()) || Funciones.validarVacio(txtApellidos.getText()) ||
+				Funciones.validarVacio(txtIdentificacion.getText()) || Funciones.validarVacio(cbCine.getSelectedItem().toString())) {
 			return true;
 		}
 		return false;

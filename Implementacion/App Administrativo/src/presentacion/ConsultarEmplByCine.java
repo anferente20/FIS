@@ -11,12 +11,14 @@ import javax.swing.table.DefaultTableModel;
 
 import logica.FachadaCine;
 import logica.FachadaEmpleado;
+import logica.Funciones;
 
 import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -62,6 +64,7 @@ public class ConsultarEmplByCine extends JFrame {
 		contentPane.add(cbCine);
 		
 		tablaEmpleados = new JTable();
+		tablaEmpleados.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		tablaEmpleados.setBounds(218, 121, 0, 0);
 		modeloTabla = new DefaultTableModel(
 				new Object[][] {
@@ -97,12 +100,7 @@ public class ConsultarEmplByCine extends JFrame {
 		contentPane.add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
-					cargarEmpleados();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				cargarEmpleados();
 			}
 		});
 		
@@ -117,27 +115,24 @@ public class ConsultarEmplByCine extends JFrame {
 			cbCine.addItem(cines.getObject(1).toString());
 		}
 	}
-	
-	private void cargarEmpleados() throws SQLException {
-		if(!(cbCine.getSelectedIndex()==0)) {
-			limpiarTabla();
-			ResultSet empleados = FachadaEmpleado.getInstance().consultarEmplByCine(cbCine.getSelectedIndex());
-			System.out.print(empleados.getFetchSize());
-			while(empleados.next()) {
-				modeloTabla.addRow(new Object[] {empleados.getString("id"),empleados.getString("nombres")
-						,empleados.getString("apellidos"),empleados.getString("identificacion"),empleados.getString("tipoEmpleado")});
+	//carga los registros de empleados en la tabla
+	private void cargarEmpleados(){
+		try {
+			Funciones.limpiarTabla(this.modeloTabla);
+			if(!(cbCine.getSelectedIndex()==0)) {
+				ResultSet empleados = FachadaEmpleado.getInstance().consultarEmplByCine(cbCine.getSelectedIndex());
+				while(empleados.next()) {
+					modeloTabla.addRow(new Object[] {empleados.getString("id"),empleados.getString("nombres")
+							,empleados.getString("apellidos"),empleados.getString("identificacion"),empleados.getString("tipoEmpleado")});
+				}
+				tablaEmpleados.setModel(modeloTabla);
 			}
-			tablaEmpleados.setModel(modeloTabla);
 		}
-		else {
-			limpiarTabla();
+		catch(SQLException e) {
+			JOptionPane.showMessageDialog(null,"Error, ¡NO FUE POSIBLE CARGAR LOS REGISTROS!");
+			System.out.println("Clase ConsultarEmplByCine: "+e.getMessage());
 		}
+		
 	}
-	
-	private void limpiarTabla() {
-		int filas = modeloTabla.getRowCount();
-		for(int i=0;i<filas;i++) {
-			modeloTabla.removeRow(0);
-		}
-	}
+
 }

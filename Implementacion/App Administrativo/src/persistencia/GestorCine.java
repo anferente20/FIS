@@ -10,10 +10,17 @@ public class GestorCine extends Gestor{
 		super();
 	}
 	
-	public ResultSet consultarCines() throws SQLException {
-		String consulta = "select nombreCine from Cine order by idCine asc;";
-		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-		return sentencia.executeQuery();
+	public ResultSet consultarCines(){
+		ResultSet cines = null;
+		try {
+			String consulta = "select nombreCine from Cine order by idCine asc;";
+			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+			cines = sentencia.executeQuery();
+		}
+		catch(SQLException e) {
+			System.out.println("Clase GestorCine: "+ e.getMessage());
+		}
+		return cines;
 	}
 
 }

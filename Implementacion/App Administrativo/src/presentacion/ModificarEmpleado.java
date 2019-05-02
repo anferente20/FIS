@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import logica.Empleado;
 import logica.FachadaEmpleado;
-import logica.Validaciones;
+import logica.Funciones;
 
 import java.awt.Font;
 
@@ -45,10 +45,6 @@ public class ModificarEmpleado extends JFrame {
 	private JList<String> listaResultados;
 	private JTextField txtCine;
 
-
-	/**
-	 * Create the frame.
-	 */
 	public ModificarEmpleado() {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("Modificar informaci\u00F3n de un empleado");
@@ -58,7 +54,7 @@ public class ModificarEmpleado extends JFrame {
 	
 	private void createFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 721, 363);
+		setBounds(100, 100, 825, 363);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -77,12 +73,12 @@ public class ModificarEmpleado extends JFrame {
 		scrollPane = new JScrollPane(listaResultados);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(357, 42, 319, 125);
+		scrollPane.setBounds(444, 42, 319, 125);
 		contentPane.add(scrollPane);
 		scrollPane.setVisible(false);
 
 		JPanel panelDatos = new JPanel();
-		panelDatos.setBounds(12, 74, 680, 208);
+		panelDatos.setBounds(64, 74, 680, 208);
 		contentPane.add(panelDatos);
 		panelDatos.setLayout(null);
 		
@@ -168,13 +164,13 @@ public class ModificarEmpleado extends JFrame {
 		txtCine.setEnabled(false);
 		panelDatos.add(txtCine);
 		
-		JLabel lblDigiteElCdigo = new JLabel("Digite el c\u00F3digo, nombre o identificaci\u00F3n del empleado:");
+		JLabel lblDigiteElCdigo = new JLabel("Digite el c\u00F3digo, nombre, apellido o identificaci\u00F3n del empleado:");
 		lblDigiteElCdigo.setBounds(12, 13, 401, 25);
 		contentPane.add(lblDigiteElCdigo);
 		lblDigiteElCdigo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		
 		txtBuscaEmpleado = new JTextField();
-		txtBuscaEmpleado.setBounds(357, 11, 319, 29);
+		txtBuscaEmpleado.setBounds(444, 11, 319, 29);
 		contentPane.add(txtBuscaEmpleado);
 		txtBuscaEmpleado.addKeyListener(new KeyAdapter() {
 			@Override
@@ -205,13 +201,13 @@ public class ModificarEmpleado extends JFrame {
 	
 	//Autocompleta el textfield de empleado
 	private void autoCompletar() throws SQLException {
-		if(Validaciones.validarVacio(txtBuscaEmpleado.getText())) {
+		if(Funciones.validarVacio(txtBuscaEmpleado.getText())) {
 			scrollPane.setVisible(false);
 		}
 		else {
 			scrollPane.setVisible(true);
 			modeloLista.removeAllElements();
-			if(!Validaciones.validarVacio(this.txtBuscaEmpleado.getText())) {
+			if(!Funciones.validarVacio(this.txtBuscaEmpleado.getText())) {
 				ResultSet resultado = null;
 				try {
 					//System.out.println(this.txtBuscaEmpleado.getText());
@@ -278,8 +274,8 @@ public class ModificarEmpleado extends JFrame {
 	}
 	
 	private boolean validarVacio() {
-		if(Validaciones.validarVacio(txtNombres.getText()) || Validaciones.validarVacio(txtApellidos.getText()) || 
-			Validaciones.validarVacio(txtIdentficacion.getText())) {
+		if(Funciones.validarVacio(txtNombres.getText()) || Funciones.validarVacio(txtApellidos.getText()) || 
+			Funciones.validarVacio(txtIdentficacion.getText())) {
 			return true;
 		}
 		return false;

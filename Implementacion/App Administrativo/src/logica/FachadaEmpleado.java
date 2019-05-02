@@ -45,5 +45,15 @@ public class FachadaEmpleado{
 	public ResultSet consultarEmplByCine(int idCine) throws SQLException {
 		return gestorE.consultarEmpleadoByCine(idCine);
 	}
+	
+	public ResultSet sugerirEmpleados(String parametro) throws SQLException {
+		return gestorE.sugerirEmpleados(parametro);
+	}
+	public ResultSet sugerirEmpleados(int parametro) throws SQLException {
+		return gestorE.sugerirEmpleados(parametro);
+	}
+	public void darBajaEmpl(int idEmpleado) throws SQLException {
+		gestorE.darBajaEmpleado(idEmpleado);
+	}
 
 }
