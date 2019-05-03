@@ -89,7 +89,13 @@ public class Menu extends JFrame {
 		});
 		mnEmpleados.add(menuConsultaEmpl);
 		
-		JMenuItem menuNuevoAdmin = new JMenuItem("Asignar un nuevo administrador a un cine");
+		JMenuItem menuNuevoAdmin = new JMenuItem("Administradores");
+		menuNuevoAdmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestionAdmins frame = new GestionAdmins();
+				frame.setVisible(true);
+			}
+		});
 		mnEmpleados.add(menuNuevoAdmin);
 		setLocationRelativeTo(null);
 		setVisible(true);

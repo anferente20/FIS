@@ -42,15 +42,15 @@ public class DarBajaEmpl extends JFrame {
 
 	private void createFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 655, 355);
+		setBounds(100, 100, 797, 355);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblEscribaNombreApellido = new JLabel("Escriba nombre, apellido o identificaci\u00F3n del empleado: ");
+		JLabel lblEscribaNombreApellido = new JLabel("Escriba nombre, apellido, nombre del cine o identificaci\u00F3n del empleado: ");
 		lblEscribaNombreApellido.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblEscribaNombreApellido.setBounds(10, 23, 342, 22);
+		lblEscribaNombreApellido.setBounds(10, 23, 474, 22);
 		contentPane.add(lblEscribaNombreApellido);
 		
 		tablaEmpleados = new JTable();
@@ -75,21 +75,22 @@ public class DarBajaEmpl extends JFrame {
 				cargarEmpleados();
 			}
 		});
-		txtParametro.setBounds(377, 19, 238, 26);
+		txtParametro.setBounds(496, 22, 238, 26);
 		contentPane.add(txtParametro);
 		txtParametro.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				darBaja();
 			}
 		});
-		btnAceptar.setBounds(270, 259, 99, 34);
+		btnAceptar.setBounds(340, 259, 99, 34);
 		contentPane.add(btnAceptar);
 		
 		JScrollPane scrollPane = new JScrollPane(tablaEmpleados);
-		scrollPane.setBounds(49, 85, 541, 150);
+		scrollPane.setBounds(119, 85, 541, 150);
 		contentPane.add(scrollPane);
 		setLocationRelativeTo(null);
 	}
@@ -137,9 +138,13 @@ public class DarBajaEmpl extends JFrame {
 		else {
 			int idEmpleado = Integer.parseInt((String) modeloTabla.getValueAt(numFila, 0));
 			try {
-				FachadaEmpleado.getInstance().darBajaEmpl(idEmpleado);
-				JOptionPane.showMessageDialog(null,"¡EMPLEADO DADO DE BAJA CON ÉXITO");
-				Funciones.limpiarTabla(modeloTabla);
+				int opcion = JOptionPane.showConfirmDialog(null,"¿Está seguro de dar de baja al empleado seleccionado?");
+				if(opcion==0) {
+					FachadaEmpleado.getInstance().darBajaEmpl(idEmpleado);
+					JOptionPane.showMessageDialog(null,"¡EMPLEADO DADO DE BAJA CON ÉXITO");
+					Funciones.limpiarTabla(modeloTabla);
+				}
+				
 			} catch (SQLException e) {
 				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
 				JOptionPane.showMessageDialog(null,"Error, ¡EMPLEADO NO DADO DE BAJA CON ÉXITO!");

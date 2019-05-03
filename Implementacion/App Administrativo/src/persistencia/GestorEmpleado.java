@@ -64,12 +64,13 @@ public class GestorEmpleado extends Gestor{
 	}
 	
 	public void actualizarEmpleado(Empleado empleado) throws SQLException {
-		String consulta = "update Empleado set nombreEmpleado = ?, apellidoEmpleado = ?, identificacionEmpleado = ? where idEmpleado = ?";
+		String consulta = "update Empleado set nombreEmpleado = ?, apellidoEmpleado = ?, identificacionEmpleado = ? , idCine = ? where idEmpleado = ?";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, empleado.getNombresEmpleado());
 		sentencia.setString(2, empleado.getApellidosEmpleados());
 		sentencia.setInt(3, empleado.getIdentificacionEmpl());
-		sentencia.setInt(4, empleado.getIdEmpleado());
+		sentencia.setInt(4, empleado.getIdCine());
+		sentencia.setInt(5, empleado.getIdEmpleado());
 		sentencia.execute();	
 	}
 	
@@ -111,5 +112,13 @@ public class GestorEmpleado extends Gestor{
 		sentencia.setInt(1, idEmpleado);
 		sentencia.execute();
 	}
+	
+	public ResultSet consultarAdmins() throws SQLException {
+		String consulta = "select empleado.idEmpleado || ' - ' || empleado.nombreEmpleado || ' ' || empleado.apellidoEmpleado as adminInfo, cine.nombreCine as cine \r\n" + 
+				"from (usuario inner join empleado on empleado.idEmpleado = usuario.idEmpleado) inner join cine on cine.idCine = usuario.idCineEncargado order by cine.idCine;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		return sentencia.executeQuery();
+	}
+	
 
 }

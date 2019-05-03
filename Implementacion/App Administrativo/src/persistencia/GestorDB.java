@@ -11,7 +11,7 @@ public class GestorDB {
 	
 	private static Connection conector;
 	private static String nombreBD = "cine_mas";
-	private static String url = "jdbc:postgresql://localhost:5433/"+nombreBD;
+	private static String url = "jdbc:postgresql://192.168.0.100:5432/"+nombreBD; 
 	private static String usuario = "postgres";
 	private static String contrasena = "leo990209";
 

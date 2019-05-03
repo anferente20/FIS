@@ -16,13 +16,14 @@ insert into Cine (nombreCine,direccion) values ('Cine+ Andino','Cra. 11 #82-71')
 insert into tipoEmpleado (descripcion) values ('Administrador'),('Normal');
 
 
+
 --Tabla Empleado
 
 insert into Empleado (idEmpleado,nombreEmpleado,apellidoEmpleado,identificacionEmpleado,idCine,idTipoEmpleado) values (1615,'Juan', 'Uribe Alvarez',1442401402,1,1),
 																										(1222,'Daniel Alexander', 'Mejia Uribe',1906959327,1,2),
 																										(1167,'Daniel Fernando', 'Mora Arias',1416500504,2,2),
 																										(1556,'Daniel', 'Castillo Rodriguez',1036929289,2,2),
-																										(1948,'Juan', 'Uribe Arias',1919678821,10,1,2),
+																										(1948,'Juan', 'Uribe Arias',1919678821,null,2),
 																										(1496,'Jhon Raul', 'Castillo',1596474852,10,2),
 																										(1566,'Jhon Camilo', 'Castillo',1977542729,3,2),
 																										(1391,'Felipe Leonardo', 'Uribe Uribe',1793786382,4,2),
@@ -68,8 +69,12 @@ insert into Usuario (idUsuario,contrasena,idEmpleado,idTipoUsuario,idCineEncarga
 																							('1668899243','admin8',1034,1,8),
 																							('1006621433','admin9',1118,1,9),
 																							('1202475853','admin10',1171,1,10),
-																							('1919678821','superadmin',1948,2,10);
-																							
+																							('1919678821','superadmin',1948,2,null);
+		
+--hacer en el portatil		
+alter table usuario
+alter column idCineEncargado drop not null;
 
+update usuario set idCineEncargado = null where idEmpleado = 1948;
+--
 
-											

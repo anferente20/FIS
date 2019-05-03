@@ -55,5 +55,8 @@ public class FachadaEmpleado{
 	public void darBajaEmpl(int idEmpleado) throws SQLException {
 		gestorE.darBajaEmpleado(idEmpleado);
 	}
+	public ResultSet consultarAdmins() throws SQLException {
+		return gestorE.consultarAdmins();
+	}
 
 }

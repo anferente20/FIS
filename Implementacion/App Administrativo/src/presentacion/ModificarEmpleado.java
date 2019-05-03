@@ -43,7 +43,7 @@ public class ModificarEmpleado extends JFrame {
 	private DefaultListModel<String> modeloLista;
 	private JScrollPane scrollPane;
 	private JList<String> listaResultados;
-	private JTextField txtCine;
+	private JComboBox<String> cbCine;
 
 	public ModificarEmpleado() {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -157,12 +157,9 @@ public class ModificarEmpleado extends JFrame {
 		panelDatos.add(btnSalir);
 		btnSalir.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		
-		txtCine = new JTextField();
-		txtCine.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		txtCine.setColumns(10);
-		txtCine.setBounds(455, 64, 169, 26);
-		txtCine.setEnabled(false);
-		panelDatos.add(txtCine);
+		cbCine = new JComboBox<String>();
+		cbCine.setBounds(455, 64, 169, 26);
+		panelDatos.add(cbCine);
 		
 		JLabel lblDigiteElCdigo = new JLabel("Digite el c\u00F3digo, nombre, apellido o identificaci\u00F3n del empleado:");
 		lblDigiteElCdigo.setBounds(12, 13, 401, 25);
@@ -197,6 +194,7 @@ public class ModificarEmpleado extends JFrame {
 		this.txtNombres.setEnabled(estado);
 		this.txtApellidos.setEnabled(estado);
 		this.txtIdentficacion.setEnabled(estado);
+		this.cbCine.setEnabled(estado);
 	}
 	
 	//Autocompleta el textfield de empleado
@@ -207,25 +205,25 @@ public class ModificarEmpleado extends JFrame {
 		else {
 			scrollPane.setVisible(true);
 			modeloLista.removeAllElements();
-			if(!Funciones.validarVacio(this.txtBuscaEmpleado.getText())) {
-				ResultSet resultado = null;
-				try {
-					//System.out.println(this.txtBuscaEmpleado.getText());
-					int valor = Integer.parseInt(this.txtBuscaEmpleado.getText());
-					//System.out.print("Es un entero");
-					resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(valor);
+
+			ResultSet resultado = null;
+			try {
+				//System.out.println(this.txtBuscaEmpleado.getText());
+				int valor = Integer.parseInt(this.txtBuscaEmpleado.getText());
+				//System.out.print("Es un entero");
+				resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(valor);
 					
-				}
-				catch(Exception e) {
-					//System.out.println("Es un string");
-					resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(this.txtBuscaEmpleado.getText());
-				}
-				while(resultado.next()) {
-					modeloLista.addElement(resultado.getObject(1).toString());
-					//System.out.println(resultado.getObject(1).toString());
-				}
-				listaResultados.setModel(modeloLista);
 			}
+			catch(Exception e) {
+				//System.out.println("Es un string");
+				resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(this.txtBuscaEmpleado.getText());
+			}
+			while(resultado.next()) {
+				modeloLista.addElement(resultado.getObject(1).toString());
+				//System.out.println(resultado.getObject(1).toString());
+			}
+			listaResultados.setModel(modeloLista);
+			
 		}
 		
 	}
@@ -243,7 +241,7 @@ public class ModificarEmpleado extends JFrame {
 			this.txtNombres.setText(resultado.getString("nombres"));
 			this.txtApellidos.setText(resultado.getString("apellidos"));
 			this.txtIdentficacion.setText(resultado.getString("identificacion"));
-			this.txtCine.setText(resultado.getString("cine"));
+			this.cbCine.setSelectedItem((resultado.getString("cine")));
 			setDatos(true);
 		} catch (SQLException e) {
 			e.getMessage();
@@ -260,6 +258,7 @@ public class ModificarEmpleado extends JFrame {
 			empleado.setNombresEmpleado(txtNombres.getText());
 			empleado.setApellidosEmpleados(txtApellidos.getText());
 			empleado.setIdentificacionEmpl(Integer.parseInt(txtIdentficacion.getText()));
+			empleado.setIdCine(Integer.parseInt((String) cbCine.getSelectedItem()));
 			try {
 				FachadaEmpleado.getInstance().actualizarEmpleado(empleado);
 				JOptionPane.showMessageDialog(null,"¡EMPLEADO ACTUALIZADO CON ÉXITO!");
@@ -275,7 +274,7 @@ public class ModificarEmpleado extends JFrame {
 	
 	private boolean validarVacio() {
 		if(Funciones.validarVacio(txtNombres.getText()) || Funciones.validarVacio(txtApellidos.getText()) || 
-			Funciones.validarVacio(txtIdentficacion.getText())) {
+			Funciones.validarVacio(txtIdentficacion.getText()) || Funciones.validarVacio(cbCine.getSelectedItem().toString())) {
 			return true;
 		}
 		return false;
