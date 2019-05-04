@@ -24,3 +24,4 @@ public class GestorCine extends Gestor{
 	}
 
 }
+

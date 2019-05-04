@@ -129,6 +129,3 @@ class RenderTabla extends DefaultTableCellRenderer{
 
     
 }
-
-
-

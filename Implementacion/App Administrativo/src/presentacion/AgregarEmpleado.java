@@ -122,7 +122,7 @@ public class AgregarEmpleado extends JFrame {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
-	//se cargan los cines que estén registrados en el combo box
+	//se cargan los cines que estÃ©n registrados en el combo box
 	private void cargarCines(){
 		try {
 			ResultSet cines = FachadaCine.getInstance().consultarCines();
@@ -149,11 +149,11 @@ public class AgregarEmpleado extends JFrame {
 			empleado.setIdCine(cbCine.getSelectedIndex());
 			try {
 				FachadaEmpleado.getInstance().insertarEmpleado(empleado);
-				JOptionPane.showMessageDialog(null,"¡EMPLEADO INSERTADO CON ÉXITO");
+				JOptionPane.showMessageDialog(null,"Â¡EMPLEADO INSERTADO CON Ã‰XITO");
 				this.dispose();
 			}
 			catch(SQLException sqle) {
-				JOptionPane.showMessageDialog(null, "Error, el ID o la identificación ya están registrados con otro usuario");
+				JOptionPane.showMessageDialog(null, "Error, el ID o la identificaciÃ³n ya estÃ¡n registrados con otro usuario");
 				System.out.println("Clase AgregarEmpleado: "+sqle.getMessage());
 			}
 		}
@@ -167,3 +167,4 @@ public class AgregarEmpleado extends JFrame {
 		return false;
 	}
 }
+

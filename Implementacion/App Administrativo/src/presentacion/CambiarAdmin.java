@@ -52,7 +52,7 @@ public class CambiarAdmin extends JInternalFrame {
 	}
 
 	//setBounds(100, 100, 584, 424); -> grande
-	//setBounds(100, 100, 584, 146); -> pequeÒo
+	//setBounds(100, 100, 584, 146); -> peque√±o
 	private void createFrame() {
 		setTitle("Cambiar Administrador");
 		setBounds(100, 100, 584, 146);
@@ -154,7 +154,7 @@ public class CambiarAdmin extends JInternalFrame {
 		btnAceptar.setBounds(200, 164, 89, 29);
 		panelOtroAdmin.add(btnAceptar);
 	}
-	//cambia el tamaÒo del internal frame
+	//cambia el tama√±o del internal frame
 	private void setTamano(int x, int y,int width,int height) {
 		this.setBounds(x, y, width, height);
 	}

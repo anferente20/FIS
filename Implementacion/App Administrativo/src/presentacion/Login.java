@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import javafx.scene.control.Menu;
-
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -97,7 +95,7 @@ public class Login extends JFrame {
 		 *    LOGIN DESDE LA BASE DE DATOS
 		 * 
 		 */
-		tipoUsuario = "Administrador";  // ---> Quitar despuÈs de hacer bien el login
+		tipoUsuario = "Administrador";  // ---> Quitar despu√©s de hacer bien el login
 		this.setVisible(false);
 		presentacion.Menu menu = new presentacion.Menu(usuario, contrasena, tipoUsuario);
 		

@@ -24,6 +24,8 @@ public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JMenuItem menuAgregaEmpl;
+	
+	
 
 	public Menu(String usuario, String contrasena, String tipoUsuario) {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -40,11 +42,13 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 97, 21);
+		menuBar.setBounds(0, 0, 450, 21);
 		contentPane.add(menuBar);
 		
 		JMenu mnEmpleados = new JMenu("Empleados");
 		menuBar.add(mnEmpleados);
+
+		
 		
 		menuAgregaEmpl = new JMenuItem("Agregar nuevo empleado");
 		menuAgregaEmpl.addActionListener(new ActionListener() {
@@ -99,5 +103,20 @@ public class Menu extends JFrame {
 		mnEmpleados.add(menuNuevoAdmin);
 		setLocationRelativeTo(null);
 		setVisible(true);
+		
+		//Menú Inventario
+		JMenu mnInventario = new JMenu("Inventario");
+		menuBar.add(mnInventario);
+		
+		//Item que aparecerá en el Menú inventario 
+		
+		JMenuItem agregarProducto = new JMenuItem("AgregarProducto");
+		agregarProducto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestionAdmins frame = new GestionAdmins();
+				frame.setVisible(true);
+			}
+		});
+		mnInventario.add(agregarProducto);
 	}
 }
