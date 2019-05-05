@@ -1,5 +1,6 @@
 package logica;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import persistencia.GestorInventario;
@@ -45,6 +46,24 @@ public class FachadaInventario {
 		}
 		return instance;
 	}
+	/**
+	 * Método que consulta todos los productos existentes
+	 * @return ResultSet con la lista de los productos
+	 * @throws SQLException
+	 */
+	public ResultSet listarProductoss() throws SQLException {
+		return gestorP.listarProductos();
+	}
+	
+	/**
+	 * Método que intermedia para poder obtener la unidad de medición del Producto
+	 * @param nombre Nombre del producto
+	 * @return Unidad de medicion del producto 
+	 * @throws SQLException
+	 */
+	public String unidadMedicion(String nombre) throws SQLException {
+		return gestorP.obtenerUM(nombre);
+	}
 	
 	/**
 	 * Método que Permite insertar un producto
@@ -53,8 +72,30 @@ public class FachadaInventario {
 	 */
 	public void insertarProducto(Producto producto) throws SQLException {
 		gestorP.insertarProducto(producto);
-}
+	}
 
+	/**
+	 * Método para actualizar datos en el inventario
+	 * @param cantidad Nueva cantidad 
+	 * @param idcine Identificador del cine
+	 * @param idproducto Identificador del producto
+	 * @throws SQLException Si falla conexión BD
+	 */
+	public void actualizar(int cantidad, int idcine,int idproducto) throws SQLException {
+		gestorI.actualizarEmpleado(cantidad, idcine, idproducto);
+	}
+	
+	/**
+	 * Método para buscar el identificador del Producto
+	 * @param nombreCine nombre del producto a buscar
+	 * @return el identificador del producto
+	 * @throws NumberFormatException
+	 * @throws SQLException
+	 */
+	public int buscarID(String nombre) throws NumberFormatException, SQLException {
+		return gestorP.ObtenerIDProducto(nombre);
+	}
+	
 	public GestorInventario getGestorI() {
 		return gestorI;
 	}
