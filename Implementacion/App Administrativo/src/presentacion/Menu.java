@@ -108,15 +108,32 @@ public class Menu extends JFrame {
 		JMenu mnInventario = new JMenu("Inventario");
 		menuBar.add(mnInventario);
 		
-		//Item que aparecerá en el Menú inventario 
+		//Item de agregar producto 
 		
 		JMenuItem agregarProducto = new JMenuItem("AgregarProducto");
 		agregarProducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GestionAdmins frame = new GestionAdmins();
+				AgregarProducto frame = new AgregarProducto();
 				frame.setVisible(true);
 			}
 		});
 		mnInventario.add(agregarProducto);
+		
+		//ITEM de Actualizar inventario
+		JMenuItem actualizarInventario = new JMenuItem("Actualizar inventario");
+		actualizarInventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ActualizarInventario frame;
+				try {
+					frame = new ActualizarInventario();
+					frame.setVisible(true);
+				} catch (SQLException e1) {
+					JOptionPane.showMessageDialog(null,"¡ERROR AL CONECTAR!");
+				}
+
+			}
+		});
+		mnInventario.add(actualizarInventario);
 	}
+	
 }
