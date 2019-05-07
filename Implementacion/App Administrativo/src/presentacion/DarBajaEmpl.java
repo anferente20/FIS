@@ -133,21 +133,21 @@ public class DarBajaEmpl extends JFrame {
 	private void darBaja(){
 		int numFila = tablaEmpleados.getSelectedRow();
 		if(numFila==-1) {
-			JOptionPane.showMessageDialog(null, "No ha seleccionado ningÃºn registro de la tabla");
+			JOptionPane.showMessageDialog(null, "No ha seleccionado ningún registro de la tabla");
 		}
 		else {
 			int idEmpleado = Integer.parseInt((String) modeloTabla.getValueAt(numFila, 0));
 			try {
-				int opcion = JOptionPane.showConfirmDialog(null,"Â¿EstÃ¡ seguro de dar de baja al empleado seleccionado?");
+				int opcion = JOptionPane.showConfirmDialog(null,"¿Está seguro de dar de baja al empleado seleccionado?");
 				if(opcion==0) {
 					FachadaEmpleado.getInstance().darBajaEmpl(idEmpleado);
-					JOptionPane.showMessageDialog(null,"Â¡EMPLEADO DADO DE BAJA CON Ã‰XITO");
+					JOptionPane.showMessageDialog(null,"¡EMPLEADO DADO DE BAJA CON ÉXITO");
 					Funciones.limpiarTabla(modeloTabla);
 				}
 				
 			} catch (SQLException e) {
 				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
-				JOptionPane.showMessageDialog(null,"Error, Â¡EMPLEADO NO DADO DE BAJA CON Ã‰XITO!");
+				JOptionPane.showMessageDialog(null,"Error, ¡EMPLEADO NO DADO DE BAJA CON ÉXITO!");
 				Funciones.limpiarTabla(modeloTabla);
 			}
 		}

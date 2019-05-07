@@ -39,7 +39,7 @@ public class GestorEmpleado extends Gestor{
 		return empleados;
 	}
 	
-	//Buscar a los empleados por identificaciÃ³n o ID
+	//Buscar a los empleados por identificación o ID
 	public ResultSet autoCompletarEmpleado(int id) {
 		ResultSet empleados = null;
 		String consulta = "select idEmpleado || ' - '|| nombreEmpleado || ' ' || apellidoEmpleado from Empleado where CAST(idEmpleado as text) like ? || '%' or "
@@ -77,7 +77,7 @@ public class GestorEmpleado extends Gestor{
 	public ResultSet consultarEmpleadoByCine(int idCine) throws SQLException {
 		String consulta = "select empleado.idEmpleado as id , empleado.nombreEmpleado as nombres, empleado.apellidoEmpleado as apellidos, empleado.identificacionEmpleado as identificacion,\r\n" + 
 				"				tipoEmpleado.descripcion as tipoEmpleado from empleado, tipoEmpleado" + 
-				"				where empleado.idTipoEmpleado = tipoEmpleado.idTipoEmpleado and empleado.idCine = ? order by empleado.idTipoEmpleado asc;";
+				"				where empleado.idTipoEmpleado = tipoEmpleado.idTipoEmpleado and empleado.idCine = ? and estado = 1 order by empleado.idTipoEmpleado asc;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, idCine);
 		return sentencia.executeQuery();	
@@ -94,7 +94,7 @@ public class GestorEmpleado extends Gestor{
 		sentencia.setString(3, parametro);
 		return sentencia.executeQuery();
 	}
-	//sugiere empleados por id o identificaciÃ³n
+	//sugiere empleados por id o identificación
 	public ResultSet sugerirEmpleados(int id) throws SQLException {
 		String consulta = "select empleado.idEmpleado as id, empleado.nombreEmpleado as nombres, empleado.apellidoEmpleado as apellidos, identificacionEmpleado\r\n" + 
 				"				as identificacion, cine.nombreCine as nombreCine from empleado, cine where empleado.estado = 1 and \r\n" + 

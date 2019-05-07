@@ -1,9 +1,8 @@
-
 package logica;
 
 public class Validaciones {
 
-	//Funci√≥n que valida si un campo est√° vac√≠o
+	//FunciÛn que valida si un campo est· vacÌo
 	public static boolean validarVacio(String campo) {
 		if(campo.trim().isEmpty()) {
 			return true;

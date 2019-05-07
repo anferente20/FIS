@@ -129,7 +129,7 @@ public class ConsultarEmplByCine extends JFrame {
 			}
 		}
 		catch(SQLException e) {
-			JOptionPane.showMessageDialog(null,"Error, Â¡NO FUE POSIBLE CARGAR LOS REGISTROS!");
+			JOptionPane.showMessageDialog(null,"Error, ¡NO FUE POSIBLE CARGAR LOS REGISTROS!");
 			System.out.println("Clase ConsultarEmplByCine: "+e.getMessage());
 		}
 		

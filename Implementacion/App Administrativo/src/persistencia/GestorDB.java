@@ -1,4 +1,3 @@
-
 package persistencia;
 
 import java.sql.Connection;
@@ -12,13 +11,13 @@ public class GestorDB {
 	
 	private static Connection conector;
 	private static String nombreBD = "cine_mas";
-	private static String url = "jdbc:postgresql://localhost:5432/"+nombreBD;
+	private static String url = "jdbc:postgresql://192.168.0.100:5432/"+nombreBD; 
 	private static String usuario = "postgres";
-	private static String contrasena = "root";
+	private static String contrasena = "leo990209";
 
 	
 	private static GestorDB gestor;
-	//Patr√≥n singleton
+	//PatrÛn singleton
 	public static GestorDB getInstance() throws SQLException {
 		if(gestor==null) {
 			gestor = new GestorDB();
@@ -29,7 +28,7 @@ public class GestorDB {
 	private GestorDB() throws SQLException {
 		conectarBD();
 	}
-	//Devuelve el conector con el que se har√°n todas las operaciones sobre la base de datos
+	//Devuelve el conector con el que se har·n todas las operaciones sobre la base de datos
 	public Connection getConector() {
 		return conector;
 	}
@@ -41,7 +40,7 @@ public class GestorDB {
 		} catch (ClassNotFoundException cnf) {
 			System.out.println("Clase no encontrada: " + cnf.getMessage());
 		} catch (SQLException sqle) {
-			System.out.println("Descripci√≥n del error al conectarsea la base de datos: " + sqle.getMessage());
+			System.out.println("DescripciÛn del error al conectarsea la base de datos: " + sqle.getMessage());
 		}
 	}
 }

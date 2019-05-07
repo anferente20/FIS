@@ -23,15 +23,4 @@ public class FachadaCine {
 	public ResultSet consultarCines() throws SQLException {
 		return gestorC.consultarCines();
 	}
-	
-	/**
-	 * Método para buscar el identificador del cine
-	 * @param nombreCine nombre del cine a buscar
-	 * @return el identificador del cine
-	 * @throws NumberFormatException
-	 * @throws SQLException
-	 */
-	public int buscarID(String nombreCine) throws NumberFormatException, SQLException {
-		return gestorC.ObtenerIDCine(nombreCine);
-	}
 }

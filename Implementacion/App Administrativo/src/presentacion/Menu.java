@@ -24,8 +24,6 @@ public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JMenuItem menuAgregaEmpl;
-	
-	
 
 	public Menu(String usuario, String contrasena, String tipoUsuario) {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -42,13 +40,11 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 450, 21);
+		menuBar.setBounds(0, 0, 97, 21);
 		contentPane.add(menuBar);
 		
 		JMenu mnEmpleados = new JMenu("Empleados");
 		menuBar.add(mnEmpleados);
-
-		
 		
 		menuAgregaEmpl = new JMenuItem("Agregar nuevo empleado");
 		menuAgregaEmpl.addActionListener(new ActionListener() {
@@ -103,37 +99,5 @@ public class Menu extends JFrame {
 		mnEmpleados.add(menuNuevoAdmin);
 		setLocationRelativeTo(null);
 		setVisible(true);
-		
-		//Menú Inventario
-		JMenu mnInventario = new JMenu("Inventario");
-		menuBar.add(mnInventario);
-		
-		//Item de agregar producto 
-		
-		JMenuItem agregarProducto = new JMenuItem("AgregarProducto");
-		agregarProducto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AgregarProducto frame = new AgregarProducto();
-				frame.setVisible(true);
-			}
-		});
-		mnInventario.add(agregarProducto);
-		
-		//ITEM de Actualizar inventario
-		JMenuItem actualizarInventario = new JMenuItem("Actualizar inventario");
-		actualizarInventario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ActualizarInventario frame;
-				try {
-					frame = new ActualizarInventario();
-					frame.setVisible(true);
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null,"¡ERROR AL CONECTAR!");
-				}
-
-			}
-		});
-		mnInventario.add(actualizarInventario);
 	}
-	
 }
