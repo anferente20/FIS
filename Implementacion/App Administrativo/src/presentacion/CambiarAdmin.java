@@ -15,6 +15,8 @@ import javax.swing.JList;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class CambiarAdmin extends JInternalFrame {
 
@@ -33,6 +35,12 @@ public class CambiarAdmin extends JInternalFrame {
 	}
 	
 	private  CambiarAdmin() {
+		addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentShown(ComponentEvent arg0) {
+				setTamano(100, 100, 584, 146);
+			}
+		});
 		addInternalFrameListener(new InternalFrameAdapter() {
 			@Override
 			public void internalFrameClosed(InternalFrameEvent arg0) {
@@ -44,7 +52,7 @@ public class CambiarAdmin extends JInternalFrame {
 	}
 
 	//setBounds(100, 100, 584, 424); -> grande
-	//setBounds(100, 100, 584, 146); -> pequeÒo
+	//setBounds(100, 100, 584, 146); -> peque√±o
 	private void createFrame() {
 		setTitle("Cambiar Administrador");
 		setBounds(100, 100, 584, 146);
@@ -146,7 +154,7 @@ public class CambiarAdmin extends JInternalFrame {
 		btnAceptar.setBounds(200, 164, 89, 29);
 		panelOtroAdmin.add(btnAceptar);
 	}
-	//cambia el tamaÒo del internal frame
+	//cambia el tama√±o del internal frame
 	private void setTamano(int x, int y,int width,int height) {
 		this.setBounds(x, y, width, height);
 	}

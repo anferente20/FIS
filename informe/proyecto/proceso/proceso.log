@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.4.24)  24 APR 2019 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.2)  5 MAY 2019 14:47
 entering extended mode
 **./proceso.tex
 (proceso.tex
-LaTeX2e <2018-04-01> patch level 5
+LaTeX2e <2018-12-01>
 ! Undefined control sequence.
 l.1 \chapter
             {Proceso}
@@ -2516,8 +2516,8 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 9 in font nullfont!
+Missing character: There is no 7 in font nullfont!
+Missing character: There is no 4 in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -2651,12 +2651,13 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no 8 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 3 in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no j in font nullfont!
 Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -3235,11 +3236,12 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.57 	\caption
-              {Poyección del desarrollo (1)}
+              {Proyección del desarrollo (1)}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no P in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -3371,11 +3373,12 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.62 	\caption
-              {Poyección del desarrollo (2)}
+              {Proyección del desarrollo (2)}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no P in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -3944,10 +3947,10 @@ Missing character: There is no . in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 26 strings out of 492970
- 351 string characters out of 3123930
- 61558 words of memory out of 3000000
- 3997 multiletter control sequences out of 15000+200000
+ 26 strings out of 492945
+ 391 string characters out of 3135514
+ 62009 words of memory out of 3000000
+ 4022 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  16i,1n,16p,633b,165s stack positions out of 5000i,500n,10000p,200000b,50000s

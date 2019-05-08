@@ -261,11 +261,11 @@ public class ModificarEmpleado extends JFrame {
 			empleado.setIdCine(Integer.parseInt((String) cbCine.getSelectedItem()));
 			try {
 				FachadaEmpleado.getInstance().actualizarEmpleado(empleado);
-				JOptionPane.showMessageDialog(null,"¡EMPLEADO ACTUALIZADO CON ÉXITO!");
+				JOptionPane.showMessageDialog(null,"Â¡EMPLEADO ACTUALIZADO CON Ã‰XITO!");
 				this.dispose();
 			}
 			catch(SQLException e) {
-				JOptionPane.showMessageDialog(null,"Error, la identificación ingresada ya está registrada con otro empleado");
+				JOptionPane.showMessageDialog(null,"Error, la identificaciÃ³n ingresada ya estÃ¡ registrada con otro empleado");
 				System.out.println(e.getMessage());
 			}
 			
