@@ -28,6 +28,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{12}{section.2.3}% 
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Open Source}{12}{section.2.4}% 
+\defcounter {refsection}{0}\relax 
 \contentsline {part}{\@mypartnumtocformat {II}{DISE\IeC {\~N}O}}{13}{part.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Requerimientos}{15}{chapter.3}% 
@@ -36,7 +38,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Requerimientos tipo C}{15}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Diagrama de Casos de Uso}{16}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Diagrama de Casos de Uso}{15}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Diagrama de Secuencia}{16}{section.3.4}% 
+\contentsline {section}{\numberline {3.4}Diagrama de Secuencia}{15}{section.3.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Diagramas de Comunicaci\IeC {\'o}n}{15}{section.3.5}% 
 \contentsfinish 

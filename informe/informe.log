@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.24)  7 MAY 2019 22:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.10)  8 MAY 2019 16:37
 entering extended mode
 **./informe.tex
 (informe.tex
 LaTeX2e <2018-12-01>
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/book.cls
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\book.cls"
 Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/fleqn.clo
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fleqn.clo"
 File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
 \mathindent=\dimen102
 Applying: [2015/01/01] Make \[ robust on input line 50.
@@ -15,7 +15,7 @@ Applying: [2015/01/01] Make \] robust on input line 74.
 LaTeX Info: Redefining \] on input line 75.
 Already applied: [0000/00/00] Make \] robust on input line 83.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/bk11.clo
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\bk11.clo"
 File: bk11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -31,75 +31,68 @@ File: bk11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen103
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/babel/babel.sty
-Package: babel 2019/04/03 3.29 The Babel package
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2018/11/13 3.27 The Babel package
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/babel/switch.def
-File: switch.def 2019/04/03 3.29 Babel switching mechanism
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-(/home/anferente97/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf
+("C:\Program Files\MiKTeX 2.9\tex/latex/babel-spanish\spanish.ldf"
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/babel/babel.def
-File: babel.def 2019/04/03 3.29 Babel common definitions
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2018/11/13 3.27 Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen104
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
 \bbl@dirlevel=\count90
 )
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language `Spanish' into the format.
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=0 instead on input line 51.
-
-\l@spanish = a dialect from \language0
 \es@quottoks=\toks14
 \es@quotdepth=\count91
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
-)) (/home/anferente97/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+))
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/fontenc.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/t1enc.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1enc.def"
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen105
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen106
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count92
@@ -140,14 +133,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks22
 \thm@bodyfont=\toks23
@@ -158,23 +151,22 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@postskip=\skip47
 \thm@headsep=\skip48
 \dth@everypar=\toks27
-)
-(structure.tex
-(/home/anferente97/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+) (structure.tex
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks28
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/ifvtex.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/ifxetex/ifxetex.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count104
@@ -190,64 +182,58 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen121
 \Gm@dimlist=\toks29
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-com
-mon.tex
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common.tex"
 \pgfutil@everybye=\toks30
 \pgfutil@tempdima=\dimen124
 \pgfutil@tempdimb=\dimen125
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-com
-mon-lists.tex))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-lat
-ex.def
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common-lists.te
+x")) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-latex.def"
 \pgfutil@abb=\box29
- (/home/anferente97/.miktex/texmfs/install/tex/latex/ms/everyshi.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code
-.tex (/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex
-)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfrcs.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf\pgf.revision.tex")
 Package: pgfrcs 2019/04/04 v3.1.2 (3.1.2)
 ))
 Package: pgf 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.co
-de.tex
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys.code.tex"
 Package: pgfsys 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks31
 \pgfkeys@temptoks=\toks32
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeysfilt
-ered.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeysfiltered.code.te
+x"
 \pgfkeys@tmptoks=\toks33
 ))
 \pgf@x=\dimen126
@@ -268,34 +254,31 @@ ered.code.tex
 \t@pgf@tokb=\toks35
 \t@pgf@tokc=\toks36
 \pgf@sys@id@count=\count111
-
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
+ ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgf.cfg"
 File: pgf.cfg 2019/04/04 v3.1.2 (3.1.2)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pd
-ftex.def
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-pdftex.def"
 File: pgfsys-pdftex.def 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-co
-mmon-pdf.def
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+"
 File: pgfsys-common-pdf.def 2019/04/04 v3.1.2 (3.1.2)
 )))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssof
-tpath.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.t
+ex"
 File: pgfsyssoftpath.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfsyssoftpath@smallbuffer@items=\count112
 \pgfsyssoftpath@bigbuffer@items=\count113
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyspro
-tocol.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsysprotocol.code.t
+ex"
 File: pgfsysprotocol.code.tex 2019/04/04 v3.1.2 (3.1.2)
-))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -309,18 +292,13 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.co
-de.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcore.code.tex"
 Package: pgfcore 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code
-.tex
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code
-.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.co
-de.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathparser.code.tex"
 \pgfmath@dimen=\dimen134
 \pgfmath@count=\count114
 \pgfmath@box=\box30
@@ -328,30 +306,28 @@ de.tex
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.code.tex
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.basic.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.trigonometric.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.random.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.comparison.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.base.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.round.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.misc.code.tex)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions
-.integerarithmetics.code.tex)))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.basic.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.trigonometr
+ic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.random.code
+.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.comparison.
+code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.base.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.round.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.misc.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.integerarit
+hmetics.code.tex")))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfloat.code.tex"
 \c@pgfmathroundto@lastzeros=\count115
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoi
-nts.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+"
 File: pgfcorepoints.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@picminx=\dimen135
 \pgf@picmaxx=\dimen136
@@ -368,130 +344,117 @@ File: pgfcorepoints.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@zx=\dimen147
 \pgf@zy=\dimen148
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepat
-hconstruct.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathconstruct.c
+ode.tex"
 File: pgfcorepathconstruct.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@path@lastx=\dimen149
 \pgf@path@lasty=\dimen150
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepat
-husage.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathusage.code.
+tex"
 File: pgfcorepathusage.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@shorten@end@additional=\dimen151
 \pgf@shorten@start@additional=\dimen152
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoresco
-pes.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+"
 File: pgfcorescopes.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfpic=\box31
 \pgf@hbox=\box32
 \pgf@layerbox@main=\box33
 \pgf@picture@serial@count=\count116
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregra
-phicstate.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoregraphicstate.co
+de.tex"
 File: pgfcoregraphicstate.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgflinewidth=\dimen153
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretra
-nsformations.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransformations
+.code.tex"
 File: pgfcoretransformations.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@pt@x=\dimen154
 \pgf@pt@y=\dimen155
 \pgf@pt@temp=\dimen156
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequi
-ck.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobj
-ects.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreobjects.code.te
+x"
 File: pgfcoreobjects.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepat
-hprocessing.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathprocessing.
+code.tex"
 File: pgfcorepathprocessing.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearr
-ows.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+"
 File: pgfcorearrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfarrowsep=\dimen157
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoresha
-de.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@max=\dimen158
 \pgf@sys@shading@range@num=\count117
 \pgf@shadingcount=\count118
-)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreima
-ge.code.tex
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreimage.code.te
+x"
 File: pgfcoreimage.code.tex 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreext
-ernal.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreexternal.code.t
+ex"
 File: pgfcoreexternal.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfexternal@startupbox=\box34
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelay
-ers.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+"
 File: pgfcorelayers.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretra
-nsparency.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransparency.co
+de.tex"
 File: pgfcoretransparency.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepat
-terns.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepatterns.code.t
+ex"
 File: pgfcorepatterns.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf
-.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex"
 File: pgfcorerdf.code.tex 2019/04/04 v3.1.2 (3.1.2)
-)))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshap
-es.code.tex
+))) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleshapes.code.
+tex"
 File: pgfmoduleshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfnodeparttextbox=\box35
-)
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot
-.code.tex
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-v
-ersion-0-65.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-0-65.
+sty"
 Package: pgfcomp-version-0-65 2019/04/04 v3.1.2 (3.1.2)
 \pgf@nodesepstart=\dimen159
 \pgf@nodesepend=\dimen160
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-v
-ersion-1-18.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-1-18.
+sty"
 Package: pgfcomp-version-1-18 2019/04/04 v3.1.2 (3.1.2)
-))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.cod
-e.tex))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code
-.tex
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgffor.code.tex"
 Package: pgffor 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex")
 \pgffor@iter=\dimen161
 \pgffor@skip=\dimen162
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/ti
-kz.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex"
 Package: tikz 2019/04/04 v3.1.2 (3.1.2)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryp
-lothandlers.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibraryplothandlers.
+code.tex"
 File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@plot@mark@count=\count119
 \pgfplotmarksize=\dimen163
@@ -511,8 +474,7 @@ File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \tikznumberofcurrentchild=\count122
 \tikz@fig@count=\count123
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematr
-ix.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgfmatrixcurrentrow=\count124
 \pgfmatrixcurrentcolumn=\count125
@@ -520,11 +482,11 @@ File: pgfmodulematrix.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
 \tikz@expandcount=\count127
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/li
-braries/tikzlibrarytopaths.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/enumitem\enumitem.sty"
 Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip49
 \enit@outerparindent=\dimen170
@@ -533,7 +495,7 @@ Package: enumitem 2019/02/04 v3.8 Customized lists
 \enit@count@id=\count128
 \enitdp@description=\count129
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen171
 \lightrulewidth=\dimen172
@@ -553,10 +515,10 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count133
 \@thisrulewidth=\dimen183
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/avant.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\avant.sty"
 Package: avant 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/mathptmx.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\mathptmx.sty"
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -592,7 +554,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/microtype.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\microtype.sty"
 Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
 \MT@toks=\toks43
 \MT@count=\count134
@@ -601,8 +563,7 @@ LaTeX Info: Redefining \textls on input line 790.
 LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
 \MT@listname@count=\count135
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/microtype-pdftex.
-def
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2019/02/28 v2.7b Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 914.
@@ -611,31 +572,31 @@ LaTeX Info: Redefining \lslig on input line 914.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/microtype.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\microtype.cfg"
 File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/fontenc.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/t1enc.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1enc.def"
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/biblatex.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.sty"
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/pdftexcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/ifluatex.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -643,30 +604,30 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count136
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/logreq/logreq.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count137
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/logreq/logreq.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/url/url.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -727,7 +688,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/blx-dm.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\blx-dm.def"
 File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -819,13 +780,13 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/blx-compat.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\blx-compat.def"
 File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/biblatex.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.def"
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
 \c@textcitecount=\count316
 \c@textcitetotal=\count317
@@ -838,18 +799,20 @@ File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/bbx/alphabetic.bbx
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/bbx\alphabetic.bbx"
 File: alphabetic.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/bbx/standard.bbx
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/bbx\standard.bbx"
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count323
 \c@bbx:relatedtotal=\count324
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/cbx/numeric.cbx
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/cbx\numeric.cbx"
 File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -866,14 +829,14 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/biblatex.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.cfg"
 File: biblatex.cfg 
 )
 
 Package biblatex Warning: 'babel' option is deprecated.
 (biblatex)                Please use 'autolang' instead.
 
-) (/home/anferente97/.miktex/texmfs/install/tex/latex/tools/calc.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count325
 \calc@Bcount=\count326
@@ -886,7 +849,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count327
 \calc@Cskip=\skip75
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/base/makeidx.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 \@indexfile=\write5
@@ -894,11 +857,11 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 
 Writing index file informe.idx
-(/home/anferente97/.miktex/texmfs/install/tex/latex/titlesec/titletoc.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/titlesec\titletoc.sty"
 Package: titletoc 2011/12/15 v1.6 TOC entries
 \ttl@leftsep=\dimen187
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip76
@@ -911,7 +874,7 @@ s
 \f@nch@O@olf=\skip83
 \f@nch@O@orf=\skip84
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 \c@notation=\count328
@@ -922,15 +885,15 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 \c@vocabulary=\count333
 \c@definitionT=\count334
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/mdframed/mdframed.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/mdframed\mdframed.sty"
 Package: mdframed 2013/07/01 1.9b: mdframed
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/l3packages/xparse/xparse.st
-y (/home/anferente97/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
-Package: expl3 2019-04-21 L3 programming layer (loader) 
+("C:\Program Files\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty"
+Package: expl3 2019-04-06 L3 programming layer (loader) 
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2019-04-21 L3 programming layer (code)
+("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\expl3-code.tex"
+Package: expl3 2019-04-06 L3 programming layer (code)
 \c_max_int=\count335
 \l_tmpa_int=\count336
 \l_tmpb_int=\count337
@@ -1081,7 +1044,7 @@ Package: expl3 2019-04-21 L3 programming layer (code)
 \l__seq_internal_b_int=\count419
 \c__deprecation_minus_one=\count420
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/l3kernel/l3pdfmode.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\l3pdfmode.def"
 File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count421
 ))
@@ -1091,28 +1054,29 @@ Package: xparse 2019-03-05 L3 Experimental document command parser
 \l__xparse_m_args_int=\count424
 \l__xparse_v_nesting_int=\count425
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/zref-abspage.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\zref-abspage.sty"
 Package: zref-abspage 2018/11/21 v2.27 Module abspage for zref (HO)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/zref-base.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\zref-base.sty"
 Package: zref-base 2018/11/21 v2.27 Module base for zref (HO)
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-) (/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/auxhook.sty
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/atbegshi.sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\atbegshi.sty"
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 )
 \c@abspage=\count426
 Package zref Info: New property: abspage on input line 62.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/needspace/needspace.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/needspace\needspace.sty"
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip91
@@ -1157,7 +1121,7 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip129
 \mdf@subsubtitleinnerbelowskip@length=\skip130
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/mdframed/md-frame-0.mdf
+("C:\Program Files\MiKTeX 2.9\tex/latex/mdframed\md-frame-0.mdf"
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
 \mdf@frametitlebox=\box59
@@ -1207,16 +1171,14 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 \esp=\skip158
 \ecart=\skip159
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hyperref.sty"
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/hobsub-hyperref.
-sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/hobsub-generic.s
-ty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -1247,14 +1209,15 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 \@linkdim=\dimen276
 \Hy@linkcounter=\count433
 \Hy@pagecounter=\count434
- (/home/anferente97/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def"
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count435
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/00miktex/hyperref.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4519.
@@ -1285,13 +1248,13 @@ LaTeX Info: Redefining \pageref on input line 6454.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/hyperref/hpdftex.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hpdftex.def"
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
 \HyAnn@Count=\count441
 \Fld@listcount=\count442
 \c@bookmark@seq@number=\count443
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/rerunfilecheck.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -1317,17 +1280,17 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 465.
 
 Package hyperref Info: Option `bookmarksopen' set `false' on input line 465.
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/bookmark.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\bookmark.sty"
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/bkm-pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\bkm-pdftex.def"
 File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 \BKM@id=\count444
 )))
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/biblatex/lbx/spanish.lbx
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\spanish.lbx"
 File: spanish.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
 
@@ -1361,7 +1324,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 76.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/t1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Info: Redefining \. on input line 76.
@@ -1401,7 +1364,7 @@ LaTeX Info: Redefining \% on input line 76.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/home/anferente97/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count447
 \scratchdimen=\dimen280
@@ -1414,11 +1377,10 @@ LaTeX Info: Redefining \% on input line 76.
 \MPnumerator=\count451
 \makeMPintoPDFobject=\count452
 \everyMPtoPDFconversion=\toks45
-)
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1440,7 +1402,7 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/mt-ptm.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-ptm.cfg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1450,18 +1412,16 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'informe.bbl' found.
-
-(informe.bbl)
+ (informe.bbl)
 Package biblatex Info: Reference section=0 on input line 76.
 Package biblatex Info: Reference segment=0 on input line 76.
 \AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring OFF on input line 76.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(/home/anferente97/.miktex/texmfs/install/tex/generic/oberdiek/gettitlestring.s
-ty
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count453
@@ -1481,7 +1441,7 @@ Package pdftex.def Info: Pictures/1.pdf  used on input line 88.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
 LaTeX Font Info:    Try loading font information for T1+pag on input line 89.
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/t1pag.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1pag.fd"
 File: t1pag.fd 2001/06/04 font definitions for T1/pag.
 )
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <24.88> not available
@@ -1499,7 +1459,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <20.74> not available
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 93
 .
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/ot1ztmcm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1509,30 +1469,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 93
 .
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/omlztmcm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 93
 .
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/omsztmcm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 93
 .
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/omxztmcm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/mt-msa.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-(/home/anferente97/.miktex/texmfs/install/tex/latex/microtype/mt-msb.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 93.
 
-(/home/anferente97/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
@@ -1543,9 +1503,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
  [1
 
-{/home/anferente97/.miktex/texmfs/data/pdftex/config/pdftex.map} <./Pictures/1.
-pdf>]
-[2
+{C:/Users/andre/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictures/
+1.pdf>] [2
 
 ]
 
@@ -1593,9 +1552,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
 \tf@toc=\write6
 \openout6 = `informe.toc'.
 
- [3 <./Pictures/5.pdf>] [4
-
-]
+ [3 <./Pictures/5.pdf>] [4]
 \c@ttl@toc@default=\count454
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <220> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 137.
@@ -1613,6 +1570,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 137.
  [5
 
+
 ] [6]
 \openout2 = `proyecto/caso/caso.aux'.
 
@@ -1623,7 +1581,7 @@ Cap\'{\i }tulo 1.
 
 pdfTeX warning: pdflatex (file ./Pictures/2.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/2.pdf, id=114, 472.8325pt x 234.91063pt>
+<Pictures/2.pdf, id=122, 472.8325pt x 234.91063pt>
 File: Pictures/2.pdf Graphic file (type pdf)
 <use Pictures/2.pdf>
 Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
@@ -1631,7 +1589,12 @@ Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
 [7
 
 
- <./Pictures/2.pdf>])
+ <./Pictures/2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
+
+ []
+
+)
 LaTeX Info: Redefining \. on input line 143.
 LaTeX Info: Redefining \% on input line 143.
  [8]
@@ -1643,18 +1606,18 @@ Cap\'{\i }tulo 2.
 
 pdfTeX warning: pdflatex (file ./Pictures/3.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/3.pdf, id=131, 524.78358pt x 268.79118pt>
+<Pictures/3.pdf, id=139, 524.78358pt x 268.79118pt>
 File: Pictures/3.pdf Graphic file (type pdf)
 <use Pictures/3.pdf>
 Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 306.056pt.
-<proyecto/proceso/imgs/prototipo.PNG, id=132, 363.60844pt x 185.94469pt>
-File: proyecto/proceso/imgs/prototipo.PNG Graphic file (type png)
-<use proyecto/proceso/imgs/prototipo.PNG>
-Package pdftex.def Info: proyecto/proceso/imgs/prototipo.PNG  used on input lin
+<proyecto/proceso/imgs/prototipo.png, id=140, 363.60844pt x 185.94469pt>
+File: proyecto/proceso/imgs/prototipo.png Graphic file (type png)
+<use proyecto/proceso/imgs/prototipo.png>
+Package pdftex.def Info: proyecto/proceso/imgs/prototipo.png  used on input lin
 e 7.
 (pdftex.def)             Requested size: 298.75264pt x 152.78204pt.
-<proyecto/proceso/imgs/modulos.png, id=134, 485.815pt x 501.875pt>
+<proyecto/proceso/imgs/modulos.png, id=142, 485.815pt x 501.875pt>
 File: proyecto/proceso/imgs/modulos.png Graphic file (type png)
 <use proyecto/proceso/imgs/modulos.png>
 Package pdftex.def Info: proyecto/proceso/imgs/modulos.png  used on input line 
@@ -1664,38 +1627,63 @@ Package pdftex.def Info: proyecto/proceso/imgs/modulos.png  used on input line
 
 
 
- <./Pictures/3.pdf> <./proyecto/proceso/imgs/prototipo.PNG>]
+ <./Pictures/3.pdf> <./proyecto/proceso/imgs/prototipo.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
 
-Overfull \hbox (13.07884pt too wide) in paragraph at lines 37--38
-[]\T1/ptm/b/n/10.95 Base de datos: \T1/ptm/m/n/10.95 (-20) Módulo encargado de 
-la insersión, actualización, modificación y almacenamiento
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
 
-LaTeX Info: Redefining \. on input line 44.
-LaTeX Info: Redefining \% on input line 44.
- [10 <./proyecto/proceso/imgs/modulos.png (PNG copy)>]
-<proyecto/proceso/imgs/modulo1.PNG, id=155, 851.43094pt x 314.67563pt>
-File: proyecto/proceso/imgs/modulo1.PNG Graphic file (type png)
-<use proyecto/proceso/imgs/modulo1.PNG>
-Package pdftex.def Info: proyecto/proceso/imgs/modulo1.PNG  used on input line 
-56.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
+\T1/ptm/m/n/10.95 (+20) den:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
+
+ []
+
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+[10 <./proyecto/proceso/imgs/modulos.png (PNG copy)>]
+<proyecto/proceso/imgs/modulo1.png, id=163, 851.43094pt x 314.67563pt>
+File: proyecto/proceso/imgs/modulo1.png Graphic file (type png)
+<use proyecto/proceso/imgs/modulo1.png>
+Package pdftex.def Info: proyecto/proceso/imgs/modulo1.png  used on input line 
+63.
 (pdftex.def)             Requested size: 426.79135pt x 157.73595pt.
-<proyecto/proceso/imgs/modulo2.PNG, id=156, 797.22844pt x 439.6425pt>
-File: proyecto/proceso/imgs/modulo2.PNG Graphic file (type png)
-<use proyecto/proceso/imgs/modulo2.PNG>
-Package pdftex.def Info: proyecto/proceso/imgs/modulo2.PNG  used on input line 
-61.
-(pdftex.def)             Requested size: 384.1096pt x 211.8243pt.
-)
-LaTeX Info: Redefining \. on input line 146.
-LaTeX Info: Redefining \% on input line 146.
- [11 <./proyecto/proceso/imgs/modulo1.PNG> <./proyecto/proceso/imgs/modulo2.PNG
->]
+<proyecto/proceso/imgs/modulo2.png, id=164, 797.22844pt x 439.6425pt>
+File: proyecto/proceso/imgs/modulo2.png Graphic file (type png)
+<use proyecto/proceso/imgs/modulo2.png>
+Package pdftex.def Info: proyecto/proceso/imgs/modulo2.png  used on input line 
+68.
+(pdftex.def)             Requested size: 341.43437pt x 188.28453pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--71
+
+ []
+
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+[11 <./proyecto/proceso/imgs/modulo1.png> <./proyecto/proceso/imgs/modulo2.png>
+])
 LaTeX Info: Redefining \. on input line 146.
 LaTeX Info: Redefining \% on input line 146.
  [12] (informe.ptc
@@ -1709,107 +1697,165 @@ LaTeX Info: Redefining \% on input line 3.
 ] [14]
 \openout2 = `diseno/requerimientos/requerimientos.aux'.
 
-
-(diseno/requerimientos/requerimientos.tex
+ (diseno/requerimientos/requerimientos.tex
 Cap\'{\i }tulo 3.
 
 
 pdfTeX warning: pdflatex (file ./Pictures/4.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/4.pdf, id=186, 493.91426pt x 258.25084pt>
+<Pictures/4.pdf, id=196, 493.91426pt x 258.25084pt>
 File: Pictures/4.pdf Graphic file (type pdf)
 <use Pictures/4.pdf>
 Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 312.43718pt.
-
-Overfull \hbox (6.4336pt too wide) in paragraph at lines 3--4
-[]\T1/ptm/m/n/10.95 (-20) Dentro del aplicativo, se plantean un serie de requer
-imientos de tipo cliente y tipo desarrollador,los
- []
-
-<diseno/requerimientos/imgs/casos1.png, id=187, 473.97075pt x 457.10776pt>
-File: diseno/requerimientos/imgs/casos1.png Graphic file (type png)
-<use diseno/requerimientos/imgs/casos1.png>
-Package pdftex.def Info: diseno/requerimientos/imgs/casos1.png  used on input l
-ine 10.
-(pdftex.def)             Requested size: 341.43437pt x 329.28471pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [15
 
 
  <./Pictures/4.pdf>]
+<diseno/requerimientos/imgs/casosUso1.png, id=204, 341.02406pt x 264.99pt>
+File: diseno/requerimientos/imgs/casosUso1.png Graphic file (type png)
+<use diseno/requerimientos/imgs/casosUso1.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/casosUso1.png  used on inpu
+t line 24.
+(pdftex.def)             Requested size: 256.07741pt x 198.99269pt.
+<diseno/requerimientos/imgs/casosUso2.png, id=205, 308.65312pt x 318.43968pt>
+File: diseno/requerimientos/imgs/casosUso2.png Graphic file (type png)
+<use diseno/requerimientos/imgs/casosUso2.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/casosUso2.png  used on inpu
+t line 30.
+(pdftex.def)             Requested size: 256.07741pt x 264.2174pt.
+<diseno/requerimientos/imgs/casos1.png, id=206, 473.97075pt x 457.10776pt>
 File: diseno/requerimientos/imgs/casos1.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos1.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos1.png  used on input l
-ine 16.
+ine 37.
 (pdftex.def)             Requested size: 341.43437pt x 329.28471pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos2.png, id=194, 460.119pt x 454.0965pt>
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+[16 <./diseno/requerimientos/imgs/casosUso1.png> <./diseno/requerimientos/imgs/
+casosUso2.png>]
+<diseno/requerimientos/imgs/casos2.png, id=213, 460.119pt x 454.0965pt>
 File: diseno/requerimientos/imgs/casos2.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos2.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos2.png  used on input l
-ine 22.
+ine 43.
 (pdftex.def)             Requested size: 341.43437pt x 336.98233pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos3.png, id=195, 596.2275pt x 368.37625pt>
+<diseno/requerimientos/imgs/casos3.png, id=214, 596.2275pt x 368.37625pt>
 File: diseno/requerimientos/imgs/casos3.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos3.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos3.png  used on input l
-ine 28.
+ine 49.
 (pdftex.def)             Requested size: 341.43437pt x 210.95468pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos4.png, id=196, 586.19pt x 423.5825pt>
+<diseno/requerimientos/imgs/casos4.png, id=215, 586.19pt x 423.5825pt>
 File: diseno/requerimientos/imgs/casos4.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos4.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos4.png  used on input l
-ine 34.
+ine 55.
 (pdftex.def)             Requested size: 341.43437pt x 246.71861pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos5.png, id=197, 600.2425pt x 386.44376pt>
+<diseno/requerimientos/imgs/casos5.png, id=216, 600.2425pt x 386.44376pt>
 File: diseno/requerimientos/imgs/casos5.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos5.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos5.png  used on input l
-ine 40.
+ine 61.
 (pdftex.def)             Requested size: 341.43437pt x 219.82707pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casosUso1.png, id=198, 341.02406pt x 264.99pt>
-File: diseno/requerimientos/imgs/casosUso1.png Graphic file (type png)
-<use diseno/requerimientos/imgs/casosUso1.png>
-Package pdftex.def Info: diseno/requerimientos/imgs/casosUso1.png  used on inpu
-t line 50.
-(pdftex.def)             Requested size: 256.07741pt x 198.99269pt.
+<diseno/requerimientos/imgs/EscacezSec.png, id=217, 826.08624pt x 355.3275pt>
+File: diseno/requerimientos/imgs/EscacezSec.png Graphic file (type png)
+<use diseno/requerimientos/imgs/EscacezSec.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/EscacezSec.png  used on inp
+ut line 68.
+(pdftex.def)             Requested size: 426.79135pt x 183.57854pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casosUso2.png, id=199, 308.65312pt x 318.43968pt>
-File: diseno/requerimientos/imgs/casosUso2.png Graphic file (type png)
-<use diseno/requerimientos/imgs/casosUso2.png>
-Package pdftex.def Info: diseno/requerimientos/imgs/casosUso2.png  used on inpu
-t line 56.
-(pdftex.def)             Requested size: 256.07741pt x 264.2174pt.
+<diseno/requerimientos/imgs/FuncionesSec.png, id=218, 1245.65375pt x 605.26125p
+t>
+File: diseno/requerimientos/imgs/FuncionesSec.png Graphic file (type png)
+<use diseno/requerimientos/imgs/FuncionesSec.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/FuncionesSec.png  used on i
+nput line 73.
+(pdftex.def)             Requested size: 426.79135pt x 207.3746pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/EstrenosSec.png, id=219, 609.02531pt x 245.41687pt>
+
+File: diseno/requerimientos/imgs/EstrenosSec.png Graphic file (type png)
+<use diseno/requerimientos/imgs/EstrenosSec.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/EstrenosSec.png  used on in
+put line 78.
+(pdftex.def)             Requested size: 426.79135pt x 171.98909pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/CompraCombosSec.png, id=220, 623.32875pt x 255.9562
+5pt>
+File: diseno/requerimientos/imgs/CompraCombosSec.png Graphic file (type png)
+<use diseno/requerimientos/imgs/CompraCombosSec.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/CompraCombosSec.png  used o
+n input line 89.
+(pdftex.def)             Requested size: 426.79135pt x 175.25476pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/EscacezCom.png, id=221, 692.5875pt x 300.12125pt>
+File: diseno/requerimientos/imgs/EscacezCom.png Graphic file (type png)
+<use diseno/requerimientos/imgs/EscacezCom.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/EscacezCom.png  used on inp
+ut line 98.
+(pdftex.def)             Requested size: 426.79135pt x 184.9467pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/FuncionesCom.png, id=222, 858.20625pt x 430.60875pt
+>
+File: diseno/requerimientos/imgs/FuncionesCom.png Graphic file (type png)
+<use diseno/requerimientos/imgs/FuncionesCom.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/FuncionesCom.png  used on i
+nput line 105.
+(pdftex.def)             Requested size: 426.79135pt x 214.14742pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/EstrenoCom.png, id=223, 706.89093pt x 277.78781pt>
+File: diseno/requerimientos/imgs/EstrenoCom.png Graphic file (type png)
+<use diseno/requerimientos/imgs/EstrenoCom.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/EstrenoCom.png  used on inp
+ut line 111.
+(pdftex.def)             Requested size: 426.79135pt x 167.71667pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<diseno/requerimientos/imgs/CompraCombosCom.png, id=224, 711.4078pt x 283.81032
+pt>
+File: diseno/requerimientos/imgs/CompraCombosCom.png Graphic file (type png)
+<use diseno/requerimientos/imgs/CompraCombosCom.png>
+Package pdftex.def Info: diseno/requerimientos/imgs/CompraCombosCom.png  used o
+n input line 122.
+(pdftex.def)             Requested size: 426.79135pt x 170.27017pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
- [16 <./diseno/requerimientos/imgs/casos1.png>]
-LaTeX Info: Redefining \. on input line 150.
-LaTeX Info: Redefining \% on input line 150.
- [17]
+ [17 <./diseno/requerimientos/imgs/casos1.png>]
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
  [18 <./diseno/requerimientos/imgs/casos2.png> <./diseno/requerimientos/imgs/ca
@@ -1820,9 +1866,19 @@ LaTeX Info: Redefining \% on input line 150.
 sos5.png>]
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
+ [20 <./diseno/requerimientos/imgs/EscacezSec.png (PNG copy)> <./diseno/requeri
+mientos/imgs/FuncionesSec.png (PNG copy)> <./diseno/requerimientos/imgs/Estreno
+sSec.png>]
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
 
-[20 <./diseno/requerimientos/imgs/casosUso1.png> <./diseno/requerimientos/imgs/
-casosUso2.png>]
+[21 <./diseno/requerimientos/imgs/CompraCombosSec.png> <./diseno/requerimientos
+/imgs/EscacezCom.png (PNG copy)> <./diseno/requerimientos/imgs/FuncionesCom.png
+ (PNG copy)>]
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+ [22 <./diseno/requerimientos/imgs/EstrenoCom.png> <./diseno/requerimientos/img
+s/CompraCombosCom.png>]
 \tf@ptc=\write7
 \openout7 = `informe.ptc'.
 
@@ -1842,21 +1898,20 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37490 strings out of 494864
- 707105 string characters out of 3177943
- 1144916 words of memory out of 3000000
- 40410 multiletter control sequences out of 15000+200000
- 619881 words of font info for 198 fonts, out of 3000000 for 9000
- 0 hyphenation exceptions out of 8191
- 57i,11n,65p,972b,2957s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/home/anferente97/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}</home/
-anferente97/.miktex/texmfs/install/fonts/type1/urw/avantgar/uagd8a.pfb></home/a
-nferente97/.miktex/texmfs/install/fonts/type1/urw/avantgar/uagk8a.pfb></home/an
-ferente97/.miktex/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></home/anfere
-nte97/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb>
-Output written on informe.pdf (20 pages, 652294 bytes).
+ 37507 strings out of 492945
+ 703436 string characters out of 3135513
+ 1149212 words of memory out of 3000000
+ 40663 multiletter control sequences out of 15000+200000
+ 619751 words of font info for 196 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,11n,65p,972b,2955s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
+KTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/urw/avantgar/uagk8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on informe.pdf (22 pages, 863099 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 44261 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 44317 words of extra memory for PDF output out of 51595 (max. 10000000)
 
