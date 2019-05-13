@@ -1,4 +1,4 @@
---Tabla Cine
+﻿--Tabla Cine
 insert into Cine (nombreCine,direccion) values ('Cine+ Andino','Cra. 11 #82-71'),
 												('Cine+ Cedritos','Cl. 151 #16-56'),
 												('Cine+ Unicentro','Ak. 15 #124-30'),
@@ -61,20 +61,4 @@ insert into TipoUsuario (descripcion) values ('Administrador'),('Super-Usuario')
 
 insert into Usuario (idUsuario,contrasena,idEmpleado,idTipoUsuario,idCineEncargado) values ('1442401402','admin1',1615,1,1),
 																							('1984699631','admin2',1629,1,2),
-																							('1248313443','admin3',1857,1,3),
-																							('1504228837','admin4',1964,1,4),
-																							('1410552682','admin5',1263,1,5),
-																							('1968997572','admin6',1529,1,6),
-																							('1014224864','admin7',1294,1,7),
-																							('1668899243','admin8',1034,1,8),
-																							('1006621433','admin9',1118,1,9),
-																							('1202475853','admin10',1171,1,10),
-																							('1919678821','superadmin',1948,2,null);
-		
---hacer en el portatil		
-alter table usuario
-alter column idCineEncargado drop not null;
-
-update usuario set idCineEncargado = null where idEmpleado = 1948;
---
 

@@ -18,13 +18,13 @@ public class GestorInventario extends Gestor{
 	}
 	
 	/**
-	 * MÃ©todo encargado de actualizar los datos del empleado en  la base de datos
+	 * Método encargado de actualizar las existencias de inventario de un cine
 	 * @param cantidad Nueva cantidad a registrar
 	 * @param idCine identificador del cine
 	 * @param idProducto identificador del producto
 	 * @throws SQLException Si no logra conectarse
 	 */
-	public void actualizarEmpleado(int cantidad, int idCine, int idProducto) throws SQLException {
+	public void actualizarInventario(int cantidad, int idCine, int idProducto) throws SQLException {
 		String consulta = "update Inventario set cantidad = ? where idcine = ? and idproducto = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, cantidad);
@@ -32,6 +32,80 @@ public class GestorInventario extends Gestor{
 		sentencia.setInt(3, idProducto);
 		sentencia.execute();	
 	}
+	
+	/**
+	 * Método encargado de insertar nuevos productos en las existencias de un cine
+	 * @param cantidad Nueva cantidad a registrar
+	 * @param idCine identificador del cine
+	 * @param idProducto identificador del producto
+	 * @throws SQLException si acontece algun error
+	 */
+	public void agregarExistencias(int cantidad, int idCine, int idProducto) throws SQLException {
+		String consulta = "insert into inventario (idCine,idProducto,cantidad) values (?,?,?);";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCine);
+		sentencia.setInt(2, idProducto);
+		sentencia.setInt(3, cantidad);
+		sentencia.execute();	
+	}
+	
+
+	
+	/**
+	 * Método que consulta las existencias de inventario de un cine en específico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	public ResultSet consultarInventario(int idCine) throws SQLException {
+		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
+				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
+				"and cine.idCine = ?;";
+		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idCine);
+		return sentencia.executeQuery();
+	}
+	
+	/**
+	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @param nombreProducto nombre del producto que se va a consultar
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	public ResultSet consultarInventario(int idCine, String nombreProducto) throws SQLException {
+		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
+				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
+				"and cine.idCine = ? and lower(producto.nombre) like ? || '%';";
+		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idCine);
+		sentencia.setString(2,nombreProducto);
+		return sentencia.executeQuery();
+	}
+	/**
+	 * 
+	 * @param idCine ID del cine del que se quiere consultar existencia
+	 * @param idProducto ID del producto del que se quiere consultar existencia
+	 * @return boolean true si la consulta no está vacía, false si está vacia
+	 * @throws SQLException
+	 */
+	public boolean verificarProductoEnCine(int idCine,int idProducto) throws SQLException {
+		String consulta = "select * from inventario where inventario.idProducto = ? and inventario.idCine = ?";
+		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idProducto);
+		sentencia.setInt(2,idCine);
+		ResultSet productos = sentencia.executeQuery();
+		if(productos.next()) {
+			return true;
+		}
+		return false;
+		
+	}
+	
+	
+	
 	
 	
 }

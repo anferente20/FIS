@@ -56,7 +56,34 @@ add constraint fk_usuario_tipoUsuario foreign key (idTipoUsuario) references Tip
 add constraint fk_usuario_cine foreign key (idCineEncargado) references Cine (idCine) on delete no action on update no action;
 
 
+CREATE TABLE Producto
+(
+	idProducto integer primary key,
+	nombre text NOT NULL,
+	unidadMedicion text NOT NULL
+)
+;
 
+CREATE TABLE Inventario
+(
+	cantidad integer NOT NULL,
+	idCine integer NOT NULL,
+	idProducto integer NOT NULL
+)
+;
+
+
+ALTER TABLE Inventario ADD CONSTRAINT PK_Inventario
+	PRIMARY KEY (idCine,idProducto);
+
+
+ALTER TABLE Inventario ADD CONSTRAINT FK_Inventario_Cine
+	FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action
+;
+
+ALTER TABLE Inventario ADD CONSTRAINT FK_Inventario_Producto
+	FOREIGN KEY (idProducto) REFERENCES Producto (idProducto) ON DELETE No Action ON UPDATE No Action
+;
 
 
 
@@ -111,13 +138,6 @@ ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_historicoValorReserva
 	FOREIGN KEY (idHistoricoReserva) REFERENCES HistoricoValorReserva (idHistoricoReserva) ON DELETE No Action ON UPDATE No Action
 ;
 
-CREATE TABLE Producto
-(
-	idProducto integer primary key,
-	nombre text NOT NULL,
-	unidadMedicion text NOT NULL
-)
-;
 
 CREATE TABLE Pelicula
 (
@@ -128,26 +148,7 @@ CREATE TABLE Pelicula
 )
 ;
 
-CREATE TABLE Inventario
-(
-	cantidad integer NOT NULL,
-	idCine integer NOT NULL,
-	idProducto integer NOT NULL
-)
-;
 
-
-ALTER TABLE Inventario ADD CONSTRAINT PK_Inventario
-	PRIMARY KEY (idCine,idProducto);
-
-
-ALTER TABLE Inventario ADD CONSTRAINT FK_Inventario_Cine
-	FOREIGN KEY (idCine) REFERENCES Cine (idCine) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Inventario ADD CONSTRAINT FK_Inventario_Producto
-	FOREIGN KEY (idProducto) REFERENCES Producto (idProducto) ON DELETE No Action ON UPDATE No Action
-;
 
 CREATE TABLE HistoricoValorReserva
 (

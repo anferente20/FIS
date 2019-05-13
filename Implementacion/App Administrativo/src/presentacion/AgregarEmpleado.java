@@ -34,9 +34,9 @@ public class AgregarEmpleado extends JFrame {
 	private JTextField txtIdentificacion;
 	private JComboBox<String> cbCine;
 
-	public AgregarEmpleado(){
+	public AgregarEmpleado() throws SQLException{
 		createFrame();
-		cargarCines();
+		Funciones.cargarCines(cbCine,FachadaCine.getInstance().consultarCines());
 	}
 	
 	private void createFrame() {
@@ -122,19 +122,6 @@ public class AgregarEmpleado extends JFrame {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
-	//se cargan los cines que estén registrados en el combo box
-	private void cargarCines(){
-		try {
-			ResultSet cines = FachadaCine.getInstance().consultarCines();
-			this.cbCine.addItem("");
-			while(cines.next()) {
-				this.cbCine.addItem((cines.getObject(1)).toString());
-			}
-		}
-		catch(SQLException sqle) {
-			System.out.print("Clase AgregarEmpleado: "+sqle.getMessage());
-		}
-	}
 	//inserta un nuevo empleado
 	private void insertarEmpleado(){
 		if(this.validarVacio()) {

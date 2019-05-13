@@ -1,5 +1,6 @@
 package logica;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -25,7 +26,7 @@ public class FachadaInventario {
 	private GestorProducto gestorP;
 	
 	/**
-	 * Objeto que permite implementar el patr√≥n prototipo
+	 * Objeto que permite implementar el patron fachada
 	 */
 	private static FachadaInventario instance;
 	
@@ -36,7 +37,7 @@ public class FachadaInventario {
 	}
 	
 	/**
-	 * M√©todo que sirve para implementar el patr√≥n singlet√≥n 
+	 * MÈtodo que sirve para implementar el patrÛn singleton 
 	 * @return la fachada creada
 	 * @throws SQLException
 	 */
@@ -47,7 +48,7 @@ public class FachadaInventario {
 		return instance;
 	}
 	/**
-	 * M√©todo que consulta todos los productos existentes
+	 *Metodo que consulta todos los productos existentes
 	 * @return ResultSet con la lista de los productos
 	 * @throws SQLException
 	 */
@@ -56,7 +57,7 @@ public class FachadaInventario {
 	}
 	
 	/**
-	 * M√©todo que intermedia para poder obtener la unidad de medici√≥n del Producto
+	 *Metodo que intermedia para poder obtener la unidad de medici√≥n del Producto
 	 * @param nombre Nombre del producto
 	 * @return Unidad de medicion del producto 
 	 * @throws SQLException
@@ -66,7 +67,7 @@ public class FachadaInventario {
 	}
 	
 	/**
-	 * M√©todo que Permite insertar un producto
+	 *Metodo que Permite insertar un producto
 	 * @param producto Producto nuevo que va a ser registrado
 	 * @throws SQLException
 	 */
@@ -75,40 +76,68 @@ public class FachadaInventario {
 	}
 
 	/**
-	 * M√©todo para actualizar datos en el inventario
+	 *Metodo para actualizar datos en el inventario
 	 * @param cantidad Nueva cantidad 
 	 * @param idcine Identificador del cine
 	 * @param idproducto Identificador del producto
 	 * @throws SQLException Si falla conexi√≥n BD
 	 */
-	public void actualizar(int cantidad, int idcine,int idproducto) throws SQLException {
-		gestorI.actualizarEmpleado(cantidad, idcine, idproducto);
+	public void actualizarInventario(int cantidad, int idCine,int idProducto) throws SQLException {
+		gestorI.actualizarInventario(cantidad, idCine, idProducto);
+	}
+	
+	
+	/**
+	 *Metodo verificar la existencia de un producto
+	 * @param nombreProducto nombre del producto a buscar
+	 * @return true si el producto existe, false si el producto no existe
+	 */
+	public boolean verificarProducto(String nombreProducto) {
+		return gestorP.verificarProducto(nombreProducto);
+	}
+	/**
+	 * MÈtodo encargado de insertar nuevos productos en las existencias de un cine
+	 * @param cantidad Nueva cantidad a registrar
+	 * @param idCine identificador del cine
+	 * @param idProducto identificador del producto
+	 * @throws SQLException si acontece algun error
+	 */
+	public void agregarExistencias(int cantidad, int idCine, int idProducto) throws SQLException {
+		gestorI.agregarExistencias(cantidad, idCine, idProducto);
 	}
 	
 	/**
-	 * M√©todo para buscar el identificador del Producto
-	 * @param nombreCine nombre del producto a buscar
-	 * @return el identificador del producto
-	 * @throws NumberFormatException
-	 * @throws SQLException
+	  * MÈtodo que permite consultar las existencias de inventario en un cine en especÌfico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
 	 */
-	public int buscarID(String nombre) throws NumberFormatException, SQLException {
-		return gestorP.ObtenerIDProducto(nombre);
+	
+	public ResultSet consultarInventario(int idCine) throws SQLException {
+		return gestorI.consultarInventario(idCine);
 	}
 	
-	public GestorInventario getGestorI() {
-		return gestorI;
+	/**
+	 * MÈtodo que permite consultar las existencias de un producto en un cine en especÌfico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @param nombreProducto nombre del producto que se va a consultar
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	public ResultSet consultarInventario(int idCine, String nombreProducto) throws SQLException {
+		return gestorI.consultarInventario(idCine, nombreProducto);
+	}
+	
+	/**
+	 * MÈtodo que verifica si un producto ya est· registrado en un cine en especÌfico
+	 * @param idCine ID del cine de que se quiere consultar la existencia
+	 * @param idProducto ID del producto de que se quiere consultar la existencia
+	 * @throws SQLException 
+	 * @return true si el producto ya est· en el cine, false si no est·
+	 */
+	public boolean verificarProductoEnCine(int idCine, int idProducto) throws SQLException {
+		return gestorI.verificarProductoEnCine(idCine, idProducto);
 	}
 
-	public void setGestorI(GestorInventario gestorI) {
-		this.gestorI = gestorI;
-	}
-
-	public GestorProducto getGestorP() {
-		return gestorP;
-	}
-
-	public void setGestorP(GestorProducto gestorP) {
-		this.gestorP = gestorP;
-	}
 }

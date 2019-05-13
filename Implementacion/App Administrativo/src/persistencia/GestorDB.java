@@ -10,11 +10,11 @@ import java.sql.Statement;
 
 public class GestorDB {
 	
-	private static Connection conector;
+	private Connection conector;
 	private static String nombreBD = "cine_mas";
-	private static String url = "jdbc:postgresql://localhost:5432/"+nombreBD;
+	private static String url = "jdbc:postgresql://localhost:5433/"+nombreBD;
 	private static String usuario = "postgres";
-	private static String contrasena = "root";
+	private static String contrasena = "leo990209";
 
 	
 	private static GestorDB gestor;
@@ -41,7 +41,7 @@ public class GestorDB {
 		} catch (ClassNotFoundException cnf) {
 			System.out.println("Clase no encontrada: " + cnf.getMessage());
 		} catch (SQLException sqle) {
-			System.out.println("DescripciÃ³n del error al conectarsea la base de datos: " + sqle.getMessage());
+			System.out.println("Descripción del error al conectarse a la base de datos: " + sqle.getMessage());
 		}
 	}
 }

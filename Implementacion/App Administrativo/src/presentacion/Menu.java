@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.Funciones;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
@@ -53,8 +56,15 @@ public class Menu extends JFrame {
 		menuAgregaEmpl = new JMenuItem("Agregar nuevo empleado");
 		menuAgregaEmpl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AgregarEmpleado frame = new AgregarEmpleado();
-				frame.setVisible(true);
+				AgregarEmpleado frame;
+				try {
+					frame = new AgregarEmpleado();
+					frame.setVisible(true);
+					
+				} catch (SQLException e) {
+					Funciones.mensajeConsola("Agregar empleado: "+e.getMessage());
+					Funciones.mensajePantalla("Error, no se pudo llevar a cabo la operación");
+				}
 			}
 		});
 		mnEmpleados.add(menuAgregaEmpl);
@@ -85,10 +95,9 @@ public class Menu extends JFrame {
 					frame = new ConsultarEmplByCine();
 					frame.setVisible(true);
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					Funciones.mensajeConsola("Consultar empleados: "+e.getMessage());
+					Funciones.mensajePantalla("Error, no se pudo llevar a cabo la operación");
 				}
-				
 			}
 		});
 		mnEmpleados.add(menuConsultaEmpl);
@@ -110,7 +119,7 @@ public class Menu extends JFrame {
 		
 		//Item de agregar producto 
 		
-		JMenuItem agregarProducto = new JMenuItem("AgregarProducto");
+		JMenuItem agregarProducto = new JMenuItem("Agregar producto");
 		agregarProducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AgregarProducto frame = new AgregarProducto();
@@ -120,20 +129,36 @@ public class Menu extends JFrame {
 		mnInventario.add(agregarProducto);
 		
 		//ITEM de Actualizar inventario
-		JMenuItem actualizarInventario = new JMenuItem("Actualizar inventario");
+		JMenuItem actualizarInventario = new JMenuItem("Agregar o modificar existencias de un cine");
 		actualizarInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ActualizarInventario frame;
+				ModificarInventario frame;
 				try {
-					frame = new ActualizarInventario();
+					frame = new ModificarInventario();
 					frame.setVisible(true);
 				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null,"Â¡ERROR AL CONECTAR!");
+					Funciones.mensajeConsola("Modificar inventario: "+e1.getMessage());
+					Funciones.mensajePantalla("Error, no se pudo llevar a cabo la operación");
 				}
 
 			}
 		});
 		mnInventario.add(actualizarInventario);
+		
+		JMenuItem mntmConsultarExistencias = new JMenuItem("Consultar existencias");
+		mntmConsultarExistencias.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarInventario frame;
+				try {
+					frame = new ConsultarInventario();
+					frame.setVisible(true);
+				} catch (SQLException e) {
+					Funciones.mensajeConsola("Consultar inventario: "+e.getMessage());
+					Funciones.mensajePantalla("Error, no se pudo llevar a cabo la operación");
+				}
+				
+			}
+		});
+		mnInventario.add(mntmConsultarExistencias);
 	}
-	
 }

@@ -41,7 +41,7 @@ public class ConsultarEmplByCine extends JFrame {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("Consultar empleados");
 		createFrame();
-		cargarCines();
+		Funciones.cargarCines(cbCine,FachadaCine.getInstance().consultarCines());
 		tablaEmpleados.setModel(modeloTabla);
 	}
 	
@@ -107,14 +107,7 @@ public class ConsultarEmplByCine extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
-	
-	private void cargarCines() throws SQLException {
-		ResultSet cines = FachadaCine.getInstance().consultarCines();
-		cbCine.addItem("");
-		while(cines.next()) {
-			cbCine.addItem(cines.getObject(1).toString());
-		}
-	}
+
 	//carga los registros de empleados en la tabla
 	private void cargarEmpleados(){
 		try {

@@ -22,6 +22,7 @@ import persistencia.GestorProducto;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class AgregarProducto extends JFrame {
 
@@ -30,95 +31,78 @@ public class AgregarProducto extends JFrame {
 	private JTextField txtNombre;
 	private JTextField txtUMedicion;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AgregarProducto frame = new AgregarProducto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public AgregarProducto() {
 		createFrame();
 	}
 	
 	public void createFrame() {
 		setTitle("Agregar Producto");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 380, 272);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblIdProducto = new JLabel("ID Producto");
-		lblIdProducto.setBounds(50, 50, 110, 30);
+		lblIdProducto.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblIdProducto.setBounds(35, 22, 110, 30);
 		contentPane.add(lblIdProducto);
 		
 		txtID = new JTextField();
-		txtID.setBounds(190, 50, 110, 30);
+		txtID.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		txtID.setBounds(193, 26, 139, 26);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(50, 100, 110, 30);
+		lblNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblNombre.setBounds(35, 72, 110, 30);
 		contentPane.add(lblNombre);
 		
 		txtNombre = new JTextField();
-		txtNombre.setBounds(190, 100, 110, 30);
+		txtNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		txtNombre.setBounds(193, 76, 139, 26);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
-		JLabel lblUMedicion = new JLabel("U. Medición");
-		lblUMedicion.setBounds(50,150,110,30);
+		JLabel lblUMedicion = new JLabel("Unidad de medici\u00F3n");
+		lblUMedicion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblUMedicion.setBounds(35,122,138,30);
 		contentPane.add(lblUMedicion);
 		
 		txtUMedicion = new JTextField();
-		txtUMedicion.setBounds(190,150,110,30);
+		txtUMedicion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		txtUMedicion.setBounds(193,126,139,26);
 		contentPane.add(txtUMedicion);
 		txtUMedicion.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					agregarProducto();
-				} catch (HeadlessException | SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				agregarProducto();
 				}}
 		);
-		btnAceptar.setBounds(95, 220, 97, 37);
+		btnAceptar.setBounds(65, 173, 97, 37);
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		btnSalir.setBounds(245, 220, 97, 37);
+		btnSalir.setBounds(204, 173, 97, 37);
 		contentPane.add(btnSalir);
 		setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	/**
-	 * Método que agrega un nuevo producto a la Base de datos
+	 * M�todo que agrega un nuevo producto a la Base de datos
 	 * @throws SQLException 
-	 * @throws HeadlessException 
 	 */
-	public void agregarProducto() throws HeadlessException, SQLException {
+	public void agregarProducto() {
 		if(this.validarVacio()) {
 			JOptionPane.showMessageDialog(null,"Error, digite la totalidad de los datos");
 		}
@@ -127,25 +111,27 @@ public class AgregarProducto extends JFrame {
 			producto.setIdProducto(Integer.parseInt(txtID.getText()));
 			producto.setNombre(txtNombre.getText());
 			producto.setUnidadMedicion(txtUMedicion.getText());
-			if(FachadaInventario.getInstance().getGestorP().vereficarProducto(txtNombre.getText())) {
-				try {
+			try {
+				if(FachadaInventario.getInstance().verificarProducto(txtNombre.getText())) {
 					FachadaInventario.getInstance().insertarProducto(producto);
-					JOptionPane.showMessageDialog(null,"¡PRODUCTO INSERTADO CON ÉXITO");
+					JOptionPane.showMessageDialog(null,"�PRODUCTO INSERTADO CON �XITO!");
 					this.dispose();
 				}
-				catch(SQLException sqle) {
-					JOptionPane.showMessageDialog(null, "Error, el ID o la identificación ya están registrados con otro usuario");
-					System.out.println("Clase AgregarProducto: "+sqle.getMessage());
+				else {
+					JOptionPane.showMessageDialog(null, "Error, ya existe otro producto registrado con ese nombre");
 				}
-			}else {
-				JOptionPane.showMessageDialog(null, "El Producto ya existe");
 			}
+			catch(SQLException sqle) {
+				JOptionPane.showMessageDialog(null, "Error, ya existe otro producto registrado con el ID digitado");
+				System.out.println("Clase AgregarProducto: "+sqle.getMessage());
+			}
+		}
 			
 		}
-	}
+
 	/**
-	 * Método que verifica que todos los campos esten llenos
-	 * @return true hay algún campo vacío
+	 * M�todo que verifica que todos los campos esten llenos
+	 * @return true hay alg�n campo vacio
 	 * 		   false si todos los campos están llenos
 	 */
 	private boolean validarVacio() {
