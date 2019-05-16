@@ -1,24 +1,16 @@
-package presentacion;
-
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package edu.udistrital.fis.admin.presentacion;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import logica.Funciones;
-
+import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.empleado.presentencion.*;
+import edu.udistrital.fis.inventario.presentacion.*;
 import java.awt.Font;
-import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

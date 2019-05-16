@@ -4,9 +4,9 @@ import java.sql.SQLException;
 
 import edu.udistrital.fis.basicos.persistencia.GestorDB;
 
-public class main {
+public class Main {
 
-	public static void main(String[] args) {
+	private static void main(String[] args) {
 		try {
 			GestorDB.getInstance();
 			Funciones.mensajeConsola("Conexión exitosa");

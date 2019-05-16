@@ -1,6 +1,6 @@
 package edu.udistrital.fis.empleado.presentencion;
 
-import java.awt.EventQueue;
+
 
 import javax.swing.JInternalFrame;
 import javax.swing.JButton;
@@ -23,8 +23,8 @@ public class CambiarAdmin extends JInternalFrame {
 	private static CambiarAdmin instance;
 	private JTextField txtBuscaEmpleado;
 	private JTextField txtBuscaAdmin;
-	private JList listaAdmin;
-	private JList listaEmpleados;
+	private JList<String> listaAdmin;
+	private JList<?> listaEmpleados;
 	
 	//singleton
 	public static CambiarAdmin getInstance() {
@@ -109,7 +109,7 @@ public class CambiarAdmin extends JInternalFrame {
 		txtBuscaEmpleado.setBounds(259, 22, 222, 29);
 		panelAscender.add(txtBuscaEmpleado);
 		
-		listaEmpleados = new JList();
+		listaEmpleados = new JList<String>();
 		
 		JScrollPane scrollPaneAscender = new JScrollPane(listaEmpleados);
 		scrollPaneAscender.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -141,7 +141,7 @@ public class CambiarAdmin extends JInternalFrame {
 		txtBuscaAdmin.setBounds(259, 22, 222, 29);
 		panelOtroAdmin.add(txtBuscaAdmin);
 		
-		listaAdmin = new JList();
+		listaAdmin = new JList<String>();
 		
 		JScrollPane scrollPaneOtroAdmin = new JScrollPane(listaAdmin);
 		scrollPaneOtroAdmin.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

@@ -8,11 +8,11 @@ public class FachadaCine{
 	private GestorCine gestor;
 	private static FachadaCine instance;
 	//constructor
-	private FachadaCine() throws SQLException {
+	private FachadaCine() throws SQLException{
 		this.gestor = new GestorCine();
 	}
 	//singleton
-	public static FachadaCine getInstance() throws SQLException {
+	public static FachadaCine getInstance() throws SQLException{
 		if(instance==null) {
 			instance = new FachadaCine();
 		}

@@ -5,10 +5,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.udistrital.fis.empleado.logica.Empleado;
-
+import edu.udistrital.fis.basicos.persistencia.Gestor;
 public class GestorEmpleado extends Gestor{
 	
-	GestorEmpleado() throws SQLException {
+	GestorEmpleado() throws SQLException{
 		super();
 	}
 	/**

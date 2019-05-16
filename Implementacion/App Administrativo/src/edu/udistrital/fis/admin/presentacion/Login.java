@@ -1,4 +1,4 @@
-package presentacion;
+package edu.udistrital.fis.admin.presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -97,7 +97,7 @@ public class Login extends JFrame {
 		 */
 		tipoUsuario = "Administrador";  // ---> Quitar después de hacer bien el login
 		this.setVisible(false);
-		presentacion.Menu menu = new presentacion.Menu(usuario, contrasena, tipoUsuario);
+		edu.udistrital.fis.admin.presentacion.Menu menu = new edu.udistrital.fis.admin.presentacion.Menu(usuario, contrasena, tipoUsuario);
 		
 		
 	}

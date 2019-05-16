@@ -1,11 +1,9 @@
 package edu.udistrital.fis.empleado.presentencion;
 
-import java.awt.BorderLayout;
+
 import java.awt.Component;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -19,10 +17,9 @@ import java.sql.SQLException;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JComboBox;
+
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JDesktopPane;
@@ -52,11 +49,7 @@ public class GestionAdmins extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		modeloTabla = new DefaultTableModel(new Object[][] {},new String[]{"Cine","Administrador",""}) 
-		{public boolean isCellEditable(int row, int column) {
-			return false;
-			};
-		};
+		modeloTabla = new DefaultTableModel(new Object[][] {},new String[]{"Cine","Administrador",""}) ;
 		desktopPane = new JDesktopPane();
 		desktopPane.setBounds(0, 0, 669, 335);
 		contentPane.add(desktopPane);

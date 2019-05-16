@@ -1,7 +1,6 @@
 package edu.udistrital.fis.empleado.presentencion;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -16,14 +15,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.ItemEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

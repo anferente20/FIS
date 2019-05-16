@@ -11,15 +11,16 @@ public class FachadaEmpleado{
 	private static FachadaEmpleado instance;
 	
 	//constructor
-	private FachadaEmpleado() throws SQLException {
+	private FachadaEmpleado() throws SQLException{
 		this.gestor = new GestorEmpleado();
 	}
 	
 	/**
 	 * Método para singletón
 	 * @return FachadaEmpleado instancia de la clase
+	 * @throws ClassNotFoundException 
 	 */
-	public static FachadaEmpleado getInstance() throws SQLException {
+	public static FachadaEmpleado getInstance() throws SQLException{
 		if(instance==null) {
 			instance = new FachadaEmpleado();
 		}

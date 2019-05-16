@@ -27,8 +27,9 @@ public class GestorDB {
 	 * Patrón singleton
 	 * @return GestorDB instancia de la clase
 	 * @throws SQLException
+	 * @throws ClassNotFoundException 
 	 */
-	public static GestorDB getInstance() throws SQLException {
+	public static GestorDB getInstance() throws SQLException{
 		if(gestor==null) {
 			gestor = new GestorDB();
 		}
@@ -36,7 +37,7 @@ public class GestorDB {
 	}
 
 	//Constructor
-	private GestorDB() throws SQLException {
+	private GestorDB() throws SQLException{
 		setCredenciales();
 		conectarBD();
 	}
@@ -60,14 +61,16 @@ public class GestorDB {
 	 * Método que conecta con la base de datos
 	 * @return void
 	 */
-	public void conectarBD() {
+	public void conectarBD(){
 		try {
 			Class.forName("org.postgresql.Driver");
 			conector = DriverManager.getConnection(url, usuario, contrasena);
-		} catch (ClassNotFoundException cnf) {
-			System.out.println("Clase no encontrada: " + cnf.getMessage());
-		} catch (SQLException sqle) {
-			System.out.println("Descripción del error al conectarse a la base de datos: " + sqle.getMessage());
+		} catch (ClassNotFoundException e) {
+			System.out.println("Clase no encontrada: "+e.getMessage());
 		}
+		catch(SQLException e) {
+			System.out.println("Error al conectarse a la base de datos: "+e.getMessage());
+		}
+		
 	}
 }

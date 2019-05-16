@@ -108,6 +108,7 @@ public class ConsultarInventario extends JFrame {
 		contentPane.add(scrollPane);
 		
 		setLocationRelativeTo(null);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	
 	private void cargarDatos() {

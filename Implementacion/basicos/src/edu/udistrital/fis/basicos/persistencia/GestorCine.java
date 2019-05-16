@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class GestorCine extends Gestor{
 	
-	public GestorCine() throws SQLException {
+	public GestorCine() throws SQLException{
 		super();
 	}
 	

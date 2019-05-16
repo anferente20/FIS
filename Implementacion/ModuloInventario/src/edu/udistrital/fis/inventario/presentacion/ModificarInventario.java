@@ -41,7 +41,7 @@ public class ModificarInventario extends JFrame {
 	
 	private void createFrame() {
 		setTitle("Actualizar Invetario");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 499, 279);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

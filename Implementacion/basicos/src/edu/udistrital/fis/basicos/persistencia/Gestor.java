@@ -11,7 +11,7 @@ public abstract class Gestor {
 	
 	protected GestorDB gestor;
 	
-	protected Gestor() throws SQLException {
+	protected Gestor() throws SQLException{
 		gestor = GestorDB.getInstance();
 	}
 }

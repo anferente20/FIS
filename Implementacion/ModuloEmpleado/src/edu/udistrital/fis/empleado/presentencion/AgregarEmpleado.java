@@ -98,7 +98,9 @@ public class AgregarEmpleado extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				insertarEmpleado();
+
+					insertarEmpleado();
+				
 				}}
 		);
 		btnAceptar.setBounds(99, 298, 97, 37);
