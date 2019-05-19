@@ -1,7 +1,5 @@
 package edu.udistrital.fis.inventario.presentacion;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -24,7 +22,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.ActionEvent;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
-import edu.udistrital.fis.inventario.logica.FachadaInventario;
+import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
 public class ConsultarInventario extends JFrame {
 
 	private JPanel contentPane;
@@ -113,7 +111,7 @@ public class ConsultarInventario extends JFrame {
 	
 	private void cargarDatos() {
 		try {
-			if(!(cbxCines.getSelectedIndex()==1)) {
+			if(!(cbxCines.getSelectedIndex()==0)) {
 				if(Funciones.validarVacio(txtNombreProducto.getText())) {
 					//se consultan todos los productos del cine
 					llenarTabla(FachadaInventario.getInstance().consultarInventario(cbxCines.getSelectedIndex()));
@@ -122,7 +120,10 @@ public class ConsultarInventario extends JFrame {
 					//se consultan productos en específico del cine
 					llenarTabla(FachadaInventario.getInstance().consultarInventario(cbxCines.getSelectedIndex(),txtNombreProducto.getText()));
 				}	
-			}	
+			}
+			else {
+				Funciones.limpiarTabla(modeloTabla);
+			}
 		}
 		catch(SQLException e) {
 			Funciones.mensajeConsola("Consultar inventario: "+e.getMessage());

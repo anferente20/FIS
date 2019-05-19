@@ -12,7 +12,7 @@ import java.sql.SQLException;
  */
 public class GestorInventario extends Gestor{
 
-	public GestorInventario() throws SQLException {
+	GestorInventario() throws SQLException {
 		super();
 	}
 	
@@ -23,7 +23,7 @@ public class GestorInventario extends Gestor{
 	 * @param idProducto identificador del producto
 	 * @throws SQLException Si no logra conectarse
 	 */
-	public void actualizarInventario(int cantidad, int idCine, int idProducto) throws SQLException {
+	void actualizarInventario(int cantidad, int idCine, int idProducto) throws SQLException {
 		String consulta = "update Inventario set cantidad = ? where idcine = ? and idproducto = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, cantidad);
@@ -39,7 +39,7 @@ public class GestorInventario extends Gestor{
 	 * @param idProducto identificador del producto
 	 * @throws SQLException si acontece algun error
 	 */
-	public void agregarExistencias(int cantidad, int idCine, int idProducto) throws SQLException {
+	void agregarExistencias(int cantidad, int idCine, int idProducto) throws SQLException {
 		String consulta = "insert into inventario (idCine,idProducto,cantidad) values (?,?,?);";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, idCine);
@@ -57,7 +57,7 @@ public class GestorInventario extends Gestor{
 	 * @throws SQLException 
 	 */
 	
-	public ResultSet consultarInventario(int idCine) throws SQLException {
+	ResultSet consultarInventario(int idCine) throws SQLException {
 		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
 				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
 				"and cine.idCine = ?;";
@@ -74,7 +74,7 @@ public class GestorInventario extends Gestor{
 	 * @throws SQLException 
 	 */
 	
-	public ResultSet consultarInventario(int idCine, String nombreProducto) throws SQLException {
+	ResultSet consultarInventario(int idCine, String nombreProducto) throws SQLException {
 		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
 				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
 				"and cine.idCine = ? and lower(producto.nombre) like ? || '%';";
@@ -84,13 +84,13 @@ public class GestorInventario extends Gestor{
 		return sentencia.executeQuery();
 	}
 	/**
-	 * 
+	 * Método que verifica la existencia de un producto en un cine en específico
 	 * @param idCine ID del cine del que se quiere consultar existencia
 	 * @param idProducto ID del producto del que se quiere consultar existencia
 	 * @return boolean true si la consulta no está vacía, false si está vacia
 	 * @throws SQLException
 	 */
-	public boolean verificarProductoEnCine(int idCine,int idProducto) throws SQLException {
+	boolean verificarProductoEnCine(int idCine,int idProducto) throws SQLException {
 		String consulta = "select * from inventario where inventario.idProducto = ? and inventario.idCine = ?";
 		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1,idProducto);
@@ -99,12 +99,7 @@ public class GestorInventario extends Gestor{
 		if(productos.next()) {
 			return true;
 		}
-		return false;
-		
+		return false;		
 	}
-	
-	
-	
-	
 	
 }

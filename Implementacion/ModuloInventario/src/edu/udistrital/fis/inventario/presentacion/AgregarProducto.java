@@ -1,11 +1,9 @@
 package edu.udistrital.fis.inventario.presentacion;
 import edu.udistrital.fis.basicos.logica.Funciones;
-import edu.udistrital.fis.inventario.logica.FachadaInventario;
+import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
 import edu.udistrital.fis.inventario.logica.Producto;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.HeadlessException;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;

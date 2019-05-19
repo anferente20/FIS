@@ -1,12 +1,12 @@
-package edu.udistrital.fis.inventario.logica;
+package edu.udistrital.fis.inventario.persistencia;
 
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.udistrital.fis.inventario.persistencia.GestorInventario;
 import edu.udistrital.fis.inventario.persistencia.GestorProducto;
-
+import edu.udistrital.fis.inventario.logica.Producto;
 
 /**
  * Fachada del inventario, maneja el inventari y el manejo de productos

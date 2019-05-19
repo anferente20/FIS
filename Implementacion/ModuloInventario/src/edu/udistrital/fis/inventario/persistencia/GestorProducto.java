@@ -22,7 +22,7 @@ public class GestorProducto extends Gestor{
 	 * @param producto Objeto que representa el producto que se va a registrar
 	 * @throws SQLException Si falla la conexión
 	 */
-	public void insertarProducto(Producto producto) throws SQLException {
+	void insertarProducto(Producto producto) throws SQLException {
 		String consulta = "insert into Producto (idProducto,nombre,unidadmedicion) values"
 				+ "(?,?,?);";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
@@ -37,7 +37,7 @@ public class GestorProducto extends Gestor{
 	 * Método que permite buscar los nombres de todos los productos de la base de datos
 	 * @return ResultSet con los nombres de los productos
 	 */
-	public ResultSet listarProductos(){
+	ResultSet listarProductos(){
 		ResultSet productos  =  null;
 		try {
 			String consulta = "select idProducto,nombre from Producto order by idProducto asc;";
@@ -54,7 +54,7 @@ public class GestorProducto extends Gestor{
 	 * @param nombre Nombre del producto
 	 * @return true si el producto no existe, false de lo contrario
 	 */
-	public boolean verificarProducto(String nombre) {
+	boolean verificarProducto(String nombre) {
 		boolean rt = true;
 		ResultSet producto  =  null;
 		try {
@@ -68,9 +68,7 @@ public class GestorProducto extends Gestor{
 		}
 		catch(SQLException e) {
 			System.out.println("Clase GestorProducto: "+ e.getMessage());
-		}
-		
-		
+		}	
 		return rt;
 	}
 	
@@ -80,7 +78,7 @@ public class GestorProducto extends Gestor{
 	 * @return String con la nombre de medicion.
 	 * @throws SQLException
 	 */
-	public String obtenerUM(String nombre) throws SQLException {
+	String obtenerUM(String nombre) throws SQLException {
 		String um = "";
 		ResultSet producto  =  null;
 		try {
@@ -93,8 +91,7 @@ public class GestorProducto extends Gestor{
 		}
 		while(producto.next()) {
 			um = producto.getObject(1).toString();
-		}
-		
+		}	
 		return um;
 	}
 }

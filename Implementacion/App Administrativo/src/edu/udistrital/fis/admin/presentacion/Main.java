@@ -15,8 +15,13 @@ public class Main {
 			GestorDB.getInstance();
 			Login frame = new Login();
 			frame.setVisible(true);
-		} catch (SQLException | ClassNotFoundException e) {
+		} 
+		catch (SQLException e) {
 			Funciones.mensajeConsola(("Descripción del error: "+e.getMessage()));
+			Funciones.mensajePantalla("Error, No fue posible conectarse a la base de datos");
+		}
+		catch(ClassNotFoundException e) {
+			Funciones.mensajeConsola(("Clase no encontrada: "+e.getMessage()));
 			Funciones.mensajePantalla("Error, No fue posible conectarse a la base de datos");
 		}
 	}

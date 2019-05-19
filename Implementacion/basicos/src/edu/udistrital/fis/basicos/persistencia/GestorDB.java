@@ -61,7 +61,7 @@ public class GestorDB {
 	 * Método que conecta con la base de datos
 	 * @return void
 	 */
-	public void conectarBD(){
+	private void conectarBD(){
 		try {
 			Class.forName("org.postgresql.Driver");
 			conector = DriverManager.getConnection(url, usuario, contrasena);

@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
-import edu.udistrital.fis.inventario.logica.FachadaInventario;;
+import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
 
 public class ModificarInventario extends JFrame {
 
