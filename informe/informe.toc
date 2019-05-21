@@ -45,4 +45,6 @@
 \contentsline {section}{\numberline {3.5}Diagramas de Comunicaci\IeC {\'o}n}{15}{section.3.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Diagrama de clases}{23}{chapter.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Patrones de dise\IeC {\~n}o}{25}{chapter.5}% 
 \contentsfinish 
