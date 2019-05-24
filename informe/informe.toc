@@ -46,5 +46,29 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Diagrama de clases}{23}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Patrones de dise\IeC {\~n}o}{25}{chapter.5}% 
+\contentsline {subsection}{\numberline {4.0.1}NOMBRE DE CLASE:}{24}{subsection.4.0.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.0.2}ATRIBUTOS}{24}{subsection.4.0.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{VISIBILIDAD}{24}{section*.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{ALCANCE}{24}{section*.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{PROPIEDADES}{24}{section*.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.0.3}OPERACIONES}{24}{subsection.4.0.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{VISIBILIDAD}{25}{section*.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{PROPIEDADES}{25}{section*.6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{PAR\IeC {\'A}METROS}{25}{section*.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.0.4}RELACIONES}{25}{subsection.4.0.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cliente/proveedor}{25}{section*.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Generalizaci\IeC {\'o}n/Implementaci\IeC {\'o}n}{25}{section*.9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Patrones de dise\IeC {\~n}o}{27}{chapter.5}% 
 \contentsfinish 

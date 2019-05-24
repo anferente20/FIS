@@ -12,7 +12,7 @@ Para la estructuración del proyecto en curso se contemplaron los siguientes pat
 	Concretamente, se busca implementar este patrón de diseño para otorgar flexibilidad al momento de querer migrar todas operaciones y consultas de la base de datos a otro DBMS. Para este proyecto inicialmente se está trabajando con el DBMS PostgreSQL, pero si se quisiera migrar a otro tal como Oracle, MySQL u otro, este patrón otorga flexibilidad y facilidad para hacerlo. Para implementarlo, se parte de la base de que las operaciones sobre la base de datos se pueden ver como una familia de dos objetos: una conexión y un gestor. La conexión transportará todas las operaciones al DBMS que el gestor le solicite.
 	\begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.7]{diseno/patrones/imgs/abstractfactoryDBMS}
+		\includegraphics[scale=0.7]{diseno/patrones/imgs/abstractFactoryDBMS}
 		\caption{Patrón de diseño 'Abstract Factory' implementado dentro del proyecto}
 	\end{figure}}
 	\item{\textbf{Facade:} El patrón de diseño fachada provee una interfaz unificada para un conjunto de interfaces en un subsistema.
