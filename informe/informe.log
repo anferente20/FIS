@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.24)  22 MAY 2019 10:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.24)  28 MAY 2019 20:22
 entering extended mode
 **./informe.tex
 (informe.tex
@@ -1343,7 +1343,7 @@ LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
  (proyecto/caso/caso.aux) (proyecto/proceso/proceso.aux)
 (diseno/requerimientos/requerimientos.aux) (diseno/clases/clases.aux)
-(diseno/patrones/patrones.aux))
+(diseno/patrones/patrones.aux) (diseno/estado/estado.aux))
 \openout1 = `informe.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -1623,7 +1623,7 @@ Cap\'{\i }tulo 1.
 
 pdfTeX warning: pdflatex (file ./Pictures/2.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/2.pdf, id=143, 472.8325pt x 234.91063pt>
+<Pictures/2.pdf, id=146, 472.8325pt x 234.91063pt>
 File: Pictures/2.pdf Graphic file (type pdf)
 <use Pictures/2.pdf>
 Package pdftex.def Info: Pictures/2.pdf  used on input line 1.
@@ -1648,18 +1648,18 @@ Cap\'{\i }tulo 2.
 
 pdfTeX warning: pdflatex (file ./Pictures/3.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/3.pdf, id=160, 524.78358pt x 268.79118pt>
+<Pictures/3.pdf, id=163, 524.78358pt x 268.79118pt>
 File: Pictures/3.pdf Graphic file (type pdf)
 <use Pictures/3.pdf>
 Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 306.056pt.
-<proyecto/proceso/imgs/prototipo.PNG, id=161, 363.60844pt x 185.94469pt>
+<proyecto/proceso/imgs/prototipo.PNG, id=164, 363.60844pt x 185.94469pt>
 File: proyecto/proceso/imgs/prototipo.PNG Graphic file (type png)
 <use proyecto/proceso/imgs/prototipo.PNG>
 Package pdftex.def Info: proyecto/proceso/imgs/prototipo.PNG  used on input lin
 e 7.
 (pdftex.def)             Requested size: 298.75264pt x 152.78204pt.
-<proyecto/proceso/imgs/modulos.png, id=163, 485.815pt x 501.875pt>
+<proyecto/proceso/imgs/modulos.png, id=166, 485.815pt x 501.875pt>
 File: proyecto/proceso/imgs/modulos.png Graphic file (type png)
 <use proyecto/proceso/imgs/modulos.png>
 Package pdftex.def Info: proyecto/proceso/imgs/modulos.png  used on input line 
@@ -1711,13 +1711,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--50
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
 [10 <./proyecto/proceso/imgs/modulos.png (PNG copy)>]
-<proyecto/proceso/imgs/modulo1.PNG, id=184, 851.43094pt x 314.67563pt>
+<proyecto/proceso/imgs/modulo1.PNG, id=187, 851.43094pt x 314.67563pt>
 File: proyecto/proceso/imgs/modulo1.PNG Graphic file (type png)
 <use proyecto/proceso/imgs/modulo1.PNG>
 Package pdftex.def Info: proyecto/proceso/imgs/modulo1.PNG  used on input line 
 63.
 (pdftex.def)             Requested size: 426.79135pt x 157.73595pt.
-<proyecto/proceso/imgs/modulo2.PNG, id=185, 797.22844pt x 439.6425pt>
+<proyecto/proceso/imgs/modulo2.PNG, id=188, 797.22844pt x 439.6425pt>
 File: proyecto/proceso/imgs/modulo2.PNG Graphic file (type png)
 <use proyecto/proceso/imgs/modulo2.PNG>
 Package pdftex.def Info: proyecto/proceso/imgs/modulo2.PNG  used on input line 
@@ -1751,7 +1751,7 @@ Cap\'{\i }tulo 3.
 
 pdfTeX warning: pdflatex (file ./Pictures/4.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<Pictures/4.pdf, id=223, 493.91426pt x 258.25084pt>
+<Pictures/4.pdf, id=228, 493.91426pt x 258.25084pt>
 File: Pictures/4.pdf Graphic file (type pdf)
 <use Pictures/4.pdf>
 Package pdftex.def Info: Pictures/4.pdf  used on input line 1.
@@ -1772,19 +1772,19 @@ uso, secuencia y comunicación respectivamente
 
 
  <./Pictures/4.pdf>]
-<diseno/requerimientos/imgs/casosUso1.png, id=230, 341.02406pt x 264.99pt>
+<diseno/requerimientos/imgs/casosUso1.png, id=235, 341.02406pt x 264.99pt>
 File: diseno/requerimientos/imgs/casosUso1.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casosUso1.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casosUso1.png  used on inpu
 t line 24.
 (pdftex.def)             Requested size: 256.07741pt x 198.99269pt.
-<diseno/requerimientos/imgs/casosUso2.png, id=231, 308.65312pt x 318.43968pt>
+<diseno/requerimientos/imgs/casosUso2.png, id=236, 308.65312pt x 318.43968pt>
 File: diseno/requerimientos/imgs/casosUso2.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casosUso2.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casosUso2.png  used on inpu
 t line 30.
 (pdftex.def)             Requested size: 256.07741pt x 264.2174pt.
-<diseno/requerimientos/imgs/casos1.png, id=232, 473.97075pt x 457.10776pt>
+<diseno/requerimientos/imgs/casos1.png, id=237, 473.97075pt x 457.10776pt>
 File: diseno/requerimientos/imgs/casos1.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos1.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos1.png  used on input l
@@ -1798,7 +1798,7 @@ LaTeX Info: Redefining \. on input line 40.
 LaTeX Info: Redefining \% on input line 40.
 [16 <./diseno/requerimientos/imgs/casosUso1.png> <./diseno/requerimientos/imgs/
 casosUso2.png>]
-<diseno/requerimientos/imgs/casos2.png, id=239, 460.119pt x 454.0965pt>
+<diseno/requerimientos/imgs/casos2.png, id=244, 460.119pt x 454.0965pt>
 File: diseno/requerimientos/imgs/casos2.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos2.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos2.png  used on input l
@@ -1808,7 +1808,7 @@ ine 43.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos3.png, id=240, 596.2275pt x 368.37625pt>
+<diseno/requerimientos/imgs/casos3.png, id=245, 596.2275pt x 368.37625pt>
 File: diseno/requerimientos/imgs/casos3.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos3.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos3.png  used on input l
@@ -1817,7 +1817,7 @@ ine 49.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos4.png, id=241, 586.19pt x 423.5825pt>
+<diseno/requerimientos/imgs/casos4.png, id=246, 586.19pt x 423.5825pt>
 File: diseno/requerimientos/imgs/casos4.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos4.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos4.png  used on input l
@@ -1826,7 +1826,7 @@ ine 55.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/casos5.png, id=242, 600.2425pt x 386.44376pt>
+<diseno/requerimientos/imgs/casos5.png, id=247, 600.2425pt x 386.44376pt>
 File: diseno/requerimientos/imgs/casos5.png Graphic file (type png)
 <use diseno/requerimientos/imgs/casos5.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/casos5.png  used on input l
@@ -1835,7 +1835,7 @@ ine 61.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/EscacezSec.png, id=243, 826.08624pt x 355.3275pt>
+<diseno/requerimientos/imgs/EscacezSec.png, id=248, 826.08624pt x 355.3275pt>
 File: diseno/requerimientos/imgs/EscacezSec.png Graphic file (type png)
 <use diseno/requerimientos/imgs/EscacezSec.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/EscacezSec.png  used on inp
@@ -1844,7 +1844,7 @@ ut line 68.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/FuncionesSec.png, id=244, 1245.65375pt x 605.26125p
+<diseno/requerimientos/imgs/FuncionesSec.png, id=249, 1245.65375pt x 605.26125p
 t>
 File: diseno/requerimientos/imgs/FuncionesSec.png Graphic file (type png)
 <use diseno/requerimientos/imgs/FuncionesSec.png>
@@ -1854,7 +1854,7 @@ nput line 73.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/EstrenosSec.PNG, id=245, 609.02531pt x 245.41687pt>
+<diseno/requerimientos/imgs/EstrenosSec.PNG, id=250, 609.02531pt x 245.41687pt>
 
 File: diseno/requerimientos/imgs/EstrenosSec.PNG Graphic file (type png)
 <use diseno/requerimientos/imgs/EstrenosSec.PNG>
@@ -1864,7 +1864,7 @@ put line 78.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/compraCombosSec.PNG, id=246, 623.32875pt x 255.9562
+<diseno/requerimientos/imgs/compraCombosSec.PNG, id=251, 623.32875pt x 255.9562
 5pt>
 File: diseno/requerimientos/imgs/compraCombosSec.PNG Graphic file (type png)
 <use diseno/requerimientos/imgs/compraCombosSec.PNG>
@@ -1874,7 +1874,7 @@ n input line 89.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/EscacezCom.png, id=247, 692.5875pt x 300.12125pt>
+<diseno/requerimientos/imgs/EscacezCom.png, id=252, 692.5875pt x 300.12125pt>
 File: diseno/requerimientos/imgs/EscacezCom.png Graphic file (type png)
 <use diseno/requerimientos/imgs/EscacezCom.png>
 Package pdftex.def Info: diseno/requerimientos/imgs/EscacezCom.png  used on inp
@@ -1883,7 +1883,7 @@ ut line 98.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/FuncionesCom.png, id=248, 858.20625pt x 430.60875pt
+<diseno/requerimientos/imgs/FuncionesCom.png, id=253, 858.20625pt x 430.60875pt
 >
 File: diseno/requerimientos/imgs/FuncionesCom.png Graphic file (type png)
 <use diseno/requerimientos/imgs/FuncionesCom.png>
@@ -1893,7 +1893,7 @@ nput line 105.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/EstrenoCom.PNG, id=249, 706.89093pt x 277.78781pt>
+<diseno/requerimientos/imgs/EstrenoCom.PNG, id=254, 706.89093pt x 277.78781pt>
 File: diseno/requerimientos/imgs/EstrenoCom.PNG Graphic file (type png)
 <use diseno/requerimientos/imgs/EstrenoCom.PNG>
 Package pdftex.def Info: diseno/requerimientos/imgs/EstrenoCom.PNG  used on inp
@@ -1902,7 +1902,7 @@ ut line 111.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<diseno/requerimientos/imgs/compraCombosCom.PNG, id=250, 711.4078pt x 283.81032
+<diseno/requerimientos/imgs/compraCombosCom.PNG, id=255, 711.4078pt x 283.81032
 pt>
 File: diseno/requerimientos/imgs/compraCombosCom.PNG Graphic file (type png)
 <use diseno/requerimientos/imgs/compraCombosCom.PNG>
@@ -1947,7 +1947,7 @@ File: Pictures/5.pdf Graphic file (type pdf)
 <use Pictures/5.pdf>
 Package pdftex.def Info: Pictures/5.pdf  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 307.2094pt.
-<diseno/clases/imgs/clases.pdf, id=298, 1064.97874pt x 649.42625pt>
+<diseno/clases/imgs/clases.pdf, id=303, 1064.97874pt x 649.42625pt>
 File: diseno/clases/imgs/clases.pdf Graphic file (type pdf)
 <use diseno/clases/imgs/clases.pdf>
 Package pdftex.def Info: diseno/clases/imgs/clases.pdf  used on input line 5.
@@ -1967,7 +1967,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
 LaTeX Info: Redefining \. on input line 58.
 LaTeX Info: Redefining \% on input line 58.
  [24]
-<diseno/clases/imgs/relaciones.png, id=347, 385.44pt x 131.49126pt>
+<diseno/clases/imgs/relaciones.png, id=352, 385.44pt x 131.49126pt>
 File: diseno/clases/imgs/relaciones.png Graphic file (type png)
 <use diseno/clases/imgs/relaciones.png>
 Package pdftex.def Info: diseno/clases/imgs/relaciones.png  used on input line 
@@ -1990,13 +1990,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--6
 
  []
 
-<diseno/patrones/imgs/abstractfactory.jpg, id=364, 451.6875pt x 254.45062pt>
+<diseno/patrones/imgs/abstractfactory.jpg, id=369, 451.6875pt x 254.45062pt>
 File: diseno/patrones/imgs/abstractfactory.jpg Graphic file (type jpg)
 <use diseno/patrones/imgs/abstractfactory.jpg>
 Package pdftex.def Info: diseno/patrones/imgs/abstractfactory.jpg  used on inpu
 t line 9.
 (pdftex.def)             Requested size: 361.35048pt x 203.56076pt.
-<diseno/patrones/imgs/abstractFactoryDBMS.png, id=365, 488.57532pt x 493.845pt>
+<diseno/patrones/imgs/abstractFactoryDBMS.png, id=370, 488.57532pt x 493.845pt>
 
 File: diseno/patrones/imgs/abstractFactoryDBMS.png Graphic file (type png)
 <use diseno/patrones/imgs/abstractFactoryDBMS.png>
@@ -2008,13 +2008,13 @@ input line 15.
 
 
  <./diseno/patrones/imgs/abstractfactory.jpg>]
-<diseno/patrones/imgs/facade.jpg, id=371, 510.90875pt x 245.91875pt>
+<diseno/patrones/imgs/facade.jpg, id=376, 510.90875pt x 245.91875pt>
 File: diseno/patrones/imgs/facade.jpg Graphic file (type jpg)
 <use diseno/patrones/imgs/facade.jpg>
 Package pdftex.def Info: diseno/patrones/imgs/facade.jpg  used on input line 21
 .
 (pdftex.def)             Requested size: 255.45375pt x 122.95906pt.
-<diseno/patrones/imgs/facadeimplementado.png, id=372, 504.38437pt x 429.85594pt
+<diseno/patrones/imgs/facadeimplementado.png, id=377, 504.38437pt x 429.85594pt
 >
 File: diseno/patrones/imgs/facadeimplementado.png Graphic file (type png)
 <use diseno/patrones/imgs/facadeimplementado.png>
@@ -2025,7 +2025,7 @@ LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
  [28 <./diseno/patrones/imgs/abstractFactoryDBMS.png> <./diseno/patrones/imgs/f
 acade.jpg>]
-<diseno/patrones/imgs/singularidad.PNG, id=379, 797.98125pt x 365.86688pt>
+<diseno/patrones/imgs/singularidad.PNG, id=384, 797.98125pt x 365.86688pt>
 File: diseno/patrones/imgs/singularidad.PNG Graphic file (type png)
 <use diseno/patrones/imgs/singularidad.PNG>
 Package pdftex.def Info: diseno/patrones/imgs/singularidad.PNG  used on input l
@@ -2033,32 +2033,73 @@ ine 34.
 (pdftex.def)             Requested size: 398.98964pt x 182.93298pt.
 ) [29 <./diseno/patrones/imgs/facadeimplementado.png> <./diseno/patrones/imgs/s
 ingularidad.PNG>]
+\openout2 = `diseno/estado/estado.aux'.
+
+
+(diseno/estado/estado.tex [30
+
+
+
+]
+Cap\'{\i }tulo 6.
+File: Pictures/3.pdf Graphic file (type pdf)
+<use Pictures/3.pdf>
+Package pdftex.def Info: Pictures/3.pdf  used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 306.056pt.
+<diseno/estado/imgs/estado.png, id=396, 786.94pt x 383.4325pt>
+File: diseno/estado/imgs/estado.png Graphic file (type png)
+<use diseno/estado/imgs/estado.png>
+Package pdftex.def Info: diseno/estado/imgs/estado.png  used on input line 13.
+(pdftex.def)             Requested size: 314.77042pt x 153.37029pt.
+<diseno/estado/imgs/estadoClase.png, id=397, 511.15968pt x 341.02406pt>
+File: diseno/estado/imgs/estadoClase.png Graphic file (type png)
+<use diseno/estado/imgs/estadoClase.png>
+Package pdftex.def Info: diseno/estado/imgs/estadoClase.png  used on input line
+ 20.
+(pdftex.def)             Requested size: 153.34908pt x 102.308pt.
+[31 <./diseno/estado/imgs/estado.png (PNG copy)>]
+<diseno/estado/imgs/patronEstado.png, id=404, 943.525pt x 456.70625pt>
+File: diseno/estado/imgs/patronEstado.png Graphic file (type png)
+<use diseno/estado/imgs/patronEstado.png>
+Package pdftex.def Info: diseno/estado/imgs/patronEstado.png  used on input lin
+e 28.
+(pdftex.def)             Requested size: 754.82103pt x 365.36548pt.
+
+Overfull \hbox (328.02968pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+)
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
+ [32 <./diseno/estado/imgs/estadoClase.png> <./diseno/estado/imgs/patronEstado.
+png (PNG copy)>]
 \tf@ptc=\write7
 \openout7 = `informe.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
-
-(informe.aux
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+ (informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
- (proyecto/caso/caso.aux) (proyecto/proceso/proceso.aux)
-(diseno/requerimientos/requerimientos.aux) (diseno/clases/clases.aux)
-(diseno/patrones/patrones.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 157.
+ (proyecto/caso/caso.aux)
+(proyecto/proceso/proceso.aux) (diseno/requerimientos/requerimientos.aux)
+(diseno/clases/clases.aux) (diseno/patrones/patrones.aux)
+(diseno/estado/estado.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 163.
 Package logreq Info: Writing requests to 'informe.run.xml'.
 \openout1 = `informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37677 strings out of 494864
- 712367 string characters out of 3177943
- 1151257 words of memory out of 3000000
- 40490 multiletter control sequences out of 15000+200000
- 625789 words of font info for 221 fonts, out of 3000000 for 9000
+ 37718 strings out of 494864
+ 713559 string characters out of 3177943
+ 1153927 words of memory out of 3000000
+ 40508 multiletter control sequences out of 15000+200000
+ 625919 words of font info for 223 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  57i,12n,65p,972b,2957s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/anferente97/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}</home/
@@ -2066,9 +2107,9 @@ anferente97/.miktex/texmfs/install/fonts/type1/urw/avantgar/uagd8a.pfb></home/a
 nferente97/.miktex/texmfs/install/fonts/type1/urw/avantgar/uagk8a.pfb></home/an
 ferente97/.miktex/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></home/anfere
 nte97/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb>
-Output written on informe.pdf (29 pages, 2416221 bytes).
+Output written on informe.pdf (32 pages, 2467153 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
- 46928 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 46951 words of extra memory for PDF output out of 51595 (max. 10000000)
 
