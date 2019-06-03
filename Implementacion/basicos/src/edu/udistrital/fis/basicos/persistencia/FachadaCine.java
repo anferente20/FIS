@@ -7,29 +7,27 @@ public class FachadaCine{
 	
 	private GestorCine gestor;
 	private static FachadaCine instance;
-	//constructor
+	
 	private FachadaCine() throws SQLException{
 		this.gestor = new GestorCine();
 	}
-	//singleton
+	/**
+	 * Método singleton
+	 * @return Instancia única de la clase
+	 * @throws SQLException
+	 */
 	public static FachadaCine getInstance() throws SQLException{
 		if(instance==null) {
 			instance = new FachadaCine();
 		}
 		return instance;
 	}
-	public ResultSet consultarCines() throws SQLException {
-		return gestor.consultarCines();
-	}
-	
 	/**
-	 * Metodo para buscar el identificador del cine
-	 * @param nombreCine nombre del cine a buscar
-	 * @return el identificador del cine
-	 * @throws NumberFormatException
+	 * Método que consulta todos los cines disponibles
+	 * @return Cines registrados
 	 * @throws SQLException
 	 */
-	public int buscarID(String nombreCine) throws NumberFormatException, SQLException {
-		return gestor.ObtenerIDCine(nombreCine);
+	public ResultSet consultarCines() throws SQLException {
+		return gestor.consultarCines();
 	}
 }

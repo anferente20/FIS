@@ -53,7 +53,7 @@ public class GestorInventario extends Gestor{
 	/**
 	 * Método que consulta las existencias de inventario de un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
-	 * @return ResultSet existencias del inventario
+	 * @return existencias del inventario
 	 * @throws SQLException 
 	 */
 	
@@ -70,7 +70,7 @@ public class GestorInventario extends Gestor{
 	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
 	 * @param nombreProducto nombre del producto que se va a consultar
-	 * @return ResultSet existencias del inventario
+	 * @return existencias del inventario
 	 * @throws SQLException 
 	 */
 	
@@ -87,7 +87,7 @@ public class GestorInventario extends Gestor{
 	 * Método que verifica la existencia de un producto en un cine en específico
 	 * @param idCine ID del cine del que se quiere consultar existencia
 	 * @param idProducto ID del producto del que se quiere consultar existencia
-	 * @return boolean true si la consulta no está vacía, false si está vacia
+	 * @return true si la consulta no está vacía, false si está vacia
 	 * @throws SQLException
 	 */
 	boolean verificarProductoEnCine(int idCine,int idProducto) throws SQLException {

@@ -75,7 +75,9 @@ create table pelicula
 	nombrePelicula text not null,
 	sinopsis text not null,
 	fechaEstreno date not null,
-	duracion interval not null
+	duracion interval not null,
+	nombreDirector not null,
+	img bytea not null
 );
 
 CREATE TABLE Sala
@@ -105,7 +107,8 @@ create table Funcion
 	idPelicula integer not null,
 	fecha date not null,
 	hora time not null,
-	idSala integer not null
+	idSala integer not null,
+	rutaImagen text not null
 );
 alter table funcion
 add constraint pk_funcion_pelicula foreign key (idPelicula) references Pelicula (idPelicula) on delete no action on update no action,

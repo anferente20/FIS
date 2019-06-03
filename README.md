@@ -25,3 +25,11 @@
 <h3>Nomenclatura de paquetes</h3>
 <h5>Los paquetes deberán ser nombrados de la siguiente manera: edu.udistrital.fis.<b>[nombre-del-modulo]</b>.<b>[nombre-de-la-capa]</b></h5>
 
+<h3>NOTAS IMPORTANTES:</H3>
+<ul>
+	<li type="disc">
+	Todos los métodos de las clases que extiendan de la clase Gestor deben tener modificador de tipo paquete, esto para evitar que dichos métodos puedan ser llamados por fuera
+	del paquete en el que se encuentran
+	</il>
+</ul>
+

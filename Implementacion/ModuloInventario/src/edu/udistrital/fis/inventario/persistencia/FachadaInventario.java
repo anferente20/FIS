@@ -111,7 +111,7 @@ public class FachadaInventario {
 	/**
 	  * Método que permite consultar las existencias de inventario en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
-	 * @return ResultSet existencias del inventario
+	 * @return  existencias del inventario
 	 * @throws SQLException 
 	 */
 	
@@ -123,7 +123,7 @@ public class FachadaInventario {
 	 * Método que permite consultar las existencias de un producto en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
 	 * @param nombreProducto nombre del producto que se va a consultar
-	 * @return ResultSet existencias del inventario
+	 * @return existencias del inventario
 	 * @throws SQLException 
 	 */
 	

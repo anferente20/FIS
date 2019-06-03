@@ -9,7 +9,10 @@ public class GestorCine extends Gestor{
 	public GestorCine() throws SQLException{
 		super();
 	}
-	
+	/**
+	 * Método que consulta todos los cines disponibles
+	 * @return Cines registrados
+	 */
 	public ResultSet consultarCines(){
 		ResultSet cines = null;
 		try {
@@ -21,30 +24,6 @@ public class GestorCine extends Gestor{
 			System.out.println("Clase GestorCine: "+ e.getMessage());
 		}
 		return cines;
-	}
-
-	/**
-	 * MÃ©todo que obtiene el id del cine
-	 * @param nombreCine nombre del cine a buscar 
-	 * @return Id del cine en la base de datos
-	 * @throws NumberFormatException Si falla el formato del numero
-	 * @throws SQLException si no conecta a la base de datos
-	 */
-	public int ObtenerIDCine(String nombreCine) throws NumberFormatException, SQLException {
-		ResultSet cines = null;
-		int cine =0;
-		try {
-			String consulta = "select idcine from Cine where nombreCine = '"+nombreCine+"';";
-			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-			cines = sentencia.executeQuery();
-		}
-		catch(SQLException e) {
-			System.out.println("Clase GestorCine: "+ e.getMessage());
-		}
-		while(cines.next()) {
-			cine = Integer.valueOf(cines.getObject(1).toString());
-		}
-		return cine;
 	}
 }
 

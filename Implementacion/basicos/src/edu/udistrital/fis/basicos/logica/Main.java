@@ -1,19 +1,14 @@
 package edu.udistrital.fis.basicos.logica;
 
-import java.sql.SQLException;
 
-import edu.udistrital.fis.basicos.persistencia.GestorDB;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Main {
 
-	private static void main(String[] args) {
-		try {
-			GestorDB.getInstance();
-			Funciones.mensajeConsola("Conexión exitosa");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public static void main(String[] args) throws ParseException {
+	
 	}
 
 }

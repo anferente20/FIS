@@ -25,7 +25,7 @@ public class GestorDB {
 	private static GestorDB gestor;
 	/**
 	 * Patrón singleton
-	 * @return GestorDB instancia de la clase
+	 * @return instancia de la clase
 	 * @throws SQLException
 	 * @throws ClassNotFoundException 
 	 */
@@ -43,7 +43,6 @@ public class GestorDB {
 	}
 	/**
 	 * Método que recibe las credenciales para conectarse a la base de datos
-	 * @return void
 	 */
 	private static void setCredenciales() {
 		String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
@@ -59,7 +58,6 @@ public class GestorDB {
 	}
 	/**
 	 * Método que conecta con la base de datos
-	 * @return void
 	 */
 	private void conectarBD(){
 		try {
