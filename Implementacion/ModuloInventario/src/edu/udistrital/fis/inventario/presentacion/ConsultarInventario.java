@@ -22,8 +22,9 @@ import java.awt.event.KeyListener;
 import java.awt.event.ActionEvent;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.basicos.presentacion.AbstractFrame;
 import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
-public class ConsultarInventario extends JFrame {
+public class ConsultarInventario extends AbstractFrame{
 
 	private JPanel contentPane;
 	private JComboBox<String> cbxCines;
@@ -31,11 +32,18 @@ public class ConsultarInventario extends JFrame {
 	private JTable tablaProductos;
 	private DefaultTableModel modeloTabla;
 
-	public ConsultarInventario() throws SQLException {
+	public ConsultarInventario(){
 		setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		setTitle("Consultar inventario");
 		createFrame();
-		Funciones.cargarDatosCbx(cbxCines, FachadaCine.getInstance().consultarCines());
+		try {
+			Funciones.cargarDatosCbx(cbxCines, FachadaCine.getInstance().consultarCines());
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase ConsultarInventario: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
+		setIdentificador();
 	}
 	
 	private void createFrame() {
@@ -126,7 +134,7 @@ public class ConsultarInventario extends JFrame {
 			}
 		}
 		catch(SQLException e) {
-			Funciones.mensajeConsola("Consultar inventario: "+e.getMessage());
+			Funciones.mensajeConsola("Clase Consultar inventario: "+e.getMessage());
 			Funciones.mensajePantalla("Error, la operación no pudo llevarse a cabo");
 		}
 	}
@@ -140,5 +148,10 @@ public class ConsultarInventario extends JFrame {
 			}
 		}
 		
+	}
+
+	@Override
+	protected void setIdentificador() {	
+		this.identificador = "Consultar existencias";
 	}
 }

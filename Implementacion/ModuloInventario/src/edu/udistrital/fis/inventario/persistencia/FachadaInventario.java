@@ -122,6 +122,19 @@ public class FachadaInventario {
 	/**
 	 * Método que permite consultar las existencias de un producto en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @param idProducto id del producto que se va a consultar
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	public ResultSet consultarInventario(int idCine, int idProducto) throws SQLException {
+		return gestorI.consultarInventario(idCine, idProducto);
+	}
+	
+	
+	/**
+	 * Método que permite consultar las existencias de un producto en un cine en específico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
 	 * @param nombreProducto nombre del producto que se va a consultar
 	 * @return ResultSet existencias del inventario
 	 * @throws SQLException 

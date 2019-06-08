@@ -1,16 +1,9 @@
 package edu.udistrital.fis.empleado.presentencion;
 
 
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import javax.swing.border.EmptyBorder;
-
-
 import java.awt.Font;
-
-
 import javax.swing.JLabel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -30,9 +23,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.basicos.presentacion.AbstractFrame;
 import edu.udistrital.fis.empleado.logica.Empleado;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
-public class ModificarEmpleado extends JFrame {
+public class ModificarEmpleado extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextField txtBuscaEmpleado;
@@ -44,16 +39,18 @@ public class ModificarEmpleado extends JFrame {
 	private JScrollPane scrollPane;
 	private JList<String> listaResultados;
 	private JComboBox<String> cbCine;
+	private JTextField txtTipoEmpleado;
 
 	public ModificarEmpleado() {
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("Modificar informaci\u00F3n de un empleado");
 		createFrame();
 		setDatos(false);
+		cargarCines();
+		setIdentificador();
 	}
 	
 	private void createFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 825, 363);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -161,6 +158,17 @@ public class ModificarEmpleado extends JFrame {
 		cbCine.setBounds(455, 64, 169, 26);
 		panelDatos.add(cbCine);
 		
+		JLabel lblTipo = new JLabel("Tipo:");
+		lblTipo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblTipo.setBounds(357, 116, 67, 20);
+		panelDatos.add(lblTipo);
+		
+		txtTipoEmpleado = new JTextField();
+		txtTipoEmpleado.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		txtTipoEmpleado.setColumns(10);
+		txtTipoEmpleado.setBounds(455, 113, 169, 26);
+		panelDatos.add(txtTipoEmpleado);
+		
 		JLabel lblDigiteElCdigo = new JLabel("Digite el c\u00F3digo, nombre, apellido o identificaci\u00F3n del empleado:");
 		lblDigiteElCdigo.setBounds(12, 13, 401, 25);
 		contentPane.add(lblDigiteElCdigo);
@@ -184,7 +192,7 @@ public class ModificarEmpleado extends JFrame {
 		txtBuscaEmpleado.setColumns(10);
 		
 		
-		
+		txtTipoEmpleado.setEnabled(false);
 		setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
@@ -214,11 +222,13 @@ public class ModificarEmpleado extends JFrame {
 				resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(valor);
 					
 			}
-			catch(Exception e) {
+			catch(NumberFormatException e) {
 				//System.out.println("Es un string");
 				resultado = FachadaEmpleado.getInstance().autoCompletarEmpleado(this.txtBuscaEmpleado.getText());
 			}
+			scrollPane.setVisible(false);
 			while(resultado.next()) {
+				scrollPane.setVisible(true);
 				modeloLista.addElement(resultado.getObject(1).toString());
 				//System.out.println(resultado.getObject(1).toString());
 			}
@@ -229,6 +239,7 @@ public class ModificarEmpleado extends JFrame {
 	}
 	
 	private void cargarDatos(){
+		setDatos(true);
 		int id;
 		String seleccionado = listaResultados.getSelectedValue();
 		id = Integer.parseInt(seleccionado.split(" -")[0]);
@@ -242,9 +253,18 @@ public class ModificarEmpleado extends JFrame {
 			this.txtApellidos.setText(resultado.getString("apellidos"));
 			this.txtIdentficacion.setText(resultado.getString("identificacion"));
 			this.cbCine.setSelectedItem((resultado.getString("cine")));
-			setDatos(true);
+			int tipoEmpleado = resultado.getInt("tipoEmpleado");
+			if(tipoEmpleado==1) { //Administrador
+				cbCine.setEnabled(false); //no se puede cambiar a una administrador de cine
+				txtTipoEmpleado.setText("Administrador");
+			}
+			else {
+				txtTipoEmpleado.setText("Empleado normal");
+			}	
 		} catch (SQLException e) {
-			e.getMessage();
+			Funciones.mensajeConsola("Clase ModificarEmpleado: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
 		}
 	}
 	
@@ -261,7 +281,7 @@ public class ModificarEmpleado extends JFrame {
 			empleado.setIdCine(Integer.parseInt((String) cbCine.getSelectedItem()));
 			try {
 				FachadaEmpleado.getInstance().actualizarEmpleado(empleado);
-				JOptionPane.showMessageDialog(null,"Â¡EMPLEADO ACTUALIZADO CON Ã‰XITO!");
+				JOptionPane.showMessageDialog(null,"¡EMPLEADO ACTUALIZADO CON Ã‰XITO!");
 				this.dispose();
 			}
 			catch(SQLException e) {
@@ -277,5 +297,21 @@ public class ModificarEmpleado extends JFrame {
 			return true;
 		}
 		return false;
+	}
+	
+	private void cargarCines() {
+		try {
+			Funciones.cargarDatosCbx(cbCine, FachadaCine.getInstance().consultarCines());
+			cbCine.setSelectedIndex(0);
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase ModificarEmpleado: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Modificar infomación de un empleado";
 	}
 }

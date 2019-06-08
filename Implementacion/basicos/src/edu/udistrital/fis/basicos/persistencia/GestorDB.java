@@ -46,12 +46,20 @@ public class GestorDB {
 	 * @return void
 	 */
 	private static void setCredenciales() {
-		String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
-		usuario = Funciones.mensajeInPut("Digite el usuario PostgreSQL");
-		contrasena = Funciones.mensajeInPut("Digite la contraseña");
-		puerto = Funciones.mensajeInPut("Digite el puerto");
-		url = "jdbc:postgresql://"+direccion+":"+puerto+"/"+nombreBD;
-		
+		String opcion = Funciones.mensajeInPut("Opcion");
+		if(opcion.equals("1")) {
+			usuario = "postgres";
+			contrasena = "leo990209";
+			puerto = "5432";
+			url = "jdbc:postgresql://localhost:"+puerto+"/"+nombreBD;
+		}
+		else {
+			String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
+			usuario = Funciones.mensajeInPut("Digite el usuario PostgreSQL");
+			contrasena = Funciones.mensajeInPut("Digite la contraseña");
+			puerto = Funciones.mensajeInPut("Digite el puerto");
+			url = "jdbc:postgresql://"+direccion+":"+puerto+"/"+nombreBD;
+		}	
 	}
 	//Devuelve el conector con el que se harÃ¡n todas las operaciones sobre la base de datos
 	public Connection getConector() {
@@ -61,16 +69,12 @@ public class GestorDB {
 	 * Método que conecta con la base de datos
 	 * @return void
 	 */
-	private void conectarBD(){
+	private void conectarBD() throws SQLException{
 		try {
 			Class.forName("org.postgresql.Driver");
 			conector = DriverManager.getConnection(url, usuario, contrasena);
 		} catch (ClassNotFoundException e) {
 			System.out.println("Clase no encontrada: "+e.getMessage());
 		}
-		catch(SQLException e) {
-			System.out.println("Error al conectarse a la base de datos: "+e.getMessage());
-		}
-		
 	}
 }

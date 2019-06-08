@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.basicos.presentacion.AbstractFrame;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class DarBajaEmpl extends JFrame {
+public class DarBajaEmpl extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTable tablaEmpleados;
@@ -36,6 +37,7 @@ public class DarBajaEmpl extends JFrame {
 		setTitle("Dar de baja a un empleado");
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		createFrame();
+		setIdentificador();
 	}
 
 	private void createFrame() {
@@ -90,6 +92,7 @@ public class DarBajaEmpl extends JFrame {
 		scrollPane.setBounds(119, 85, 541, 150);
 		contentPane.add(scrollPane);
 		setLocationRelativeTo(null);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	//carga los registro de los empleados en la tabla
 	private void cargarEmpleados(){
@@ -148,5 +151,10 @@ public class DarBajaEmpl extends JFrame {
 				Funciones.limpiarTabla(modeloTabla);
 			}
 		}
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Dar de baja a un empleado";
 	}
 }

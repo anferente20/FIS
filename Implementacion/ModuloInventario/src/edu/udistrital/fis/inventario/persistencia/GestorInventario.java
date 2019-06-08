@@ -69,6 +69,24 @@ public class GestorInventario extends Gestor{
 	/**
 	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @param idProducto id del producto que se va a consultar
+	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	ResultSet consultarInventario(int idCine, int idProducto) throws SQLException {
+		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
+				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
+				"and cine.idCine = ? and producto.idProducto = ?;";
+		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idCine);
+		sentencia.setInt(2,idProducto);
+		return sentencia.executeQuery();
+	}
+	
+	/**
+	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
 	 * @param nombreProducto nombre del producto que se va a consultar
 	 * @return ResultSet existencias del inventario
 	 * @throws SQLException 
