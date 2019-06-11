@@ -1,4 +1,4 @@
-package edu.udistrital.fis.basicos.presentacion;
+package edu.udistrital.fis.api.logica;
 
 import javax.swing.JFrame;
 /**

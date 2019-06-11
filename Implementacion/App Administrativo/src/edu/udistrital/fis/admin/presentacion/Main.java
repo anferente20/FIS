@@ -7,7 +7,7 @@ import java.util.HashMap;
 import edu.udistrital.fis.admin.utilidades.*;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.GestorDB;
-import edu.udistrital.fis.basicos.presentacion.AbstractFrame;
+import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.core.*;
 
 public class Main {
@@ -41,6 +41,7 @@ public class Main {
 		}
 		else {
 			Funciones.mensajeConsola("Modulo empleados no encontrado");
+			Funciones.mensajePantalla("Modulo empleados no encontrado");
 		}
 		return null;
 	}
@@ -59,6 +60,7 @@ public class Main {
 		}
 		else {
 			Funciones.mensajeConsola("Modulo inventario no encontrado");
+			Funciones.mensajePantalla("Modulo inventario no encontrado");
 		}
 		return null;
 	}
