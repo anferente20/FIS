@@ -16,23 +16,15 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+
 import java.util.Date;
 import java.awt.event.ActionEvent;
-
 import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.funciones.logica.AlgoritmoPrimero;
 import edu.udistrital.fis.funciones.logica.Pelicula;
 import edu.udistrital.imagen.Imagen;
-import javax.swing.text.JTextComponent;
-import javax.xml.soap.Text;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+
 public class AgregarPelicula extends JFrame {
 
 	private JPanel contentPane;
@@ -49,19 +41,21 @@ public class AgregarPelicula extends JFrame {
 	private JTextField txtFuncionesDia;
 
 	public AgregarPelicula() {
-		setTitle("Agrega nueva pel\u00EDcula");
-		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		createFrame();
 	}
 	
 	private void createFrame() {
+		//Imagen que se va a cargar
 		img = new Imagen();
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 782, 688);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setTitle("Agrega nueva pel\u00EDcula");
+		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -105,6 +99,7 @@ public class AgregarPelicula extends JFrame {
 		dpFechaEstreno.setBounds(201, 93, 201, 26);
 		contentPane.add(dpFechaEstreno);
 		txtSinopsis = new JTextArea();
+		txtSinopsis.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		
 		JScrollPane scrollPane = new JScrollPane(txtSinopsis);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -144,6 +139,7 @@ public class AgregarPelicula extends JFrame {
 		contentPane.add(lblDirectores);
 		
 		txtDirector = new JTextField();
+		txtDirector.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		txtDirector.setBounds(201, 199, 201, 26);
 		contentPane.add(txtDirector);
 		txtDirector.setColumns(10);
@@ -169,14 +165,19 @@ public class AgregarPelicula extends JFrame {
 		contentPane.add(lblFuncionesPorDa);
 		
 		txtFuncionesDia = new JTextField();
+		txtFuncionesDia.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		txtFuncionesDia.setColumns(10);
 		txtFuncionesDia.setBounds(201, 304, 201, 26);
 		contentPane.add(txtFuncionesDia);
 		
+		//Place holder
 		TextPrompt thHoras = new TextPrompt("Horas", txtHoras);
 		TextPrompt thMinutos = new TextPrompt("Minutos", txtMinutos);
 		TextPrompt thMeses = new TextPrompt("Meses", txtMeses);
 		TextPrompt thDias = new TextPrompt("Dias", txtDias);
+		
+		thMeses.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		thDias.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		
 		JLabel lblNewLabel = new JLabel("Horas");
 		lblNewLabel.setBounds(223, 170, 33, 16);
@@ -193,10 +194,13 @@ public class AgregarPelicula extends JFrame {
 		JLabel lblDias = new JLabel("Dias");
 		lblDias.setBounds(351, 275, 33, 16);
 		contentPane.add(lblDias);
+		//Minima fecha seleccionable = HOY
+		dpFechaEstreno.setMinSelectableDate(new Date());
 		
 	}
 	
 	private void cargarImagen() {
+		//se carga la imagen que el usuario desee cargar
 		img.cargarImagen(lblImagen);
 	}
 	
@@ -205,10 +209,10 @@ public class AgregarPelicula extends JFrame {
 			Funciones.mensajePantalla("Error, verifique los datos");
 		}
 		else {
-			String duracion = "'"+txtHoras.getText()+" hours "+txtMinutos.getText()+" minutes'";
-			String tiempoCartelera = "'"+txtMeses.getText()+" months "+txtDias.getText()+" days'";
-			DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			String fecha = "'"+df.format(dpFechaEstreno.getDate())+"'";
+			String duracion = txtHoras.getText()+" hours "+txtMinutos.getText()+" minutes";
+			String tiempoCartelera = txtMeses.getText()+" months "+txtDias.getText()+" days";
+			FuncionesTiempo ft = new FuncionesTiempo();
+			String fecha = ft.DateToString(dpFechaEstreno.getDate());
 			int funcionesDia = Integer.parseInt(txtFuncionesDia.getText());
 			Pelicula pelicula = new Pelicula(txtNombre.getText(), txtSinopsis.getText(), fecha,
 			duracion, img.getFile(), new AlgoritmoPrimero(), 
@@ -247,7 +251,7 @@ public class AgregarPelicula extends JFrame {
 	//Valida que los valores de los campos de tiempo estén correctos
 	private boolean validarFechasTiempo() {
 		try {
-			boolean validarHoras = Integer.parseInt(txtHoras.getText())>Pelicula.HORAS_MAXIMAS_DURACION;
+ 			boolean validarHoras = Integer.parseInt(txtHoras.getText())>Pelicula.HORAS_MAXIMAS_DURACION;
 			boolean validarMinutos = !(Integer.parseInt(txtMinutos.getText())>=0 && Integer.parseInt(txtMinutos.getText())<=59);
 			boolean validarMeses = Integer.parseInt(txtMeses.getText())>Pelicula.MESES_MAXIMOS_DURACION;
 			boolean validarFunciones = Integer.parseInt(txtFuncionesDia.getText())>Pelicula.FUNCIONES_MAXIMAS_POR_DIA;

@@ -12,7 +12,9 @@ import java.sql.SQLException;
  *fecha:3.5.19
  */
 public class GestorProducto extends Gestor{
-
+	/**
+	 * @throws SQLException
+	 */
 	public GestorProducto() throws SQLException {
 		super();
 	}

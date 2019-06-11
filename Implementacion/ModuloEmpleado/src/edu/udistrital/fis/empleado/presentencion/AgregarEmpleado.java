@@ -98,10 +98,9 @@ public class AgregarEmpleado extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 					insertarEmpleado();
-				
-				}}
+			}
+		}
 		);
 		btnAceptar.setBounds(99, 298, 97, 37);
 		contentPane.add(btnAceptar);
@@ -132,12 +131,12 @@ public class AgregarEmpleado extends JFrame {
 			empleado.setIdCine(cbCine.getSelectedIndex());
 			try {
 				FachadaEmpleado.getInstance().insertarEmpleado(empleado);
-				Funciones.mensajePantalla("\"¡EMPLEADO INSERTADO CON ÉXITO\"");
+				Funciones.mensajePantalla("�EMPLEADO INSERTADO CON EXITO");
 				this.dispose();
 			}
 			catch(SQLException sqle) {
 				Funciones.mensajeConsola("Clase AgregarEmpleado: "+sqle.getMessage());
-				Funciones.mensajePantalla("Error, el ID o la identificación ya están registrados con otro usuario");
+				Funciones.mensajePantalla("Error, el ID o la identificacion ya estan registrados con otro usuario");
 
 			}
 		}

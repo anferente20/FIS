@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
 import java.awt.Font;
@@ -91,7 +92,8 @@ public class GestionAdmins extends JFrame {
 				this.modeloTabla.addRow(new Object[] {admins.getString("cine"),admins.getString("adminInfo"), new JButton("Cambiar administrador")});
 			}
 		} catch (SQLException e) {
-			System.out.println("Clase GestionAdmins: "+e.getMessage());
+			Funciones.mensajeConsola("Clase GestionAdmins: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no pudo llevarse a cabo la operacion");
 		}
 	}
 	

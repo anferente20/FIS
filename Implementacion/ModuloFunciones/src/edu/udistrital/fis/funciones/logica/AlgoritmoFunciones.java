@@ -10,5 +10,5 @@ import java.util.ArrayList;
 public abstract class AlgoritmoFunciones {
 
 	protected abstract void crearFunciones(Pelicula pelicula);
-	protected abstract void insertarFunciones(ArrayList<Funcion> funciones);
+	protected abstract void insertarFunciones(ArrayList<Funcion> funciones,Pelicula pelicula);
 }

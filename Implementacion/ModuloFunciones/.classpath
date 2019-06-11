@@ -2,10 +2,14 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/comp/postgresql-42.2.5.jar"/>
-	<classpathentry kind="lib" path="/comp/basics.jar"/>
-	<classpathentry kind="lib" path="/comp/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="/comp/imagen.jar"/>
-	<classpathentry kind="lib" path="/comp/placeHolder.jar"/>
+	<classpathentry kind="lib" path="/App Administrativo/lib/basics.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/E:/Andrés/Universidad/SÉPTIMO%20SEMESTRE/FIS/proyecto/Implementacion/doc/basics/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/App Administrativo/lib/imagen.jar"/>
+	<classpathentry kind="lib" path="/App Administrativo/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="/App Administrativo/lib/placeHolder.jar"/>
+	<classpathentry kind="lib" path="/App Administrativo/lib/postgresql-42.2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -26,8 +26,7 @@ public class GestorDB {
 	/**
 	 * Patrón singleton
 	 * @return instancia de la clase
-	 * @throws SQLException
-	 * @throws ClassNotFoundException 
+	 * @throws SQLException Exception SQL
 	 */
 	public static GestorDB getInstance() throws SQLException{
 		if(gestor==null) {
@@ -45,12 +44,20 @@ public class GestorDB {
 	 * Método que recibe las credenciales para conectarse a la base de datos
 	 */
 	private static void setCredenciales() {
-		String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
-		usuario = Funciones.mensajeInPut("Digite el usuario PostgreSQL");
-		contrasena = Funciones.mensajeInPut("Digite la contraseña");
-		puerto = Funciones.mensajeInPut("Digite el puerto");
-		url = "jdbc:postgresql://"+direccion+":"+puerto+"/"+nombreBD;
-		
+		String opcion = Funciones.mensajeInPut("Opcion");
+		if(opcion.equals("1")) {
+			usuario = "postgres";
+			contrasena = "leo990209";
+			puerto = "5432";
+			url = "jdbc:postgresql://localhost:"+puerto+"/"+nombreBD;
+		}
+		else {
+			String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
+			usuario = Funciones.mensajeInPut("Digite el usuario PostgreSQL");
+			contrasena = Funciones.mensajeInPut("Digite la contraseña");
+			puerto = Funciones.mensajeInPut("Digite el puerto");
+			url = "jdbc:postgresql://"+direccion+":"+puerto+"/"+nombreBD;
+		}	
 	}
 	//Devuelve el conector con el que se harÃ¡n todas las operaciones sobre la base de datos
 	public Connection getConector() {

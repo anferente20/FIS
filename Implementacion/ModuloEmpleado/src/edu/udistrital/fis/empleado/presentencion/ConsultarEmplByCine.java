@@ -105,7 +105,7 @@ public class ConsultarEmplByCine extends JFrame {
 		}
 		catch(SQLException e) {
 			Funciones.mensajeConsola("Clase ConsultarEmplByCine: "+e.getMessage());
-			Funciones.mensajePantalla("Error, ¡NO FUE POSIBLE CARGAR LOS REGISTROS!");
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 		}
 		
 	}

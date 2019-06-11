@@ -3,8 +3,7 @@ package edu.udistrital.fis.basicos.logica;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -59,6 +58,7 @@ public class Funciones {
 	 * Método que carga registros en un combo box
 	 * @param cbx Combo box en el que serán ingresados los datos
 	 * @param datos ResultSet que contiene los registros
+	 * @throws SQLException Excepcion SQL
 	 */
 	public static void cargarDatosCbx(JComboBox<String> cbx, ResultSet datos) throws SQLException{
 		cbx.addItem("");
@@ -84,7 +84,7 @@ public class Funciones {
 	}
 	/**
 	 * Metodo que valida que en una cadena existen unicamnete valores numericos
-	 * @param cadena
+	 * @param cadena Valor a verificar
 	 * @return false si el valor no es numerico
 	 */
 	public static boolean validarNumerico(String cadena) {// si solo hay numeros

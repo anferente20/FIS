@@ -9,11 +9,12 @@ import edu.udistrital.fis.basicos.persistencia.Gestor;
 /**
  * Clase que se comunicará directamente con la base de datos para el manejo de información relacionada a empleados
  * @author Andrés Arias
- *
  */
 public class GestorEmpleado extends Gestor{
 	
-	
+	/**
+	 * @throws SQLException
+	 */
 	protected GestorEmpleado() throws SQLException {
 		super();
 	}

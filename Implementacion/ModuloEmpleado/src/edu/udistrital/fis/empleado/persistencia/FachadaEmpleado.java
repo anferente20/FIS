@@ -13,7 +13,9 @@ public class FachadaEmpleado{
 	private GestorEmpleado gestor;
 	private static FachadaEmpleado instance;
 	
-	//constructor
+	/**
+	 * @throws SQLException
+	 */
 	private FachadaEmpleado() throws SQLException{
 		this.gestor = new GestorEmpleado();
 	}

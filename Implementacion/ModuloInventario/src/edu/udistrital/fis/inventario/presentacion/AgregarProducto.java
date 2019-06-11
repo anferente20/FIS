@@ -92,13 +92,9 @@ public class AgregarProducto extends JFrame {
 		setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
-	/**
-	 * Método que agrega un nuevo producto a la Base de datos
-	 * @throws SQLException 
-	 */
 	public void agregarProducto() {
 		if(this.validarVacio()) {
-			JOptionPane.showMessageDialog(null,"Error, digite la totalidad de los datos");
+			Funciones.mensajePantalla("Error, digite la totalidad de los datos");
 		}
 		else {
 			Producto producto = new Producto();
@@ -108,16 +104,16 @@ public class AgregarProducto extends JFrame {
 			try {
 				if(FachadaInventario.getInstance().verificarProducto(txtNombre.getText())) {
 					FachadaInventario.getInstance().insertarProducto(producto);
-					JOptionPane.showMessageDialog(null,"¡PRODUCTO INSERTADO CON ÉXITO!");
+					Funciones.mensajePantalla("¡PRODUCTO INSERTADO CON ÉXITO!");
 					this.dispose();
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Error, ya existe otro producto registrado con ese nombre");
+					Funciones.mensajePantalla("Error, ya existe otro producto registrado con ese nombre");
 				}
 			}
-			catch(SQLException sqle) {
-				JOptionPane.showMessageDialog(null, "Error, ya existe otro producto registrado con el ID digitado");
-				System.out.println("Clase AgregarProducto: "+sqle.getMessage());
+			catch(SQLException sqle) {	
+				Funciones.mensajeConsola("Clase AgregarProducto: "+sqle.getMessage());
+				Funciones.mensajePantalla("Error, ya existe otro producto registrado con el ID digitado");
 			}
 		}
 			

@@ -33,6 +33,9 @@ public class FachadaInventario {
 	private static FachadaInventario instance;
 	
 	//------------------------CONSTRUCTOR--------------
+	/**
+	 * @throws SQLException
+	 */
 	private FachadaInventario() throws SQLException {
 		this.gestorP = new GestorProducto();
 		this.gestorI = new GestorInventario();

@@ -2,9 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/comp/basics.jar"/>
-	<classpathentry kind="lib" path="/comp/inventario.jar"/>
-	<classpathentry kind="lib" path="/comp/empleado.jar"/>
-	<classpathentry kind="lib" path="/comp/postgresql-42.2.5.jar"/>
+	<classpathentry kind="lib" path="componentes/empleado.jar"/>
+	<classpathentry kind="lib" path="componentes/inventario.jar"/>
+	<classpathentry kind="lib" path="lib/basics.jar"/>
+	<classpathentry kind="lib" path="lib/imagen.jar"/>
+	<classpathentry kind="lib" path="lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/placeHolder.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-42.2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -14,7 +14,7 @@ public class FachadaCine{
 	/**
 	 * Método singleton
 	 * @return Instancia única de la clase
-	 * @throws SQLException
+	 * @throws SQLException Exception SQL
 	 */
 	public static FachadaCine getInstance() throws SQLException{
 		if(instance==null) {
@@ -25,7 +25,7 @@ public class FachadaCine{
 	/**
 	 * Método que consulta todos los cines disponibles
 	 * @return Cines registrados
-	 * @throws SQLException
+	 * @throws SQLException Exception SQL
 	 */
 	public ResultSet consultarCines() throws SQLException {
 		return gestor.consultarCines();

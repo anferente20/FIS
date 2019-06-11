@@ -135,12 +135,7 @@ public class ModificarEmpleado extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
-					actualizarEmpleado();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				actualizarEmpleado();
 			}
 		});
 		btnAceptar.setBounds(270, 168, 85, 29);
@@ -175,8 +170,8 @@ public class ModificarEmpleado extends JFrame {
 				try {
 					autoCompletar();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					Funciones.mensajePantalla("Clase ModificarEmpleado: "+e.getMessage());
+					Funciones.mensajePantalla("Error, no pudo llevarse a cabo la operacion");
 				}
 			}
 		});
@@ -244,13 +239,14 @@ public class ModificarEmpleado extends JFrame {
 			this.cbCine.setSelectedItem((resultado.getString("cine")));
 			setDatos(true);
 		} catch (SQLException e) {
-			e.getMessage();
+			Funciones.mensajeConsola("Clase ModificarEmpleado "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
 		}
 	}
 	
-	private void actualizarEmpleado() throws SQLException {
+	private void actualizarEmpleado(){
 		if(validarVacio()) {
-			JOptionPane.showMessageDialog(null,"Error, digite la totalidad de los datos");
+			Funciones.mensajePantalla("Error, digite la totalidad de los datos");
 		}
 		else {
 			Empleado empleado = new Empleado();
@@ -261,12 +257,12 @@ public class ModificarEmpleado extends JFrame {
 			empleado.setIdCine(Integer.parseInt((String) cbCine.getSelectedItem()));
 			try {
 				FachadaEmpleado.getInstance().actualizarEmpleado(empleado);
-				JOptionPane.showMessageDialog(null,"Â¡EMPLEADO ACTUALIZADO CON Ã‰XITO!");
+				Funciones.mensajePantalla("¡EMPLEADO ACTUALIZADO CON EXITO!");
 				this.dispose();
 			}
 			catch(SQLException e) {
-				JOptionPane.showMessageDialog(null,"Error, la identificaciÃ³n ingresada ya estÃ¡ registrada con otro empleado");
-				System.out.println(e.getMessage());
+				Funciones.mensajeConsola("Clase ModificarEmpleado "+e.getMessage());
+				Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
 			}			
 		}
 	}

@@ -156,7 +156,7 @@ public class ModificarInventario extends JFrame {
 		}
 		catch(SQLException  | NumberFormatException e) {
 			Funciones.mensajeConsola("Modificar Inventario: "+e.getMessage());
-			Funciones.mensajePantalla("Error al ejecutar la operación");
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
 			
 		}
 	}
@@ -177,7 +177,7 @@ public class ModificarInventario extends JFrame {
 					txtCantidad.setText(producto.getObject(3).toString());
 					lblUMedicion.setText(producto.getObject(4).toString());
 					accion = 2;
-					btnAceptar.setText("Actualizar existencia");
+					btnAceptar.setText("Actualizar existencias");
 				}
 				else { //el producto no ha sido registrado en el cine
 					Funciones.mensajePantalla("El producto no ha sido registrado en el cine seleccionado");
@@ -188,7 +188,8 @@ public class ModificarInventario extends JFrame {
 			}
 		} 
 		catch (SQLException  | NullPointerException e) {
-					Funciones.mensajeConsola("Modificar inventario: "+e.getMessage());
+			Funciones.mensajeConsola("Modificar inventario: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 		}
 	}
 	
