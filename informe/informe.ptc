@@ -49,35 +49,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Diagrama de clases}{23}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.0.1}NOMBRE DE CLASE:}{24}{subsection.4.0.1}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.0.2}ATRIBUTOS}{24}{subsection.4.0.2}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{VISIBILIDAD}{24}{section*.2}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{ALCANCE}{24}{section*.3}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{PROPIEDADES}{24}{section*.4}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.0.3}OPERACIONES}{24}{subsection.4.0.3}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{VISIBILIDAD}{25}{section*.5}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{PROPIEDADES}{25}{section*.6}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{PAR\IeC {\'A}METROS}{25}{section*.7}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.0.4}RELACIONES}{25}{subsection.4.0.4}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Cliente/proveedor}{25}{section*.8}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Generalizaci\IeC {\'o}n/Implementaci\IeC {\'o}n}{25}{section*.9}% 
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Patrones de dise\IeC {\~n}o}{27}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Diagramas de estado}{31}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Diagrama de componentes}{35}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.0.1}ELEMENTOS}{35}{subsection.7.0.1}% 
+\contentsline {chapter}{\numberline {8}Diagrama de Nodos}{37}{chapter.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Definici\IeC {\'o}n}{37}{section.8.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Implementaci\IeC {\'o}n}{38}{section.8.2}% 
 \contentsfinish 

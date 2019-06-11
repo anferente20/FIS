@@ -2,14 +2,18 @@ package edu.udistrital.fis.admin.presentacion;
 
 
 import java.sql.SQLException;
+
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import edu.udistrital.fis.basicos.logica.Funciones;
-import edu.udistrital.fis.basicos.persistencia.GestorDB;
+import 
+.GestorDB;
 public class Main {
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+		//Estilos que tenga el sistema operativo
+		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		try {
 			Class.forName("edu.udistrital.fis.basicos.persistencia.GestorDB");
 			GestorDB.getInstance();

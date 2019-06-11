@@ -7,13 +7,13 @@ Los diagramas de clase son una de las herramientas UML más utilizadas para el d
 \end{figure}
 Las clases están conformadas por tres partes importantes: el nombre de clase, los atributos y las operaciones.
 
-\subsection{NOMBRE DE CLASE:}
+\subsection*{NOMBRE DE CLASE:}
 En esta sección es donde se define la clase, generalmente se nombran con sustantivos y se busca, mediante estos expresar de manera implícita lo que representa la clase.
   
-\subsection{ATRIBUTOS}
+\subsection*{ATRIBUTOS}
 Son las características propias de la clase, los elementos que la hacen única. Todos los atributos tienen ciertas características especiales que determinarán la manera con la que se interactúa con ellos.
 
-\subsubsection{VISIBILIDAD}
+\subsubsection*{VISIBILIDAD}
 Cuando hablamos de la visibilidad de un atributo se hace referencia a facilidad que tienen otras clases de ver los atributos de una clase en específico, existen cuatro tipos de visibilidad.
 
 \begin{itemize}
@@ -23,7 +23,7 @@ Cuando hablamos de la visibilidad de un atributo se hace referencia a facilidad 
 	\item{\textbf{Pública:} finalmente este tipo indica que cualquier clase existe puede ver el atributo de la clase.}
 \end{itemize}
 
-\subsubsection{ALCANCE}
+\subsubsection*{ALCANCE}
 Esta característica de los atributos nos indica el lugar que va a ocupar en memoria, partiendo del hecho de que en todo programa se cuenta con tres tipos de memoria: memoria estática, memoria de pila, memoria de montículo.
 
 \begin{itemize}
@@ -33,7 +33,7 @@ Esta característica de los atributos nos indica el lugar que va a ocupar en mem
 	
 \end{itemize}
 
-\subsubsection{PROPIEDADES}
+\subsubsection*{PROPIEDADES}
 Esta característica de los atributos es lo que nos indica la posibilidad que se tiene de ser modificados en tiempo de ejecución, se tienen de do tipos: Final y volátil.
 
 \begin{itemize}
@@ -48,11 +48,11 @@ Donde los “[ ]” hacen referencia a la cantidad de elementos que se tienen y 
 
 
 
-\subsection{OPERACIONES}
+\subsection*{OPERACIONES}
 Cuando se habla de las operaciones de una clase se hace referencia a las “habilidades” que esta tiene para poder interactuar con el programa, al igual que los atributos tiene ciertas características que las diferencian las unas de las otras.
 
 
-\subsubsection{VISIBILIDAD}
+\subsubsection*{VISIBILIDAD}
 La visibilidad de una operación es muy parecida con la visibilidad de los atributos, con la diferenciación de que en general solo cuenta con visibilidad pública y privada. 
 
 Para saber si una operación es pública o privada hay que tener un término que se llama cohesión secuencial, es decir, si la operación necesita de otras operaciones para funcionar correctamente.
@@ -62,7 +62,7 @@ Una operación es privada si dicha operación  realiza una actividad que solamen
 una operación es pública si la operación permite la interacción con otras clases. Generalmente dentro de ella aparece la cohesión secuencial, es decir, ella llama a las operaciones privadas de la clase. Se denomina interfaz, pues es un mediador con otras clases.
 
 
-\subsubsection{PROPIEDADES}
+\subsubsection*{PROPIEDADES}
 En el caso de las operaciones las propiedades indican el tipo de acción que permite realizar.
 
 \begin{itemize}
@@ -73,7 +73,7 @@ En el caso de las operaciones las propiedades indican el tipo de acción que per
 \end{itemize}
 
 
-\subsubsection{PARÁMETROS}
+\subsubsection*{PARÁMETROS}
 Los parámetro son la información que recibe la operación para poder realizar el proceso asignado, tienen una dirección que indica la característica del atributo:
 
 \begin{itemize}
@@ -87,10 +87,10 @@ La manera en que se escriben las operaciones dentro de una clase es la siguiente
 \centerline{\textbf{\underline{Visibilidad nombre (parámetros): retorno {propiedad}}}}
 
 
-\subsection{RELACIONES}
+\subsection*{RELACIONES}
 Estas relaciones tienen la característica de tener reuso de caja negra, es decir que las clases que se relacionan mediante ellas no tienen conocimiento de cómo se lleva a cabo una operación, pero aún así pueden hacer uso de ellas. Por otro lado, tienen el problema de que tienen un acoplamiento muy alto, lo que significa que la necesidad entre las clases es algo muy elevado.
 
-\subsubsection{Cliente/proveedor}
+\subsubsection*{Cliente/proveedor}
 Estas relaciones se dividen en dos grandes subramas: Dependencias y Asociaciones.
 
 \textbf{Dependencia:}
@@ -100,7 +100,7 @@ Estos casos se dan cuando una clase utiliza otra clase para poder llevar a cabo 
 Esta tiene de dos tipos, el primero, la agregación, indica que la relación entre ellos no es vital, es decir, el cliente puede vivir sin el proveedor. Por otro lado la composición indica una relación vital, es decir, el cliente no puede vivir, ni tener sentido a no ser que tenga al proveedor.
 
 
-\subsubsection{Generalización/Implementación}
+\subsubsection*{Generalización/Implementación}
 Estas relaciones tienen la característica de tener reuso de caja blanca, es decir que las clases que se relacionan mediante ellas  tienen conocimiento de cómo se lleva a cabo una operación, e incluso pueden llegar a modificarlo. Por otro lado, tienen la ventaja de que tienen un acoplamiento muy bajo, lo que significa que la necesidad entre las clases es algo que puede pasar a segundo plano.
 
 Por un lado las generalizaciones permiten crear una clase a partir de otra, con las mismas características, pero con la idea de que tenga un rol diferente. Por otro lado las implementaciones indican el uso de algunas operaciones de una interfaz en una clase determinada.
