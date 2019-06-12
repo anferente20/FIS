@@ -31,18 +31,22 @@ public class GestorPelicula extends Gestor{
 	 * @throws SQLException
 	 * @throws FileNotFoundException
 	 */
-	void insertarPelicula(Pelicula pelicula) throws SQLException, FileNotFoundException {
-		String consulta = 
-				"insert into "
-				+ "pelicula (nombrePelicula,sinopsis,fechaEstreno,duracion,img,nombreDirector) "
-				+ "values"
-				+ "(?,?,'"+pelicula.getFechaEstreno()+"','"+pelicula.getDuracion()+"',?,?);";
-		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-		sentencia.setString(1, pelicula.getNombre());
-		sentencia.setString(2, pelicula.getSinopsis());
-		sentencia.setBinaryStream(3,new FileInputStream(pelicula.getImg()),pelicula.getImg().length());
-		sentencia.setString(4, pelicula.getDirector());
-		sentencia.execute();
+	void insertarPelicula(Pelicula pelicula) throws SQLException{
+		try {
+			String consulta = 
+					"insert into "
+					+ "pelicula (nombrePelicula,sinopsis,fechaEstreno,duracion,img,nombreDirector) "
+					+ "values"
+					+ "(?,?,'"+pelicula.getFechaEstreno()+"','"+pelicula.getDuracion()+"',?,?);";
+			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+			sentencia.setString(1, pelicula.getNombre());
+			sentencia.setString(2, pelicula.getSinopsis());
+			sentencia.setBinaryStream(3,new FileInputStream(pelicula.getImg()),pelicula.getImg().length());
+			sentencia.setString(4, pelicula.getDirector());
+			sentencia.execute();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * Método que inserta un registro de Funcion en la base de datos

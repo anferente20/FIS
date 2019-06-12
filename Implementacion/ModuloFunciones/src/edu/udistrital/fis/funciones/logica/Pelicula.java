@@ -12,7 +12,7 @@ import edu.udistrital.fis.funciones.persistencia.FachadaPelicula;
  * Clase Pelicula
  * @author Andres Arias
  */
-public class Pelicula {
+public class Pelicula implements Runnable{
 	//El tiempo en horas debe estar en formato: hh hours mm minutes
 	//El tiempo en meses debe estar en formato: MM months dd days
 	/**
@@ -119,13 +119,9 @@ public class Pelicula {
 			FachadaPelicula.getInstance().insertarPelicula(this);
 			this.setId();
 			//creacion de las funciones por el algoritmo dado
-			long startTime = System.currentTimeMillis(); //Tiempo inicial
-			this.algoritmo.crearFunciones(this);
-			long endTime = System.currentTimeMillis()-startTime; //Tiempo empleado
-			Funciones.mensajeConsola("Tiempo empleado: "+String.valueOf((long)endTime/1000)+" s");
-			Funciones.mensajeConsola("Funciones creadas");
-			Funciones.mensajePantalla("¡Pelicula insertada con éxito!");
-		} catch (SQLException | FileNotFoundException e) {
+			Thread hilo = new Thread(this);
+			hilo.start();
+		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase Pelicula: "+e.getMessage());
 			Funciones.mensajePantalla("No fue posible llevar a cabo la operación");
 		}
@@ -142,6 +138,15 @@ public class Pelicula {
 			Funciones.mensajeConsola("Clase pelicula: "+e.getMessage());
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 		}
+	}
+
+	@Override
+	public void run() {
+		long startTime = System.currentTimeMillis(); //Tiempo inicial
+		this.algoritmo.crearFunciones(this);
+		long endTime = System.currentTimeMillis()-startTime; //Tiempo empleado
+		Funciones.mensajeConsola("Tiempo empleado: "+String.valueOf((long)endTime/1000)+" s");
+		Funciones.mensajePantalla("¡Pelicula insertada con éxito!");
 	}
 
 }

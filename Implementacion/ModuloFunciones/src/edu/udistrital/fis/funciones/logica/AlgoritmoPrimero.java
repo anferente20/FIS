@@ -5,10 +5,12 @@ import edu.udistrital.fis.basicos.logica.Cine;
 import java.util.ArrayList;
 import java.util.Date;
 import java.time.Period;
-
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.funciones.persistencia.FachadaPelicula;
+import edu.udistrital.fis.funciones.presentacion.AgregarPelicula;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
+import edu.udistrital.fis.basicos.presentacion.ProgressBar;
+
 /**
  * Clase que es la primera implementacion de la interfaz AlgoritmoFunciones para el algoritmo de creacion de funciones
  * @author Andres Arias
@@ -16,9 +18,11 @@ import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 public class AlgoritmoPrimero extends AlgoritmoFunciones{
 
 	private FuncionesTiempo ft;
+	private ProgressBar pg;
 	
 	public AlgoritmoPrimero() {
 		ft = new FuncionesTiempo();
+		pg = new ProgressBar(Cine.CINES, "Creando funciones", "Creando funciones para Cine 1"); //barra de progreso
 	}
 	@Override
 	/**
@@ -64,8 +68,10 @@ public class AlgoritmoPrimero extends AlgoritmoFunciones{
 					//se suma un día a la fecha
 					fecha = this.ft.sumarDiasFecha(fecha, 1);
 				}
-				Funciones.mensajeConsola("Funciones para cine "+cine);
+				Funciones.mensajeConsola("Funciones para cine "+cine+" creadas");
+				pg.cargarBarra("Creando funciones para Cine "+String.valueOf(cine+1));
 			}
+			Funciones.mensajeConsola("Funciones creadas");
 		}
 		catch(SQLException e) {
 			Funciones.mensajeConsola("Clase AlgoritmoPrimero: "+e.getMessage());
@@ -101,5 +107,4 @@ public class AlgoritmoPrimero extends AlgoritmoFunciones{
 	protected void insertarFunciones(ArrayList<Funcion> funciones,Pelicula pelicula) {
 
 	}
-	
 }

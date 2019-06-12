@@ -209,6 +209,7 @@ public class AgregarPelicula extends JFrame {
 			Funciones.mensajePantalla("Error, verifique los datos");
 		}
 		else {
+			this.dispose();
 			String duracion = txtHoras.getText()+" hours "+txtMinutos.getText()+" minutes";
 			String tiempoCartelera = txtMeses.getText()+" months "+txtDias.getText()+" days";
 			FuncionesTiempo ft = new FuncionesTiempo();
@@ -217,7 +218,6 @@ public class AgregarPelicula extends JFrame {
 			Pelicula pelicula = new Pelicula(txtNombre.getText(), txtSinopsis.getText(), fecha,
 			duracion, img.getFile(), new AlgoritmoPrimero(), 
 			tiempoCartelera, funcionesDia, txtDirector.getText());
-			this.dispose();
 		}
 	}
 	

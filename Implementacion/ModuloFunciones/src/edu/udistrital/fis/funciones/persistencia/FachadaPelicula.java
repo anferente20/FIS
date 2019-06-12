@@ -36,7 +36,7 @@ public class FachadaPelicula {
 	 * @throws SQLException
 	 * @throws FileNotFoundException
 	 */
-	public void insertarPelicula (Pelicula pelicula) throws SQLException, FileNotFoundException {
+	public void insertarPelicula (Pelicula pelicula) throws SQLException{
 		this.gestor.insertarPelicula(pelicula);
 	}
 	/**

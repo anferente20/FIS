@@ -51,6 +51,12 @@ public class GestorDB {
 			puerto = "5432";
 			url = "jdbc:postgresql://localhost:"+puerto+"/"+nombreBD;
 		}
+		else if(opcion.equals("2")) {
+			usuario = "postgres";
+			contrasena = "leo990209";
+			puerto = "5433";
+			url = "jdbc:postgresql://localhost:"+puerto+"/"+nombreBD;
+		}
 		else {
 			String direccion = Funciones.mensajeInPut("Digite la dirección IP del servidor");
 			usuario = Funciones.mensajeInPut("Digite el usuario PostgreSQL");
