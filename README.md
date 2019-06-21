@@ -32,11 +32,9 @@
 	Todos los métodos de las clases que extiendan de la clase Gestor deben tener modificador de tipo paquete, esto para evitar que dichos métodos puedan ser llamados por fuera
 	del paquete en el que se encuentran
 	</il>
+	<li type="disc">
+	TODOS los Frame deberán extender de la clase edu.udistrital.fis.api.logica.AbstractFrame en el componente 'api'; esto para poder 	aplicar la referenciacion de componentes de manera dinámica
+	</li>
 </ul>
-=======
-<h3>IMPORTANTE:</h3>
-<ul>
-    <li type="disc">TODOS los Frame deberán extender de la clase edu.udistrital.fis.basicos.persistencia.AbstractFrame en el componente 'basics'; esto para poder aplicar la referenciacion de componentes de manera dinámica</li>
-  </ul>
->>>>>>> componentes
+
 
