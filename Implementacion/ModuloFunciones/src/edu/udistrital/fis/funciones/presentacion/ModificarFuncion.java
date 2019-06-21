@@ -152,6 +152,7 @@ class ModificarFuncion extends JFrame {
 					Funciones.mensajePantalla("¡FUNCIÓN MODIFICADA CON ÉXITO");
 					this.dispose();
 					this.target.setModificada(txtHora.getText()+":"+txtMinutos.getText(), cbxSala.getSelectedIndex(), idCine);
+					this.target.setModificada(txtHora.getText()+":"+txtMinutos.getText());
 				}
 				else {
 					Funciones.mensajePantalla("Error, las modificaciones hechas en la función hacen que se crucen con otra funcion."

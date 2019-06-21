@@ -10,7 +10,9 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		//Estilos que tenga el sistema operativo
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		ConsultarFuncionesByPelicula x = new ConsultarFuncionesByPelicula();
+		AgregarPelicula x1 = new AgregarPelicula();
+		x1.setVisible(true);
+		ConsultarFuncionesBySala x = new ConsultarFuncionesBySala();
 		x.setVisible(true);
 	}
 }

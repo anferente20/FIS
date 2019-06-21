@@ -19,6 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.BorderFactory;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLayeredPane;
@@ -91,11 +93,15 @@ class MostrarFuncionesPelicula extends JFrame {
 		panelDinamico = new JLayeredPane();
 		panelDinamico.setBounds(0, 0, 298, 386);
 		panelDinamico.setLayout(null);
-		contentPane.add(panelDinamico);
+
 		
-		
-		JScrollPane scrollPane = new JScrollPane(panelDinamico,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(363, 25, 322, 386);
+		scrollPane.setViewportView(panelDinamico);
+		scrollPane.getViewport().setView(panelDinamico);
+		
+		
 		contentPane.add(scrollPane);
 		
 		setLocationRelativeTo(null);
@@ -109,6 +115,7 @@ class MostrarFuncionesPelicula extends JFrame {
 				x += 150;
 				agregarFuncion(funciones,x);
 			}
+			panelDinamico.setPreferredSize(new Dimension(298, x));
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase MostrarFuncionesPelicula: "+e.getMessage());
 			this.dispose();
@@ -124,7 +131,7 @@ class MostrarFuncionesPelicula extends JFrame {
 		FuncionesTiempo ft = new FuncionesTiempo();
 		funcion = new Funcion(pelicula, ft.StringToDate(this.fecha), funciones.getString("hora"), funciones.getInt("idsala"));
 		funcion.setIdFuncion(funciones.getInt("idfuncion"));
-		PanelFuncion pf = new PanelFuncion(funcion);
+		PanelFuncionByPelicula pf = new PanelFuncionByPelicula(funcion);
 		pf.setBounds(0, x, this.panelDinamico.getWidth(), 150);
 		pf.setBorder(BorderFactory.createLineBorder(Color.black, 2));
 		panelDinamico.add(pf);

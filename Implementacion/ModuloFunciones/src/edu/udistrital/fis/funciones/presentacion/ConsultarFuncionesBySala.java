@@ -1,6 +1,5 @@
 package edu.udistrital.fis.funciones.presentacion;
 
-import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -132,6 +131,9 @@ public class ConsultarFuncionesBySala extends JFrame {
 				}
 				else {
 					Funciones.mensajeConsola("Mostrando funciones");
+					MostrarFuncionesSala x = new MostrarFuncionesSala(sala, fecha, 
+							idCine, funciones);
+					x.setVisible(true);
 				}
 			}
 			catch(SQLException e ) {
