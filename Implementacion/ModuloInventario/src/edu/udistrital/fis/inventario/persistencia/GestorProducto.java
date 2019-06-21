@@ -12,7 +12,9 @@ import java.sql.SQLException;
  *fecha:3.5.19
  */
 public class GestorProducto extends Gestor{
-
+	/**
+	 * @throws SQLException
+	 */
 	public GestorProducto() throws SQLException {
 		super();
 	}
@@ -34,8 +36,8 @@ public class GestorProducto extends Gestor{
 	}
 	
 	/**
-	 * MÃ©todo que permite buscar los nombres de todos los productos de la base de datos
-	 * @return ResultSet con los nombres de los productos
+	 * Metodo que permite buscar los nombres de todos los productos de la base de datos
+	 * @return con los nombres de los productos
 	 */
 	ResultSet listarProductos(){
 		ResultSet productos  =  null;
@@ -75,7 +77,7 @@ public class GestorProducto extends Gestor{
 	/**
 	 * Método que se encarga de obtener la unidad de medición
 	 * @param nombre Nombre del producto a buscar
-	 * @return String con la nombre de medicion.
+	 * @return Unidad de medición
 	 * @throws SQLException
 	 */
 	String obtenerUM(String nombre) throws SQLException {

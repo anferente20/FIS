@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+
+Name: COMPONENTE
+nombre: edu.udistrital.fis.core.IFunciones
+clase: edu.udistrital.fis.funciones.logica.FFunciones

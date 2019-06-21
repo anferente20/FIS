@@ -1,17 +1,18 @@
 package edu.udistrital.fis.admin.presentacion;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import edu.udistrital.fis.api.logica.AbstractFrame;
 
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
@@ -22,10 +23,10 @@ public class Login extends JFrame {
 	private JButton btnIngresar;
 	private JButton btnSalir;
 
-	/**
-	 * Create the frame.
-	 */
-	public Login() {
+	private HashMap<String,ArrayList<AbstractFrame>> presentacion;
+	
+	public Login(HashMap<String,ArrayList<AbstractFrame>> presentacion) {
+		this.presentacion = presentacion;
 		createFrame();
 	}
 	
@@ -97,9 +98,8 @@ public class Login extends JFrame {
 		 */
 		tipoUsuario = "Administrador";  // ---> Quitar después de hacer bien el login
 		this.setVisible(false);
-		edu.udistrital.fis.admin.presentacion.Menu menu = new edu.udistrital.fis.admin.presentacion.Menu(usuario, contrasena, tipoUsuario);
-		
-		
+		MenuAdmin menu = new MenuAdmin(usuario, contrasena, tipoUsuario,this.presentacion);
+		menu.setVisible(true);
 	}
 
 }

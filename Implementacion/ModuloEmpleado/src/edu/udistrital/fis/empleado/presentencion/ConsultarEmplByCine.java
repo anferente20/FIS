@@ -24,21 +24,29 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
-public class ConsultarEmplByCine extends JFrame {
+public class ConsultarEmplByCine extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JComboBox<String> cbCine;
 	private DefaultTableModel modeloTabla;
 	private JTable tablaEmpleados;
 
-	public ConsultarEmplByCine() throws SQLException {
+	public ConsultarEmplByCine(){
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("Consultar empleados");
 		createFrame();
-		Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		try {
+			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase ConsultarEmplByCine: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
 		tablaEmpleados.setModel(modeloTabla);
+		setIdentificador();
 	}
 	
 	private void createFrame() {
@@ -105,9 +113,14 @@ public class ConsultarEmplByCine extends JFrame {
 		}
 		catch(SQLException e) {
 			Funciones.mensajeConsola("Clase ConsultarEmplByCine: "+e.getMessage());
-			Funciones.mensajePantalla("Error, ¡NO FUE POSIBLE CARGAR LOS REGISTROS!");
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 		}
 		
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Consultar empleados";
 	}
 
 }

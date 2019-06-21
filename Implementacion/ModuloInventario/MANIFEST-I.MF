@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+
+Name: COMPONENTE
+nombre: edu.udistrital.fis.core.IInventario
+clase: edu.udistrital.fis.inventario.logica.FInventario

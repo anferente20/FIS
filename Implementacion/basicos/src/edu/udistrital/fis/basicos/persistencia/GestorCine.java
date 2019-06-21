@@ -9,8 +9,11 @@ public class GestorCine extends Gestor{
 	public GestorCine() throws SQLException{
 		super();
 	}
-	
-	public ResultSet consultarCines(){
+	/**
+	 * Método que consulta todos los cines disponibles
+	 * @return Cines registrados
+	 */
+	ResultSet consultarCines(){
 		ResultSet cines = null;
 		try {
 			String consulta = "select nombreCine from Cine order by idCine asc;";
@@ -22,29 +25,33 @@ public class GestorCine extends Gestor{
 		}
 		return cines;
 	}
-
 	/**
-	 * MÃ©todo que obtiene el id del cine
-	 * @param nombreCine nombre del cine a buscar 
-	 * @return Id del cine en la base de datos
-	 * @throws NumberFormatException Si falla el formato del numero
-	 * @throws SQLException si no conecta a la base de datos
+	 * Método que obtiene el nombre de un cine dado su id
+	 * @param idCine Identificador del cine
+	 * @return Nombre del cine asociado al identificador
+	 * @throws SQLException
 	 */
-	public int ObtenerIDCine(String nombreCine) throws NumberFormatException, SQLException {
-		ResultSet cines = null;
-		int cine =0;
-		try {
-			String consulta = "select idcine from Cine where nombreCine = '"+nombreCine+"';";
-			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-			cines = sentencia.executeQuery();
-		}
-		catch(SQLException e) {
-			System.out.println("Clase GestorCine: "+ e.getMessage());
-		}
-		while(cines.next()) {
-			cine = Integer.valueOf(cines.getObject(1).toString());
-		}
-		return cine;
+	String getNombreCine(int idCine) throws SQLException {
+		String consulta = "select nombreCine from cine where idCine = ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCine);
+		ResultSet resultado = sentencia.executeQuery();
+		resultado.next();
+		return resultado.getString("nombreCine");
+	}
+	/**
+	 * Método que obtiene el id del cine al que está asociada una sala
+	 * @param idSala Sala de la cual se quiere consultar el cine
+	 * @return Identificador de la sala
+	 * @throws SQLException
+	 */
+	int getIdCine(int idSala) throws SQLException {
+		String consulta = "select idcine from sala where idSala = ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idSala);
+		ResultSet resultado = sentencia.executeQuery();
+		resultado.next();
+		return resultado.getInt("idcine");
 	}
 }
 

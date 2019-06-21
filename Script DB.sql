@@ -75,7 +75,9 @@ create table pelicula
 	nombrePelicula text not null,
 	sinopsis text not null,
 	fechaEstreno date not null,
-	duracion interval not null
+	duracion interval not null,
+	nombreDirector not null,
+	img bytea not null
 );
 
 CREATE TABLE Sala
@@ -104,8 +106,9 @@ create table Funcion
 	idFuncion serial primary key,
 	idPelicula integer not null,
 	fecha date not null,
-	hora time not null,
-	idSala integer not null
+	hora interval not null,
+	idSala integer not null,
+	estado integer not null
 );
 alter table funcion
 add constraint pk_funcion_pelicula foreign key (idPelicula) references Pelicula (idPelicula) on delete no action on update no action,
@@ -275,12 +278,59 @@ add constraint fk_boleta_compra foreign key (idCompra) references compra (idComp
 add constraint fk_boleta_historico foreign key (idHistoricoBoleta) references HistoricoBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action;
 
 
+-- VIEWS
+
+create view consolidadoFunciones as
+select 
+pelicula.nombrePelicula,
+pelicula.duracion duracionPelicula,
+funcion.fecha fechaFuncion,
+funcion.hora horaFuncion,
+(funcion.hora+pelicula.duracion) horaTerminacion,
+cine.nombreCine,
+sala.consecutivo,
+funcion.estado
+from
+pelicula, sala, cine,funcion
+where
+pelicula.idPelicula = funcion.idPelicula and
+sala.idSala = funcion.idSala and
+sala.idCine = cine.idCine
+order by cine.idCine,funcion.fecha;
+
+create view HoraTerminacionFunciones as
+SELECT funcion.idfuncion,
+sala.consecutivo,
+pelicula.nombrepelicula,
+pelicula.duracion,
+funcion.hora AS horainicio,
+pelicula.duracion + funcion.hora AS horaterminacion
+FROM pelicula,
+funcion,
+sala
+WHERE funcion.idsala = sala.idsala AND funcion.idpelicula = pelicula.idpelicula AND sala.idcine = 1;
+
+
+create view cantidad_funciones_por_fecha_por_cine as
+select nombrePelicula, fechafuncion,idCine, count(*) from consolidadoFunciones
+group by nombrePelicula, fechafuncion,idCine order by fechafuncion;
 
 
 
-
-
-
+--Hora de terminacion de las funciones
+create view hora_terminacion_funciones as
+select
+funcion.idFuncion,
+sala.consecutivo,
+pelicula.nombrePelicula,
+pelicula.duracion,
+funcion.hora horaInicio,
+(pelicula.duracion + funcion.hora) horaTerminacion 
+from
+pelicula, funcion, sala
+where
+funcion.idSala = sala.idSala and
+funcion.idPelicula = pelicula.idPelicula;
 
 
 

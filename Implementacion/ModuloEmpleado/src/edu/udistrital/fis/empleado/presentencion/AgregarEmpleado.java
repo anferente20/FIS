@@ -16,10 +16,11 @@ import javax.swing.border.EmptyBorder;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.empleado.logica.Empleado;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
-public class AgregarEmpleado extends JFrame {
+public class AgregarEmpleado extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
@@ -28,9 +29,16 @@ public class AgregarEmpleado extends JFrame {
 	private JTextField txtIdentificacion;
 	private JComboBox<String> cbCine;
 
-	public AgregarEmpleado() throws SQLException{
+	public AgregarEmpleado(){
 		createFrame();
-		Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		try {
+			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase AgregarEmpleado: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
+		setIdentificador();
 	}
 	
 	private void createFrame() {
@@ -98,10 +106,9 @@ public class AgregarEmpleado extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 					insertarEmpleado();
-				
-				}}
+			}
+		}
 		);
 		btnAceptar.setBounds(99, 298, 97, 37);
 		contentPane.add(btnAceptar);
@@ -132,12 +139,12 @@ public class AgregarEmpleado extends JFrame {
 			empleado.setIdCine(cbCine.getSelectedIndex());
 			try {
 				FachadaEmpleado.getInstance().insertarEmpleado(empleado);
-				Funciones.mensajePantalla("\"¡EMPLEADO INSERTADO CON ÉXITO\"");
+				Funciones.mensajePantalla("�EMPLEADO INSERTADO CON EXITO");
 				this.dispose();
 			}
 			catch(SQLException sqle) {
 				Funciones.mensajeConsola("Clase AgregarEmpleado: "+sqle.getMessage());
-				Funciones.mensajePantalla("Error, el ID o la identificación ya están registrados con otro usuario");
+				Funciones.mensajePantalla("Error, el ID o la identificacion ya estan registrados con otro usuario");
 
 			}
 		}
@@ -149,6 +156,11 @@ public class AgregarEmpleado extends JFrame {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Agregar un empleado";
 	}
 }
 

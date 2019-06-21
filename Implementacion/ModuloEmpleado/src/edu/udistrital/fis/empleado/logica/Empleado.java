@@ -1,5 +1,8 @@
 package edu.udistrital.fis.empleado.logica;
-
+/**
+ * Clase Empleado
+ * @author Andres Arias
+ */
 public class Empleado {
 	private int idEmpleado;
 	private String nombresEmpleado;

@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class DarBajaEmpl extends JFrame {
+public class DarBajaEmpl extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTable tablaEmpleados;
@@ -36,6 +37,7 @@ public class DarBajaEmpl extends JFrame {
 		setTitle("Dar de baja a un empleado");
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		createFrame();
+		setIdentificador();
 	}
 
 	private void createFrame() {
@@ -90,6 +92,7 @@ public class DarBajaEmpl extends JFrame {
 		scrollPane.setBounds(119, 85, 541, 150);
 		contentPane.add(scrollPane);
 		setLocationRelativeTo(null);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	//carga los registro de los empleados en la tabla
 	private void cargarEmpleados(){
@@ -103,16 +106,17 @@ public class DarBajaEmpl extends JFrame {
 				empleados = FachadaEmpleado.getInstance().sugerirEmpleados(valor);
 			}
 			catch(SQLException e) {
-				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
+				Funciones.mensajeConsola("Clase DarBajaEmpl: "+e.getMessage());
+				Funciones.mensajePantalla("Error, no pudo llevarse a cabo la operacion");
 			}
 			catch(NumberFormatException e) {
 				//es una cadena
-				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
 				try {
 					empleados = FachadaEmpleado.getInstance().sugerirEmpleados(txtParametro.getText());
 				}
 				catch(SQLException e2) {
-					System.out.println("Clase DarBajaEmpl: "+e.getMessage());
+					Funciones.mensajeConsola("Clase DarBajaEmpl: "+e.getMessage());
+					Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operaci�n");
 				}
 			}
 			//llena la tabla
@@ -121,7 +125,8 @@ public class DarBajaEmpl extends JFrame {
 				modeloTabla.addRow(new Object[] {empleados.getString("id"),empleados.getString("nombres")
 						,empleados.getString("apellidos"),empleados.getString("identificacion"),empleados.getString("nombreCine")});}
 			} catch (SQLException e) {
-				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
+				Funciones.mensajeConsola("Clase DarBajaEmpl: "+e.getMessage());
+				Funciones.mensajePantalla("Error, no pudo llevarse a cabo la operacion");
 			}
 		}
 		
@@ -130,23 +135,28 @@ public class DarBajaEmpl extends JFrame {
 	private void darBaja(){
 		int numFila = tablaEmpleados.getSelectedRow();
 		if(numFila==-1) {
-			JOptionPane.showMessageDialog(null, "No ha seleccionado ningún registro de la tabla");
+			Funciones.mensajePantalla("No ha seleccionado ningun registro de la tabla");
 		}
 		else {
 			int idEmpleado = Integer.parseInt((String) modeloTabla.getValueAt(numFila, 0));
 			try {
-				int opcion = JOptionPane.showConfirmDialog(null,"¿Está seguro de dar de baja al empleado seleccionado?");
+				int opcion = Funciones.mensajeConfirmacion("�Esta seguro de dar de baja al empleado seleccionado?");
 				if(opcion==0) {
 					FachadaEmpleado.getInstance().darBajaEmpl(idEmpleado);
-					JOptionPane.showMessageDialog(null,"¡EMPLEADO DADO DE BAJA CON ÉXITO");
+					Funciones.mensajePantalla("�EMPLEADO DADO DE BAJA CON EXITO");
 					Funciones.limpiarTabla(modeloTabla);
 				}
 				
 			} catch (SQLException e) {
-				System.out.println("Clase DarBajaEmpl: "+e.getMessage());
-				JOptionPane.showMessageDialog(null,"Error, ¡EMPLEADO NO DADO DE BAJA CON ÉXITO!");
+				Funciones.mensajeConsola("Clase DarBajaEmpl: "+e.getMessage());
+				Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 				Funciones.limpiarTabla(modeloTabla);
 			}
 		}
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Dar de baja a un empleado";
 	}
 }

@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -15,9 +14,10 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
 
-public class ModificarInventario extends JFrame {
+public class ModificarInventario extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCantidad;
@@ -28,19 +28,21 @@ public class ModificarInventario extends JFrame {
 	private int accion; // 1 -> agregar existencia al cine; 2 -> actualizar existencia del cine
 	private JButton btnAceptar;
 
-
-	/**
-	 * Create the frame.
-	 * @throws SQLException 
-	 */
-	public ModificarInventario() throws SQLException {
+	public ModificarInventario(){
 		createFrame();
-		Funciones.cargarDatosCbx(cbxCinema,FachadaCine.getInstance().consultarCines());
-		cargarProductos();
+		try {
+			Funciones.cargarDatosCbx(cbxCinema,FachadaCine.getInstance().consultarCines());
+			cargarProductos();
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase ModificarInventario: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
+		setIdentificador();
 	}
 	
 	private void createFrame() {
-		setTitle("Actualizar Invetario");
+		setTitle("Actualizar Inventario");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 499, 279);
 		contentPane = new JPanel();
@@ -100,7 +102,7 @@ public class ModificarInventario extends JFrame {
 				actualizarInventario();
 				}}
 		);
-		btnAceptar.setBounds(77, 182, 148, 37);
+		btnAceptar.setBounds(51, 182, 174, 37);
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -110,7 +112,7 @@ public class ModificarInventario extends JFrame {
 				dispose();
 			}
 		});
-		btnSalir.setBounds(247, 182, 148, 37);
+		btnSalir.setBounds(263, 182, 174, 37);
 		contentPane.add(btnSalir);
 		setLocationRelativeTo(null);
 	}
@@ -156,7 +158,7 @@ public class ModificarInventario extends JFrame {
 		}
 		catch(SQLException  | NumberFormatException e) {
 			Funciones.mensajeConsola("Modificar Inventario: "+e.getMessage());
-			Funciones.mensajePantalla("Error al ejecutar la operación");
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
 			
 		}
 	}
@@ -167,17 +169,16 @@ public class ModificarInventario extends JFrame {
 		try {
 			if(!cbxProducto.getSelectedItem().toString().isEmpty() && !cbxCinema.getSelectedItem().toString().isEmpty()) {
 				int idProducto = Integer.parseInt(cbxProducto.getSelectedItem().toString().split(" - ")[0]);
-				String nombreProducto = cbxProducto.getSelectedItem().toString().split(" - ")[1];
 				int idCine = cbxCinema.getSelectedIndex();
 				boolean bandera = FachadaInventario.getInstance().verificarProductoEnCine(cbxCinema.getSelectedIndex(), idProducto);
 				if(bandera) { //el producto ya fue registrado en el cine
 					Funciones.mensajePantalla("El producto ya ha sido registrado en el cine seleccionado, se actualizará la existencia");
-					ResultSet producto = FachadaInventario.getInstance().consultarInventario(idCine, nombreProducto);
+					ResultSet producto = FachadaInventario.getInstance().consultarInventario(idCine, idProducto);
 					producto.next();
 					txtCantidad.setText(producto.getObject(3).toString());
 					lblUMedicion.setText(producto.getObject(4).toString());
 					accion = 2;
-					btnAceptar.setText("Actualizar existencia");
+					btnAceptar.setText("Actualizar existencias");
 				}
 				else { //el producto no ha sido registrado en el cine
 					Funciones.mensajePantalla("El producto no ha sido registrado en el cine seleccionado");
@@ -187,8 +188,12 @@ public class ModificarInventario extends JFrame {
 				}
 			}
 		} 
-		catch (SQLException  | NullPointerException e) {
-					Funciones.mensajeConsola("Modificar inventario: "+e.getMessage());
+		catch (SQLException e) {
+			Funciones.mensajeConsola("Modificar inventario: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+		}
+		catch(NullPointerException e) {
+			
 		}
 	}
 	
@@ -198,6 +203,11 @@ public class ModificarInventario extends JFrame {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Agregar o modificar existencias de un cine";
 	}
 }
 

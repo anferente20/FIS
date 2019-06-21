@@ -11,7 +11,9 @@ import java.sql.SQLException;
  *fecha:3.5.19
  */
 public class GestorInventario extends Gestor{
-
+	/**
+	 * @throws SQLException
+	 */
 	GestorInventario() throws SQLException {
 		super();
 	}
@@ -53,7 +55,7 @@ public class GestorInventario extends Gestor{
 	/**
 	 * Método que consulta las existencias de inventario de un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
-	 * @return ResultSet existencias del inventario
+	 * @return existencias del inventario
 	 * @throws SQLException 
 	 */
 	
@@ -69,8 +71,26 @@ public class GestorInventario extends Gestor{
 	/**
 	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
 	 * @param idCine ID del cine del cual se van a consultar las existencias
-	 * @param nombreProducto nombre del producto que se va a consultar
+	 * @param idProducto id del producto que se va a consultar
 	 * @return ResultSet existencias del inventario
+	 * @throws SQLException 
+	 */
+	
+	ResultSet consultarInventario(int idCine, int idProducto) throws SQLException {
+		String consulta = "select producto.idProducto, producto.nombre, inventario.cantidad, producto.unidadMedicion from \r\n" + 
+				"producto, inventario, cine where producto.idProducto = inventario.idProducto and inventario.idCine = cine.idCine\r\n" + 
+				"and cine.idCine = ? and producto.idProducto = ?;";
+		PreparedStatement sentencia = gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idCine);
+		sentencia.setInt(2,idProducto);
+		return sentencia.executeQuery();
+	}
+	
+	/**
+	 * Método que consulta las existencias de inventario  de un producto específico en un cine en específico
+	 * @param idCine ID del cine del cual se van a consultar las existencias
+	 * @param nombreProducto nombre del producto que se va a consultar
+	 * @return existencias del inventario
 	 * @throws SQLException 
 	 */
 	
@@ -87,7 +107,7 @@ public class GestorInventario extends Gestor{
 	 * Método que verifica la existencia de un producto en un cine en específico
 	 * @param idCine ID del cine del que se quiere consultar existencia
 	 * @param idProducto ID del producto del que se quiere consultar existencia
-	 * @return boolean true si la consulta no está vacía, false si está vacia
+	 * @return true si la consulta no está vacía, false si está vacia
 	 * @throws SQLException
 	 */
 	boolean verificarProductoEnCine(int idCine,int idProducto) throws SQLException {
