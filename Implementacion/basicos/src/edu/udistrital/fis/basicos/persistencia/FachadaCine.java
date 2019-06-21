@@ -1,5 +1,6 @@
 package edu.udistrital.fis.basicos.persistencia;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -29,5 +30,24 @@ public class FachadaCine{
 	 */
 	public ResultSet consultarCines() throws SQLException {
 		return gestor.consultarCines();
+	}
+	
+	/**
+	 * Método que obtiene el nombre de un cine dado su id
+	 * @param idCine Identificador del cine
+	 * @return Nombre del cine asociado al identificador
+	 * @throws SQLException
+	 */
+	public String getNombreCine(int idCine) throws SQLException {
+		return this.gestor.getNombreCine(idCine);
+	}
+	/**
+	 * Método que obtiene el id del cine al que está asociada una sala
+	 * @param idSala Sala de la cual se quiere consultar el cine
+	 * @return Identificador de la sala
+	 * @throws SQLException
+	 */
+	public int getIdCine(int idSala) throws SQLException {
+		return this.gestor.getIdCine(idSala);
 	}
 }

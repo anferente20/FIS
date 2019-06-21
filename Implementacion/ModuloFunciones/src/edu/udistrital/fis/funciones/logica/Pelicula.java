@@ -1,7 +1,6 @@
 package edu.udistrital.fis.funciones.logica;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -72,7 +71,7 @@ public class Pelicula implements Runnable{
 		this.funcionesPorDia = funcionesPorDia;
 		this.director = director;
 		//se agrega la pelicula
-		agregarPelicula();
+		if(algoritmo!=null) agregarPelicula();
 	}
 	
 	public int getId() {
@@ -126,7 +125,7 @@ public class Pelicula implements Runnable{
 			Funciones.mensajePantalla("No fue posible llevar a cabo la operación");
 		}
 	}
-	
+	//Obtiene el Id de la película en la base de datos
 	private void setId() {
 		String consulta = "select max(idPelicula) from pelicula;";
 		try {

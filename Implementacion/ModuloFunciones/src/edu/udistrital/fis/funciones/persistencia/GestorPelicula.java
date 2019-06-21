@@ -55,6 +55,29 @@ public class GestorPelicula extends Gestor{
 	 * @throws SQLException
 	 */
 	boolean insertarFuncion(Funcion funcion) throws SQLException {
+		ResultSet resultado = this.verificarFuncion(funcion);
+		//se verifica si se cruza con otra funcion
+		if(!resultado.next()) { 
+			//La función no se cruza con ninguna otra funcion
+			String consulta = "insert into "
+					+ "funcion (idPelicula,fecha,hora,idSala,estado) "
+					+ "values"
+					+ "(?,'"+funcion.getFecha()+"','"+funcion.getHora()+"',?,1);";
+			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+			sentencia.setInt(1,funcion.getPelicula().getId());
+			sentencia.setInt(2,funcion.getIdSala());
+			sentencia.execute();
+			return true;
+		}
+		return false; //La funcion se cruza con otra función y no puede ser insertarda
+	}
+	/**
+	 * Método que verifica si una funcion a insertar se cruza con otras
+	 * @param funcion Funcion que se quiere insertar
+	 * @return Devuelve todas las funciones con las que se cruza la funcion a insertar
+	 * @throws SQLException
+	 */
+	private ResultSet verificarFuncion(Funcion funcion) throws SQLException{
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Pelicula pel = funcion.getPelicula();
 		PreparedStatement sentencia;
@@ -106,23 +129,11 @@ public class GestorPelicula extends Gestor{
 				"	)\n" + 
 				")\n" + 
 				"and\n" + 
-				"sala.idSala = "+funcion.getIdSala()+" ;";
+				"sala.idSala = "+funcion.getIdSala()+" "+
+				"and funcion.estado = 1;";
 		sentencia = this.gestor.getConector().prepareStatement(consulta);
 		ResultSet resultado = sentencia.executeQuery();
-		//se verifica si se cruza con otra funcion
-		if(!resultado.next()) { 
-			//La función no se cruza con ninguna otra funcion
-			consulta = "insert into "
-					+ "funcion (idPelicula,fecha,hora,idSala,estado) "
-					+ "values"
-					+ "(?,'"+funcion.getFecha()+"','"+funcion.getHora()+"',?,1);";
-			sentencia = this.gestor.getConector().prepareStatement(consulta);
-			sentencia.setInt(1,funcion.getPelicula().getId());
-			sentencia.setInt(2,funcion.getIdSala());
-			sentencia.execute();
-			return true;
-		}
-		return false; //La funcion se cruza con otra función y no puede ser insertarda
+		return resultado;
 	}
 	
 	/**
@@ -150,5 +161,157 @@ public class GestorPelicula extends Gestor{
 			return resultado.getInt(1);
 		}
 		return 0;
+	}
+	/**
+	 * Método que retorna el consecutivo de una sala dentro de una cine dado si ID
+	 * @param idSala Identificador de la sala
+	 * @return Consecutivo de la sala dentro de su cine
+	 * @throws SQLException 
+	 */
+	int getConsecutivoSala(int idSala) throws SQLException {
+		String consulta = "select consecutivo from sala where idSala = ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idSala);
+		ResultSet resultado = sentencia.executeQuery();
+		resultado.next();
+		return resultado.getInt("consecutivo");
+	}
+	/**
+	 * Método que cancela una funcion 
+	 * @param idFuncion Identificador de la funcion que se va a cancelar
+	 * @throws SQLException
+	 */
+	void cancelarFuncion (int idFuncion) throws SQLException {
+		String consulta = "update funcion set estado = 0 where idFuncion = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1,idFuncion);
+		sentencia.execute();
+	}
+	/**
+	 * Método que verifica si una funcion puede ser modificada, es decir, verifica si la nueva informacion
+	 * hace que la funcion se cruce con otra
+	 * @param funcion Funcion con la nueva informacion y que se quiere modificar
+	 * @return true si la modificacion pudo hacerse, false si no pudo hacerse
+	 * @throws SQLException
+	 */
+	boolean verificarModificacion(Funcion funcion) throws SQLException {
+		ResultSet resultado = verificarFuncion(funcion);
+		if(!resultado.next()) {
+			//La modificacion se puede hacer
+			modificarFuncion(funcion);
+		}
+		else {
+			int idFuncion = resultado.getInt("idfuncion");
+			if(idFuncion==funcion.getIdFuncion()) {
+				//Se cruza consigo misma, por tanto la modificacion se puede hacer
+				modificarFuncion(funcion);
+			}
+			else {
+				//la modificacion no se puede hacer
+				return false;
+			}
+		}
+		return true;
+	}
+	/**
+	 * Funcion que ejecuta una actualizacion sobre la tabla funcion
+	 * @param funcion Funcion con la nueva informacion
+	 * @throws SQLException
+	 */
+	private void modificarFuncion(Funcion funcion) throws SQLException {
+		FuncionesTiempo ft = new FuncionesTiempo();
+		String consulta = "update funcion set idSala = ?, fecha = '"+ft.DateToString(funcion.getFecha())+"', "
+				+ "hora = '"+funcion.getHora()+"' where idfuncion = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, funcion.getIdSala());
+		sentencia.setInt(2, funcion.getIdFuncion());
+		sentencia.execute();
+	}
+	/**
+	 * Funcion que consulta funciones por pelicula en una fecha y cine en específico
+	 * @param fecha Fecha en formato dd/MM/yyyy
+	 * @param idPelicula Identificacion de la pelicula
+	 * @param idCine Identificacion del cine
+	 * @return Funciones que cumplan con los criterios de busqueda
+	 * @throws SQLException
+	 */
+	ResultSet consultarFuncionesByPeliculaByCine(String fecha,int idPelicula,int idCine) throws SQLException {
+		String consulta = 
+				"select "
+				+ "pelicula.nombrePelicula, "
+				+ "funcion.hora, "
+				+ "funcion.fecha, "
+				+ "sala.idsala, "
+				+ "pelicula.duracion, "
+				+ "funcion.idfuncion, "
+				+ "cine.nombreCine, "
+				+ "pelicula.img imagenPelicula "
+				+ "from "
+				+ "pelicula,funcion,sala,cine "
+				+ "where "
+				+ "pelicula.idpelicula = funcion.idpelicula and "
+				+ "funcion.idsala = sala.idSala and "
+				+ "sala.idcine = cine.idcine and "
+				+ "funcion.fecha = '"+fecha+"' and "
+				+ "pelicula.idPelicula = ? and "
+				+ "cine.idcine = ? and "
+				+ "funcion.estado = 1 "
+				+ "order by funcion.hora asc;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idPelicula);
+		sentencia.setInt(2, idCine);
+		return sentencia.executeQuery();
+	}
+	/**
+	 * Método que consulta funciones en una fecha y sala de un cine en específico
+	 * @param fecha Fecha en formato dd/MM/yyyy
+	 * @param consecutivoSala Consecutivo de la sala dentro de su cine
+	 * @param idCine Identificador del cine 
+	 * @return Funciones que cumplen con los criterios de búsqueda
+	 * @throws SQLException 
+	 */
+	ResultSet consultarFuncionesBySalaByFecha(String fecha,int consecutivoSala,int idCine) throws SQLException {
+		String consulta = 
+				"select "
+				+ "funcion.hora, "
+				+ "pelicula.nombre, "
+				+ "pelicula.duracion, "
+				+ "funcion.fecha, "
+				+ "sala.consecutivo consecutivoSala, "
+				+ "cine.nombreCine, "
+				+ "pelicula.img imagenPelicula "
+				+ "from "
+				+ "funcion, pelicula, sala, cine "
+				+ "where "
+				+ "funcion.idpelicula = pelicula.idpelicula and "
+				+ "funcion.idsala = sala.idsala and "
+				+ "sala.idcine = cine.idcine and "
+				+ "funcion.fecha = '"+fecha+"' and "
+				+ "sala.consecutivo = ? and "
+				+ "cine.idcine = ? "
+				+ "and funcion.estado = 1 "
+				+ "order by funcion.hora asc;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, consecutivoSala);
+		sentencia.setInt(2, idCine);
+		return sentencia.executeQuery();
+	}
+	
+	/**
+	 * Método que consulta todas las películas que tengan funciones vigentes
+	 * @return Nombre de las películas vigentes
+	 * @throws SQLException
+	 */
+	ResultSet consultarPeliculasVigentes() throws SQLException {
+		String consulta = 
+				"select distinct "
+				+ "pelicula.idpelicula || ' - ' || pelicula.nombrePelicula || ' - Estreno: ' || pelicula.fechaestreno  "
+				+ "from "
+				+ "pelicula, funcion "
+				+ "where "
+				+ "pelicula.idpelicula = funcion.idpelicula and "
+				+ "funcion.fecha >= now()";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		return sentencia.executeQuery();
 	}
 }

@@ -287,15 +287,16 @@ pelicula.duracion duracionPelicula,
 funcion.fecha fechaFuncion,
 funcion.hora horaFuncion,
 (funcion.hora+pelicula.duracion) horaTerminacion,
-cine.idCine,
-sala.consecutivo
+cine.nombreCine,
+sala.consecutivo,
+funcion.estado
 from
 pelicula, sala, cine,funcion
 where
 pelicula.idPelicula = funcion.idPelicula and
 sala.idSala = funcion.idSala and
 sala.idCine = cine.idCine
-order by cine.idCine,funcion.idFuncion;
+order by cine.idCine,funcion.fecha;
 
 create view HoraTerminacionFunciones as
 SELECT funcion.idfuncion,

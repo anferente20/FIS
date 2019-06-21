@@ -41,12 +41,13 @@ public class AgregarPelicula extends JFrame {
 	private JTextField txtFuncionesDia;
 
 	public AgregarPelicula() {
+		//Imagen que se va a cargar
+		img = new Imagen();
 		createFrame();
 	}
 	
 	private void createFrame() {
-		//Imagen que se va a cargar
-		img = new Imagen();
+		
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 782, 688);
@@ -237,6 +238,13 @@ public class AgregarPelicula extends JFrame {
 		if(actualFecha.compareTo(dpFechaEstreno.getDate())>0) {
 			return true;
 		}
+		try {
+			FuncionesTiempo ft = new FuncionesTiempo();
+			ft.DateToString(dpFechaEstreno.getDate());
+		}
+		catch(NullPointerException npe) {
+			return true;
+		}
 		return false;
 	}
 	//Valida que solo existan caracteres de tipo numerico
@@ -265,4 +273,5 @@ public class AgregarPelicula extends JFrame {
 		}
 		return false;
 	}
+
 }

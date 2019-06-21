@@ -7,7 +7,6 @@ import java.util.Date;
 import java.time.Period;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.funciones.persistencia.FachadaPelicula;
-import edu.udistrital.fis.funciones.presentacion.AgregarPelicula;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.presentacion.ProgressBar;
 
