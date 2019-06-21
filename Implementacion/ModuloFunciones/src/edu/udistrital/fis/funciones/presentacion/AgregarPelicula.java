@@ -19,13 +19,15 @@ import java.awt.event.ActionListener;
 
 import java.util.Date;
 import java.awt.event.ActionEvent;
+
+import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.funciones.logica.AlgoritmoPrimero;
 import edu.udistrital.fis.funciones.logica.Pelicula;
 import edu.udistrital.imagen.Imagen;
 
-public class AgregarPelicula extends JFrame {
+public class AgregarPelicula extends AbstractFrame{
 
 	private JPanel contentPane;
 	private JTextField txtNombre;
@@ -48,7 +50,7 @@ public class AgregarPelicula extends JFrame {
 	
 	private void createFrame() {
 		
-		
+		setIdentificador();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 782, 688);
 		contentPane = new JPanel();
@@ -272,6 +274,11 @@ public class AgregarPelicula extends JFrame {
 			
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Agregar una nueva película";
 	}
 
 }

@@ -16,10 +16,11 @@ import javax.swing.border.EmptyBorder;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.empleado.logica.Empleado;
 import edu.udistrital.fis.empleado.persistencia.FachadaEmpleado;
 
-public class AgregarEmpleado extends JFrame {
+public class AgregarEmpleado extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
@@ -28,9 +29,16 @@ public class AgregarEmpleado extends JFrame {
 	private JTextField txtIdentificacion;
 	private JComboBox<String> cbCine;
 
-	public AgregarEmpleado() throws SQLException{
+	public AgregarEmpleado(){
 		createFrame();
-		Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		try {
+			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+		} catch (SQLException e) {
+			Funciones.mensajeConsola("Clase AgregarEmpleado: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+			dispose();
+		}
+		setIdentificador();
 	}
 	
 	private void createFrame() {
@@ -148,6 +156,11 @@ public class AgregarEmpleado extends JFrame {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Agregar un empleado";
 	}
 }
 

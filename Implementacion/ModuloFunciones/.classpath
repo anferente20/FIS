@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="/App Administrativo/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="/App Administrativo/lib/placeHolder.jar"/>
 	<classpathentry kind="lib" path="/App Administrativo/lib/postgresql-42.2.5.jar"/>
+	<classpathentry kind="lib" path="/App Administrativo/api/api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

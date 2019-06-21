@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import com.toedter.calendar.JDateChooser;
 
+import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
@@ -20,7 +21,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ConsultarFuncionesBySala extends JFrame {
+public class ConsultarFuncionesBySala extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JComboBox<String> cbxCine;
@@ -29,6 +30,7 @@ public class ConsultarFuncionesBySala extends JFrame {
 
 
 	public ConsultarFuncionesBySala() {
+		setIdentificador();
 		createFrame();
 		try {
 			cargarCines();
@@ -141,5 +143,10 @@ public class ConsultarFuncionesBySala extends JFrame {
 				Funciones.mensajePantalla("Error, la operacion no pudo llevarse a cabo");
 			}
 		}
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Consultar funciones por sala";
 	}
 }

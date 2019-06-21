@@ -42,7 +42,8 @@ public class GestorEmpleado extends Gestor{
 	 */
 	ResultSet autoCompletarEmpleado(String parametro) throws SQLException {
 		ResultSet empleados = null;
-		String consulta = "select idEmpleado || ' - '|| nombreEmpleado || ' ' || apellidoEmpleado from Empleado where lower(nombreEmpleado) like ? || '%' or lower(apellidoEmpleado) like "
+		String consulta = "select idEmpleado || ' - '|| nombreEmpleado || ' ' || apellidoEmpleado "
+				+ "from Empleado where lower(nombreEmpleado) like ? || '%' or lower(apellidoEmpleado) like "
 				+ "? || '%' and estado = 1;";
 		
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
@@ -74,7 +75,7 @@ public class GestorEmpleado extends Gestor{
 	 */
 	ResultSet consultarEmpleadoByID(int id) throws SQLException {
 		String consulta = "select empleado.nombreEmpleado as nombres, empleado.apellidoEmpleado as apellidos, empleado.identificacionEmpleado as identificacion,"
-				+ "Cine.nombreCine as cine from Empleado, Cine where  Empleado.idEmpleado = ? and Empleado.idCine = Cine.idCine  and estado = 1";
+				+ "Cine.nombreCine as cine, idtipoempleado tipoEmpleado from Empleado, Cine where  Empleado.idEmpleado = ? and Empleado.idCine = Cine.idCine  and estado = 1";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, id);
 		return sentencia.executeQuery();	

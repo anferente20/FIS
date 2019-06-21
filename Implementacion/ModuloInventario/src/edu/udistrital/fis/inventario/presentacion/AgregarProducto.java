@@ -1,24 +1,21 @@
 package edu.udistrital.fis.inventario.presentacion;
+
 import edu.udistrital.fis.basicos.logica.Funciones;
+import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.inventario.persistencia.FachadaInventario;
 import edu.udistrital.fis.inventario.logica.Producto;
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 
-public class AgregarProducto extends JFrame {
+public class AgregarProducto extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
@@ -27,6 +24,7 @@ public class AgregarProducto extends JFrame {
 
 	public AgregarProducto() {
 		createFrame();
+		setIdentificador();
 	}
 	
 	public void createFrame() {
@@ -129,5 +127,10 @@ public class AgregarProducto extends JFrame {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Agregar un nuevo producto";
 	}
 }

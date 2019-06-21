@@ -4,6 +4,8 @@ package edu.udistrital.fis.funciones.presentacion;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
@@ -25,7 +27,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 
-public class ConsultarFuncionesByPelicula extends JFrame {
+public class ConsultarFuncionesByPelicula extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JComboBox<String> cbxCine;
@@ -36,6 +38,7 @@ public class ConsultarFuncionesByPelicula extends JFrame {
 
 	
 	public ConsultarFuncionesByPelicula() {
+		setIdentificador();
 		createFrame();
 		try {
 			cargarCines();
@@ -156,5 +159,11 @@ public class ConsultarFuncionesByPelicula extends JFrame {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void setIdentificador() {
+		this.identificador = "Consultar funciones por película";
+		
 	}
 }

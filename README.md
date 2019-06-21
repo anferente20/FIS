@@ -25,6 +25,7 @@
 <h3>Nomenclatura de paquetes</h3>
 <h5>Los paquetes deberán ser nombrados de la siguiente manera: edu.udistrital.fis.<b>[nombre-del-modulo]</b>.<b>[nombre-de-la-capa]</b></h5>
 
+<<<<<<< HEAD
 <h3>NOTAS IMPORTANTES:</H3>
 <ul>
 	<li type="disc">
@@ -32,4 +33,10 @@
 	del paquete en el que se encuentran
 	</il>
 </ul>
+=======
+<h3>IMPORTANTE:</h3>
+<ul>
+    <li type="disc">TODOS los Frame deberán extender de la clase edu.udistrital.fis.basicos.persistencia.AbstractFrame en el componente 'basics'; esto para poder aplicar la referenciacion de componentes de manera dinámica</li>
+  </ul>
+>>>>>>> componentes
 
