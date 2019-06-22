@@ -127,6 +127,16 @@ add constraint fk_espacio_funcion foreign key (idFuncion) references Funcion (id
 add constraint fk_espacio_asiento foreign key (fila,columna,idSala) references Asiento (fila,columna,idSala) on delete no action on update no action;
 
 
+CREATE TABLE Combo
+(
+	idCombo serial primary key,
+	descripcion text NOT NULL,
+	precio decimal NOT NULL,
+	estado integer NOT NULL,
+	img bytea not null
+)
+;
+
 
 
 
@@ -231,17 +241,6 @@ ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Combo
 ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Compra
 	FOREIGN KEY (idCompra) REFERENCES Compra (idCompra) ON DELETE No Action ON UPDATE No Action;
 
-
-
-
-CREATE TABLE Combo
-(
-	idCombo integer primary key,
-	descripcion text NOT NULL,
-	precio decimal NOT NULL,
-	estado boolean NOT NULL
-)
-;
 
 CREATE TABLE Cliente
 (

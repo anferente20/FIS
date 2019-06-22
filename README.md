@@ -25,7 +25,6 @@
 <h3>Nomenclatura de paquetes</h3>
 <h5>Los paquetes deberán ser nombrados de la siguiente manera: edu.udistrital.fis.<b>[nombre-del-modulo]</b>.<b>[nombre-de-la-capa]</b></h5>
 
-<<<<<<< HEAD
 <h3>NOTAS IMPORTANTES:</H3>
 <ul>
 	<li type="disc">

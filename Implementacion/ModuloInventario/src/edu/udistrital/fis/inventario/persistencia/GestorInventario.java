@@ -1,6 +1,10 @@
 package edu.udistrital.fis.inventario.persistencia;
 
 import edu.udistrital.fis.basicos.persistencia.Gestor;
+import edu.udistrital.fis.inventario.logica.Combo;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -120,6 +124,43 @@ public class GestorInventario extends Gestor{
 			return true;
 		}
 		return false;		
+	}
+	
+	void insertarCombo(Combo combo) throws SQLException, FileNotFoundException {
+		String consulta = 
+				"insert into "
+				+ "combo (descripcion,precio,estado,img) "
+				+ "values "
+				+ "(?,?,?,?);";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, combo.getDescripcion());
+		sentencia.setFloat(2, combo.getPrecio());
+		sentencia.setInt(3, 1);
+		sentencia.setBinaryStream(4,new FileInputStream(combo.getImg().getFile()),combo.getImg().getFile().length());
+		sentencia.execute();
+	}
+	
+	ResultSet consultarCombos() throws SQLException {
+		String consulta = "select * from combo where estado = 1;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		return sentencia.executeQuery();
+	}
+	
+	void darBajaCombo(int idCombo) throws SQLException {
+		String consulta = "update combo set estado = 0 where idcombo = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCombo);
+		sentencia.execute();
+	}
+	
+	void modificarCombo(Combo combo) throws SQLException, FileNotFoundException {
+		String consulta = "update combo set descripcion = ?, precio = ?, img = ? where idcombo = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, combo.getDescripcion());
+		sentencia.setFloat(2, combo.getPrecio());
+		sentencia.setBinaryStream(3,new FileInputStream(combo.getImg().getFile()),combo.getImg().getFile().length());
+		sentencia.setInt(4, combo.getIdCombo());
+		sentencia.execute();
 	}
 	
 }

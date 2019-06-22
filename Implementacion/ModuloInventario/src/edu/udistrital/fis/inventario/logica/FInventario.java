@@ -5,6 +5,7 @@ import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.core.IInventario;
 import edu.udistrital.fis.inventario.presentacion.AgregarProducto;
 import edu.udistrital.fis.inventario.presentacion.ConsultarInventario;
+import edu.udistrital.fis.inventario.presentacion.GestionCombos;
 import edu.udistrital.fis.inventario.presentacion.ModificarInventario;
 
 
@@ -16,6 +17,7 @@ public class FInventario implements IInventario{
 		array.add(new AgregarProducto());
 		array.add(new ConsultarInventario());
 		array.add(new ModificarInventario());
+		array.add(new GestionCombos());
 		return array;
 	}
 

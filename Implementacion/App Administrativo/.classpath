@@ -8,7 +8,7 @@
 			<attribute name="javadoc_location" value="file:/E:/Andrés/Universidad/SÉPTIMO%20SEMESTRE/FIS/proyecto/Implementacion/doc/basics/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/imagen.jar"/>
+	<classpathentry kind="lib" path="lib/imagen.jar" sourcepath="/Imagen"/>
 	<classpathentry kind="lib" path="lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/placeHolder.jar"/>
 	<classpathentry kind="lib" path="lib/postgresql-42.2.5.jar"/>

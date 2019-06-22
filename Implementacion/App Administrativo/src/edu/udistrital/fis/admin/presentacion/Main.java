@@ -7,8 +7,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import edu.udistrital.fis.admin.utilidades.*;

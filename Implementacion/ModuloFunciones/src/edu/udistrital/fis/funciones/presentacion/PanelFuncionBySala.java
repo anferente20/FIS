@@ -26,6 +26,7 @@ public class PanelFuncionBySala extends JPanel implements PanelFuncion{
 	private JLabel lblPelicula;
 	private JButton btnCancelar;
 	private JLabel lblImg;
+	private JButton btnModificar;
 
 
 	public PanelFuncionBySala(Funcion funcion, byte[] imgPelicula) {
@@ -56,7 +57,7 @@ public class PanelFuncionBySala extends JPanel implements PanelFuncion{
 		lblPelicula.setBounds(93, 73, 102, 20);
 		add(lblPelicula);
 		
-		JButton btnModificar = new JButton("Modificar");
+		btnModificar = new JButton("Modificar");
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				modificar();
@@ -106,6 +107,7 @@ public class PanelFuncionBySala extends JPanel implements PanelFuncion{
 				this.btnCancelar.setEnabled(false);
 				this.lblEstado.setText("CANCELADA");
 				this.btnCancelar.setEnabled(false);
+				this.btnModificar.setEnabled(false);
 				this.lblEstado.setForeground(Color.red);
 				Funciones.mensajePantalla("¡FUNCIÓN ELIMINADA!");
 			} catch (SQLException e) {

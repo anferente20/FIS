@@ -99,7 +99,7 @@ public class MostrarFuncionesSala extends JFrame {
 				x += 188;
 				agregarFuncion(funciones,x);
 			}
-			panelDinamico.setPreferredSize(new Dimension(533, x));
+			panelDinamico.setPreferredSize(new Dimension(533, x+188));
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase MostrarFuncionesPelicula: "+e.getMessage());
 			this.dispose();

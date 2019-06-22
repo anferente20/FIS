@@ -2,7 +2,6 @@ package edu.udistrital.fis.funciones.presentacion;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import edu.udistrital.fis.basicos.logica.Funciones;
@@ -24,7 +23,6 @@ import java.awt.Dimension;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLayeredPane;
-import javax.swing.JSplitPane;
 
 class MostrarFuncionesPelicula extends JFrame {
 
@@ -115,7 +113,7 @@ class MostrarFuncionesPelicula extends JFrame {
 				x += 150;
 				agregarFuncion(funciones,x);
 			}
-			panelDinamico.setPreferredSize(new Dimension(298, x));
+			panelDinamico.setPreferredSize(new Dimension(298, x+150));
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase MostrarFuncionesPelicula: "+e.getMessage());
 			this.dispose();

@@ -12,7 +12,6 @@ import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
 import edu.udistrital.fis.funciones.logica.Funcion;
-import edu.udistrital.fis.funciones.logica.Pelicula;
 import edu.udistrital.fis.funciones.persistencia.FachadaPelicula;
 
 import javax.swing.JTextField;

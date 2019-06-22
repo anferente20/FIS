@@ -1,11 +1,13 @@
 package edu.udistrital.fis.inventario.persistencia;
 
 
+import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.udistrital.fis.inventario.persistencia.GestorInventario;
 import edu.udistrital.fis.inventario.persistencia.GestorProducto;
+import edu.udistrital.fis.inventario.logica.Combo;
 import edu.udistrital.fis.inventario.logica.Producto;
 
 /**
@@ -156,6 +158,22 @@ public class FachadaInventario {
 	 */
 	public boolean verificarProductoEnCine(int idCine, int idProducto) throws SQLException {
 		return gestorI.verificarProductoEnCine(idCine, idProducto);
+	}
+	
+	public void insertarCombo(Combo combo) throws SQLException, FileNotFoundException {
+		this.gestorI.insertarCombo(combo);
+	}
+	
+	public ResultSet consultarCombos() throws SQLException {
+		return this.gestorI.consultarCombos();
+	}
+	
+	public void darBajaCombo(int idCombo) throws SQLException {
+		this.gestorI.darBajaCombo(idCombo);
+	}
+	
+	public void modificarCombo(Combo combo) throws SQLException, FileNotFoundException {
+		this.gestorI.modificarCombo(combo);
 	}
 
 }

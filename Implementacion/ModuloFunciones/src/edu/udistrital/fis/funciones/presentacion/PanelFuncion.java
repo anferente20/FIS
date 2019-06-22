@@ -1,6 +1,5 @@
 package edu.udistrital.fis.funciones.presentacion;
 
-import javax.swing.JPanel;
 
 abstract interface PanelFuncion{
 
