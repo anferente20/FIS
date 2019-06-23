@@ -40,7 +40,7 @@ public class DarBajaEmpl extends AbstractFrame {
 	}
 
 	private void createFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 797, 355);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,7 +61,13 @@ public class DarBajaEmpl extends AbstractFrame {
 				new String[] {
 					"ID", "Nombres", "Apellidos", "Identificaci\u00F3n","Cine"
 				}
-			);
+			){
+			@Override
+			   public boolean isCellEditable(int row, int column) {
+			       //Only the third column
+			       return false;
+			   }
+		};
 		tablaEmpleados.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		tablaEmpleados.setBounds(63, 196, 541, 150);
 		tablaEmpleados.setModel(modeloTabla);

@@ -33,12 +33,15 @@ public class ConsultarInventario extends AbstractFrame{
 	private JTable tablaProductos;
 	private DefaultTableModel modeloTabla;
 
-	public ConsultarInventario(){
-		setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		setTitle("Consultar inventario");
+	public ConsultarInventario(int tipoAdmin,int idCine){
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbxCines, FachadaCine.getInstance().consultarCines());
+			if(tipoAdmin==1) //Administrador normal
+			{
+				cbxCines.setSelectedIndex(idCine);
+				cbxCines.setEnabled(false);
+			}
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase ConsultarInventario: "+e.getMessage());
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
@@ -48,7 +51,9 @@ public class ConsultarInventario extends AbstractFrame{
 	}
 	
 	private void createFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		setTitle("Consultar inventario");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 597, 328);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -103,7 +108,14 @@ public class ConsultarInventario extends AbstractFrame{
 
 		});
 		
-		modeloTabla = new DefaultTableModel(new Object[][] {}, new Object[] {"ID","Nombre","Cantidad","Unidad de medición"});
+		modeloTabla = new DefaultTableModel(new Object[][] {}, new Object[] {"ID","Nombre","Cantidad","Unidad de medición"})
+		{
+			@Override
+			   public boolean isCellEditable(int row, int column) {
+			       //Only the third column
+			       return false;
+			   }
+		};
 		
 		tablaProductos = new JTable();
 		tablaProductos.setModel(modeloTabla);

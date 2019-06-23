@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -27,6 +28,7 @@ public class AgregarProducto extends AbstractFrame {
 	}
 	
 	public void createFrame() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Agregar Producto");
 		setBounds(100, 100, 380, 272);
 		contentPane = new JPanel();

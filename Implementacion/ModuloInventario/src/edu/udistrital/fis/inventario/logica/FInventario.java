@@ -12,12 +12,16 @@ import edu.udistrital.fis.inventario.presentacion.ModificarInventario;
 public class FInventario implements IInventario{
 
 	@Override
-	public ArrayList<AbstractFrame> getPresentacion() {
+	public ArrayList<AbstractFrame> getPresentacion(int tipoAdmin, int idCine) {
 		ArrayList<AbstractFrame> array = new ArrayList<AbstractFrame>();
-		array.add(new AgregarProducto());
-		array.add(new ConsultarInventario());
-		array.add(new ModificarInventario());
-		array.add(new GestionCombos());
+		if(tipoAdmin==2) //Super administrador
+		{
+			array.add(new AgregarProducto());
+			array.add(new GestionCombos());
+		}
+		array.add(new ConsultarInventario(tipoAdmin,idCine));
+		array.add(new ModificarInventario(tipoAdmin,idCine));
+		
 		return array;
 	}
 

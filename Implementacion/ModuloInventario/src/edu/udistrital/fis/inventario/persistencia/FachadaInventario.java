@@ -59,7 +59,7 @@ public class FachadaInventario {
 	 * @return ResultSet con la lista de los productos
 	 * @throws SQLException
 	 */
-	public ResultSet listarProductoss() throws SQLException {
+	public ResultSet listarProductos() throws SQLException {
 		return gestorP.listarProductos();
 	}
 	

@@ -53,5 +53,13 @@ public class GestorCine extends Gestor{
 		resultado.next();
 		return resultado.getInt("idcine");
 	}
+	
+	ResultSet login(String usuario, String pass) throws SQLException {
+		String consulta = "select idtipousuario, idcineencargado from usuario where idusuario = ? and contrasena = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, usuario);
+		sentencia.setString(2, pass);
+		return sentencia.executeQuery();
+	}
 }
 

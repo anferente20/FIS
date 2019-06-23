@@ -4,5 +4,5 @@ import java.util.ArrayList;
 import edu.udistrital.fis.api.logica.AbstractFrame;
 
 public interface IInventario {
-	public ArrayList<AbstractFrame> getPresentacion();
+	public ArrayList<AbstractFrame> getPresentacion(int tipoAdmin, int idCine);
 }

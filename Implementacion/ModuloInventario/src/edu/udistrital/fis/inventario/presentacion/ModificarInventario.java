@@ -28,10 +28,15 @@ public class ModificarInventario extends AbstractFrame {
 	private int accion; // 1 -> agregar existencia al cine; 2 -> actualizar existencia del cine
 	private JButton btnAceptar;
 
-	public ModificarInventario(){
+	public ModificarInventario(int tipoAdmin,int idCine){
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbxCinema,FachadaCine.getInstance().consultarCines());
+			if(tipoAdmin==1) //Administrador normal
+			{
+				cbxCinema.setSelectedIndex(idCine);
+				cbxCinema.setEnabled(false);
+			}
 			cargarProductos();
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase ModificarInventario: "+e.getMessage());
@@ -119,7 +124,7 @@ public class ModificarInventario extends AbstractFrame {
 	
 	
 	private void cargarProductos() throws SQLException {
-		ResultSet productos = FachadaInventario.getInstance().listarProductoss();
+		ResultSet productos = FachadaInventario.getInstance().listarProductos();
 		if(!productos.next()) {
 			Funciones.mensajePantalla("Error, no se ha ingresado ningún producto. Por favor ingrese uno en la pestaña 'Agregar producto'");
 			dispose();

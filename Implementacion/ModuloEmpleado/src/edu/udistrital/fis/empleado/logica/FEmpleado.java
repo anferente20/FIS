@@ -9,12 +9,14 @@ import edu.udistrital.fis.empleado.presentencion.*;
 public class FEmpleado implements IEmpleados{
 
 	@Override
-	public ArrayList<AbstractFrame> getPresentacion() {
+	public ArrayList<AbstractFrame> getPresentacion(int tipoAdmin, int idCine) {
 		ArrayList<AbstractFrame> array = new ArrayList<AbstractFrame>();
-		array.add(new AgregarEmpleado());
-		array.add(new ConsultarEmplByCine());
-		array.add(new DarBajaEmpl());
-		array.add(new ModificarEmpleado());
+		if(tipoAdmin==2) { //Super usuario
+			array.add(new AgregarEmpleado());
+			array.add(new DarBajaEmpl());
+			array.add(new ModificarEmpleado());
+		}
+		array.add(new ConsultarEmplByCine(tipoAdmin,idCine));
 		return array;
 	}
 

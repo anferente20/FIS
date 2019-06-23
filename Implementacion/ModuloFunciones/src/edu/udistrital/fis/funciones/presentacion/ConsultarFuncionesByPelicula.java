@@ -37,11 +37,15 @@ public class ConsultarFuncionesByPelicula extends AbstractFrame {
 	private JScrollPane scrollPane;
 
 	
-	public ConsultarFuncionesByPelicula() {
+	public ConsultarFuncionesByPelicula(int tipoAdmin, int idCine) {
 		setIdentificador();
 		createFrame();
 		try {
 			cargarCines();
+			if(tipoAdmin==1) { //Administrador normal
+				cbxCine.setSelectedIndex(idCine);
+				cbxCine.setEnabled(false);
+			}
 			cargarPeliculas();
 			dateChooser.setMinSelectableDate(new Date());
 		} catch (SQLException e) {

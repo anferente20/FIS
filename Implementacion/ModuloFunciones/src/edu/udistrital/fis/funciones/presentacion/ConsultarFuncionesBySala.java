@@ -29,11 +29,15 @@ public class ConsultarFuncionesBySala extends AbstractFrame {
 	private JDateChooser dateChooser;
 
 
-	public ConsultarFuncionesBySala() {
+	public ConsultarFuncionesBySala(int tipoAdmin, int idCine) {
 		setIdentificador();
 		createFrame();
 		try {
 			cargarCines();
+			if(tipoAdmin==1) { //Administrador normal
+				cbxCine.setSelectedIndex(idCine);
+				cbxCine.setEnabled(false);
+			}
 			cargarSalas();
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase ConsultarFuncionesBySala: "+e.getMessage());
@@ -43,7 +47,7 @@ public class ConsultarFuncionesBySala extends AbstractFrame {
 	}
 
 	private void createFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 469, 151);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

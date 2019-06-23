@@ -11,11 +11,13 @@ import edu.udistrital.fis.funciones.presentacion.ConsultarFuncionesBySala;
 public class FFunciones implements IFunciones{
 
 	@Override
-	public ArrayList<AbstractFrame> getPresentacion() {
+	public ArrayList<AbstractFrame> getPresentacion(int tipoAdmin, int idCine) {
 		ArrayList<AbstractFrame> array = new ArrayList<AbstractFrame>();
-		array.add(new AgregarPelicula());
-		array.add(new ConsultarFuncionesByPelicula());
-		array.add(new ConsultarFuncionesBySala());
+		if(tipoAdmin==2) { //Super administrador
+			array.add(new AgregarPelicula());
+		}
+		array.add(new ConsultarFuncionesByPelicula(tipoAdmin,idCine));
+		array.add(new ConsultarFuncionesBySala(tipoAdmin,idCine));
 		return array;
 	}
 	

@@ -34,12 +34,15 @@ public class ConsultarEmplByCine extends AbstractFrame {
 	private DefaultTableModel modeloTabla;
 	private JTable tablaEmpleados;
 
-	public ConsultarEmplByCine(){
-		setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		setTitle("Consultar empleados");
+	public ConsultarEmplByCine(int tipoAdmin, int idCine){
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());
+			if(tipoAdmin==1) //Administrador normal
+			{
+				cbCine.setSelectedIndex(idCine);
+				cbCine.setEnabled(false);
+			}
 		} catch (SQLException e) {
 			Funciones.mensajeConsola("Clase ConsultarEmplByCine: "+e.getMessage());
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
@@ -50,7 +53,9 @@ public class ConsultarEmplByCine extends AbstractFrame {
 	}
 	
 	private void createFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		setTitle("Consultar empleados");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 509, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,7 +81,13 @@ public class ConsultarEmplByCine extends AbstractFrame {
 				new String[] {
 					"ID", "Nombres", "Apellidos", "Identificaci\u00F3n", "Tipo"
 				}
-			);
+			) {
+			@Override
+			   public boolean isCellEditable(int row, int column) {
+			       //Only the third column
+			       return false;
+			   }
+		};
 
 
 		JScrollPane scrollPane = new JScrollPane(tablaEmpleados);

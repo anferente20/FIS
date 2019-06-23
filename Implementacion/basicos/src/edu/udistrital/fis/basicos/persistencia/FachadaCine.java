@@ -50,4 +50,8 @@ public class FachadaCine{
 	public int getIdCine(int idSala) throws SQLException {
 		return this.gestor.getIdCine(idSala);
 	}
+	
+	public ResultSet login(String usuario, String pass) throws SQLException{
+		return this.gestor.login(usuario, pass);
+	}
 }
