@@ -137,16 +137,6 @@ CREATE TABLE Combo
 )
 ;
 
-
-
-
-
-
-
-
-
-
-
 CREATE TABLE TipoSuscripcion
 (
 	ipSuscripcion SERIAL primary key,
@@ -154,6 +144,30 @@ CREATE TABLE TipoSuscripcion
 	descripcion text NOT NULL
 )
 ;
+
+CREATE TABLE Cliente
+(
+	idCliente integer primary key,
+	nombreCliente text NOT NULL,
+	apellidoCliente text NOT NULL,
+	identificacionCliente integer NOT NULL,
+	tipoSuscripcion integer NOT NULL,
+	ipSuscripcion integer NOT NULL
+)
+;
+
+ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
+	FOREIGN KEY (ipSuscripcion) REFERENCES TipoSuscripcion (ipSuscripcion) ON DELETE No Action ON UPDATE No Action
+;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -240,24 +254,6 @@ ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Combo
 
 ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Compra
 	FOREIGN KEY (idCompra) REFERENCES Compra (idCompra) ON DELETE No Action ON UPDATE No Action;
-
-
-CREATE TABLE Cliente
-(
-	idCliente integer primary key,
-	nombreCliente text NOT NULL,
-	apellidoCliente text NOT NULL,
-	identificacionCliente integer NOT NULL,
-	tipoSuscripcion integer NOT NULL,
-	ipSuscripcion integer NOT NULL
-)
-;
-
-ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
-	FOREIGN KEY (ipSuscripcion) REFERENCES TipoSuscripcion (ipSuscripcion) ON DELETE No Action ON UPDATE No Action
-;
-
-
 
 CREATE TABLE Boleta
 (
