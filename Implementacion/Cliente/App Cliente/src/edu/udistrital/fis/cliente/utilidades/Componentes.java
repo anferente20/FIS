@@ -12,10 +12,10 @@ import edu.udistrital.fis.core.IRegistroCliente;
 
 public class Componentes {
 	private HashMap<String,ArrayList<AbstractFrame>> presentacion;
-	public Componentes(){
-		cargarComponentes();
+	public Componentes(String correo){
+		cargarComponentes(correo);
 	}
-	public void cargarComponentes() {
+	public void cargarComponentes(String correo) {
 		//Conjuntos de frames agrupados por modulos
 		HashMap<String,ArrayList<AbstractFrame>> presentacion = new HashMap<String, ArrayList<AbstractFrame>>(); 
 				
@@ -23,20 +23,21 @@ public class Componentes {
 				
 		Cargador cc = new Cargador("componentes", ClassLoader.getSystemClassLoader());
 		//Modulo registro cliente
-		ArrayList<AbstractFrame> cliente = verificarModuloCliente(cc);
+		ArrayList<AbstractFrame> cliente = verificarModuloCliente(cc,correo);
 		if(cliente!=null) presentacion.put("Mi cuenta",cliente);
 		
 		this.presentacion = presentacion;
 	}
 	//Verificacion de modulo cliente
-	private static ArrayList<AbstractFrame> verificarModuloCliente(Cargador cc) {
+	private static ArrayList<AbstractFrame> verificarModuloCliente(Cargador cc,String correo) {
 	Class cls = cc.cargarUnaClaseDesdeSuDirectorio(IRegistroCliente.class.getName());
 	if(cls!=null) {
 		try {
 			IRegistroCliente cliente = (IRegistroCliente)cls.newInstance();
 			Funciones.mensajeConsola("Modulo cliente cargado");
-			return cliente.getPresentacion();
+			return cliente.getPresentacion(correo);
 		} catch (Exception e) {
+			e.printStackTrace();
 			Funciones.mensajeConsola("Error al cargar modulo Cliente: "+e.getMessage());
 			return null;
 		}

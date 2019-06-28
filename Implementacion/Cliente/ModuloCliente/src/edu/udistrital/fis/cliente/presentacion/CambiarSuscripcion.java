@@ -34,10 +34,11 @@ public class CambiarSuscripcion extends AbstractFrame {
 	private JComboBox comboBox;
 	private JLabel lblSus;
 	private ArrayList<String> desc;
-	private JTextField textField;
+	private String correo;
 
 	
-	public CambiarSuscripcion() {
+	public CambiarSuscripcion(String correo) {
+		this.correo = correo;
 		createFrame();
 		setIdentificador();
 		try {
@@ -59,7 +60,7 @@ public class CambiarSuscripcion extends AbstractFrame {
 	private void createFrame() {
 		setTitle("Cambio Suscripcion");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 600, 292);
+		setBounds(100, 100, 500, 292);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,34 +70,25 @@ public class CambiarSuscripcion extends AbstractFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblCorreo = new JLabel("Correo");
-		lblCorreo.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblCorreo.setBounds(20, 40, 150, 30);
-		panel.add(lblCorreo);
-		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		textField.setBounds(180, 40, 150, 30);
-		panel.add(textField);
 		
 		JLabel lblSuscripcion = new JLabel("Suscripcion Actual");
 		lblSuscripcion.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblSuscripcion.setBounds(20, 80, 150, 30);
+		lblSuscripcion.setBounds(20, 40, 150, 30);
 		panel.add(lblSuscripcion);
 		
 		lblSus = new JLabel("");
 		lblSus.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblSus.setBounds(180, 80, 150, 30);
+		lblSus.setBounds(180, 40, 150, 30);
 		panel.add(lblSus);
 		
 		JLabel lblNueva = new JLabel("Nueva Suscripcion");
 		lblNueva.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblNueva.setBounds(20, 130, 150, 30);
+		lblNueva.setBounds(20, 90, 150, 30);
 		panel.add(lblNueva);
 		
 		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		comboBox.setBounds(180, 130, 200, 30);
+		comboBox.setBounds(180, 90, 200, 30);
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					cambiarDescripcion();
@@ -105,25 +97,9 @@ public class CambiarSuscripcion extends AbstractFrame {
 		);
 		panel.add(comboBox);
 		
-		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnBuscar.setBounds(120, 180, 100, 30);
-		btnBuscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-					try {
-						buscar();
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-			}
-		}
-		);
-		panel.add(btnBuscar);
-		
 		JButton btnCambiar = new JButton("Cambiar");
 		btnCambiar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnCambiar.setBounds(320, 180, 100, 30);
+		btnCambiar.setBounds(220, 140, 100, 30);
 		btnCambiar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					try {
@@ -148,18 +124,24 @@ public class CambiarSuscripcion extends AbstractFrame {
 		txta1.setBackground(new Color(240, 240, 240));
 		pane1.add(txta1,BorderLayout.CENTER);
 		sur.add(pane1);
+		try {
+			buscar();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	private void buscar() throws SQLException {
-		String correo = "";
-		ResultSet res = FachadaSuscripcion.getInstance().getSuscripcion(textField.getText());
+		String susc= "";
+		ResultSet res = FachadaSuscripcion.getInstance().getSuscripcion(this.correo);
 		while (res.next()) {
-			correo = res.getString(1);
+			susc = res.getString(1);
 		}
-		lblSus.setText(correo);
+		lblSus.setText(susc);
 	}
 	
 	private void cambiar() throws SQLException {
-		FachadaCliente.getInstance().cambiarSuscripcion(comboBox.getSelectedIndex(),textField.getText());
+		FachadaCliente.getInstance().cambiarSuscripcion(comboBox.getSelectedIndex(),this.correo);
 		this.dispose();
 	}
 	private void cambiarDescripcion() {

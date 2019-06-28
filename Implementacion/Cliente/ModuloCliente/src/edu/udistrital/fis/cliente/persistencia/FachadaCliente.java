@@ -76,27 +76,7 @@ public class FachadaCliente {
 		gestor.cambiarSuscripcion(tipo, correo);
 	}
 	
-	/**
-	 * Método que verifica que los datos ingresados correspondan a los datos registrados
-	 * @param correo Correo del cliente
-	 * @param contrasena contrasena del cliente
-	 * @return True si los datos existen , false si no existen
-	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
-	 */
-	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
-		return gestor.verificarIngreso(correo, contrasena);
-	}
 	
-	/**
-	 * Método que verifica que los datos ingresados correspondan a los datos registrados
-	 * @param correo Correo del cliente
-	 * @param contrasena contrasena del cliente
-	 * @return El nombre del usuario que ingreso
-	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
-	 */
-	public String ingresar(String correo, String contrasena) throws SQLException {
-		return gestor.ingresar(correo, contrasena);
-	}
 	
 	/**
 	 * Método que verifica la existencia de un correo 

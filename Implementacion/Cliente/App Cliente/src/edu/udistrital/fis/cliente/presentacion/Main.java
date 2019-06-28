@@ -12,8 +12,7 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		//Estilos que tenga el sistema operativo
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		Componentes comp = new Componentes();
-		MenuCliente men = new MenuCliente(comp.getPresentacion());
+		MenuCliente men = new MenuCliente();
 		men.setVisible(true);
 	}
 	

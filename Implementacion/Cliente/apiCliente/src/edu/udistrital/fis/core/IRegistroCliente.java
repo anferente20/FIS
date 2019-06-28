@@ -4,5 +4,5 @@ import java.util.ArrayList;
 import edu.udistrital.fis.api.logica.AbstractFrame;
 
 public interface IRegistroCliente {
-	public ArrayList<AbstractFrame> getPresentacion();
+	public ArrayList<AbstractFrame> getPresentacion(String correo);
 }
