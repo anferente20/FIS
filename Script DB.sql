@@ -152,7 +152,8 @@ CREATE TABLE Cliente
 	apellidoCliente text NOT NULL,
 	identificacionCliente integer NOT NULL,
 	tipoSuscripcion integer NOT NULL,
-	ipSuscripcion integer NOT NULL
+	contrasnea text NOT NULL,
+	correo text NOT NULL
 )
 ;
 
