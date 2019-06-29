@@ -224,8 +224,8 @@ CREATE TABLE HistoricoPreciosBoleta
 CREATE TABLE Compra
 (
 	idCompra integer primary key,
-	fecha date NOT NULL,
-	hora time NOT NULL,
+	fecha text NOT NULL,
+	hora text NOT NULL,
 	idCliente integer NOT NULL,
 	total decimal NOT NULL
 )
@@ -239,7 +239,7 @@ ALTER TABLE Compra ADD CONSTRAINT FK_Compra_Cliente
 CREATE TABLE ComboCompra
 (
 	cantidad integer NOT NULL,
-	subtotal decimal NOT NULL,
+	subtotal numeric NOT NULL,
 	idCompra integer NOT NULL,
 	idCombo integer NOT NULL
 )
