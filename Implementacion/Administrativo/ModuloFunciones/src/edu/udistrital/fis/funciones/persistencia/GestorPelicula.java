@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.Gestor;
 import edu.udistrital.fis.funciones.logica.Funcion;
@@ -169,7 +171,7 @@ public class GestorPelicula extends Gestor{
 	 * @throws SQLException 
 	 */
 	int getConsecutivoSala(int idSala) throws SQLException {
-		String consulta = "select consecutivo from sala where idSala = ?";
+		String consulta = "select consecutivo from sala where idSala = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, idSala);
 		ResultSet resultado = sentencia.executeQuery();
@@ -315,5 +317,36 @@ public class GestorPelicula extends Gestor{
 				+ "funcion.fecha >= now()";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		return sentencia.executeQuery();
+	}
+	
+	ResultSet consultarPrecioBoleteria() throws SQLException {
+		String consulta = "select"
+				+ " precio, "
+				+ "fecha "
+				+ "from "
+				+ "historicopreciosboleta "
+				+ "where "
+				+ "fecha ="
+				+ "("
+				+ "select "
+				+ "max(fecha) "
+				+ "from "
+				+ "historicopreciosboleta"
+				+ ");";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		return sentencia.executeQuery();
+	}
+	
+	void insertarPrecioBoleta(float precio) throws SQLException {
+		FuncionesTiempo ft = new FuncionesTiempo();
+		String consulta = 
+				"insert into "
+				+ "historicopreciosboleta "
+				+ "(precio,fecha) "
+				+ "values "
+				+ "(?,'"+ft.DateToString(new Date())+"');";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setFloat(1, precio);
+		sentencia.execute();
 	}
 }

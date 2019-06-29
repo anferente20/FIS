@@ -1,4 +1,4 @@
---Tabla Cine
+﻿--Tabla Cine
 insert into 
 Cine (nombreCine,direccion) 
 values 	
@@ -103,6 +103,13 @@ values
 (35605,'Gaseosa sevenUp','Litro'),
 (46560,'Endulzante para ice sabor fresa','Paquetes');
 
+--Tabla HistoricosPreciosBoleta
 
+insert into historicoPreciosBoleta (precio,fecha) values (12000,'28/06/2019');
 
+--Tabla TipoSuscripcion
 
+insert into tiposuscripcion (ipsuscripcion,nombre,descripcion)
+values(1,'Basico','No tiene beneficios. No tiene ningún costo'),
+(2,'Platino','5% de descuento en compras tiene un precio de $50.000 anuales'),
+(3,'Premium','10% de descuento en compras, tiene un precio de $100.000 anuales');

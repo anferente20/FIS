@@ -1,11 +1,7 @@
 package edu.udistrital.fis.admin.presentacion;
 
-
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
-
 
 public class Main {
 

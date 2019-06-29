@@ -73,11 +73,54 @@ public class GestorCliente extends Gestor{
 	 * @throws SQLException Si existe un error al conectarse a la base de datos
 	 */
 	public void cambiarSuscripcion(int tipo, String correo) throws SQLException {
-		String consulta ="update cliente set tiposuscripcion = ? where correo = ?";
+		String consulta ="update cliente set tiposuscripcion = ? where correo = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, tipo);
 		sentencia.setString(2, correo);
 		sentencia.execute();
+	}
+	
+	/**
+	 * Método que verifica que los datos ingresados correspondan a los datos registrados
+	 * @param correo Correo del cliente
+	 * @param contrasena contrasena del cliente
+	 * @return True si los datos existen , false si no existen
+	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
+	 */
+	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
+		String consulta = "select nombreCliente from Cliente"
+				+ " where correo = ? "
+				+ "and contrasena= ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		sentencia.setString(2, contrasena);
+		ResultSet resultado = sentencia.executeQuery();
+		if(resultado.next()==true) {
+			return true;
+		}else {
+			return false;
+		}	
+	}
+	/**
+	 * Método que verifica que los datos ingresados correspondan a los datos registrados
+	 * @param correo Correo del cliente
+	 * @param contrasena contrasena del cliente
+	 * @return El nombre del usuario que ingreso
+	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
+	 */
+	public String ingresar(String correo, String contrasena) throws SQLException {
+		String consulta = "select nombreCliente||' '||apellidocliente from Cliente"
+				+ " where correo = ? "
+				+ "and contrasena= ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		sentencia.setString(2, contrasena);
+		ResultSet resultado = sentencia.executeQuery();
+		String res="";
+		if(resultado.next()) {
+			res = resultado.getString(1);
+		}
+		return res;
 	}
 	
 	/**
@@ -88,7 +131,7 @@ public class GestorCliente extends Gestor{
 	 */
 	public boolean verificarCorreo(String correo) throws SQLException {
 		String consulta = "select correo from Cliente"
-				+ " where correo = ? ";
+				+ " where correo = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		ResultSet resultado = sentencia.executeQuery();

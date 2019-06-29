@@ -117,8 +117,8 @@ add constraint pk_funcion_sala foreign key (idSala) references Sala (idSala) on 
 create table Espacio
 (
 	idFuncion integer,
-	fila char(1),
-	columna char(1),
+	fila text,
+	columna text,
 	idSala integer
 );
 alter table Espacio
@@ -139,7 +139,7 @@ CREATE TABLE Combo
 
 CREATE TABLE TipoSuscripcion
 (
-	ipSuscripcion SERIAL primary key,
+	idSuscripcion SERIAL primary key,
 	nombre text NOT NULL,
 	descripcion text NOT NULL
 )
@@ -152,62 +152,13 @@ CREATE TABLE Cliente
 	apellidoCliente text NOT NULL,
 	identificacionCliente integer NOT NULL,
 	tipoSuscripcion integer NOT NULL,
-	contrasnea text NOT NULL,
+	contrasena text NOT NULL,
 	correo text NOT NULL
 )
 ;
 
 ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
-	FOREIGN KEY (ipSuscripcion) REFERENCES TipoSuscripcion (ipSuscripcion) ON DELETE No Action ON UPDATE No Action
-;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE Reserva
-(
-	idReserva integer primary key,
-	idFuncion integer NOT NULL,
-	estado boolean NOT NULL,
-	idCliente integer NOT NULL,
-	idCompra integer NOT NULL,
-	idHistoricoReserva integer NOT NULL
-)
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Cliente
-	FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Compra
-	FOREIGN KEY (idCompra) REFERENCES Compra (idCompra) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Funcion
-	FOREIGN KEY (idFuncion) REFERENCES Funcion (idFuncion) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_historicoValorReserva
-	FOREIGN KEY (idHistoricoReserva) REFERENCES HistoricoValorReserva (idHistoricoReserva) ON DELETE No Action ON UPDATE No Action
-;
-
-
-CREATE TABLE HistoricoValorReserva
-(
-	idHistoricoReserva SERIAL primary key,
-	valor decimal NOT NULL,
-	fecha date NOT NULL
-)
+	FOREIGN KEY (idSuscripcion) REFERENCES TipoSuscripcion (idSuscripcion) ON DELETE No Action ON UPDATE No Action
 ;
 
 CREATE TABLE HistoricoPreciosBoleta
@@ -218,14 +169,10 @@ CREATE TABLE HistoricoPreciosBoleta
 )
 ;
 
-
-
-
 CREATE TABLE Compra
 (
-	idCompra integer primary key,
+	idCompra serial primary key,
 	fecha date NOT NULL,
-	hora time NOT NULL,
 	idCliente integer NOT NULL,
 	total decimal NOT NULL
 )
@@ -234,7 +181,6 @@ CREATE TABLE Compra
 ALTER TABLE Compra ADD CONSTRAINT FK_Compra_Cliente
 	FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON DELETE No Action ON UPDATE No Action
 ;
-
 
 CREATE TABLE ComboCompra
 (
@@ -258,9 +204,9 @@ ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Compra
 
 CREATE TABLE Boleta
 (
-	idBoleta integer primary key,
-	fila char(1)	 NOT NULL,
-	columna char(1)	 NOT NULL,
+	idBoleta serial primary key,
+	fila text	 NOT NULL,
+	columna text	 NOT NULL,
 	idFuncion integer NOT NULL,
 	idCompra integer NOT NULL,
 	idHistoricoBoleta integer NOT NULL,
@@ -271,7 +217,7 @@ CREATE TABLE Boleta
 alter table boleta
 add constraint fk_boleta_espacio foreign key (idFuncion,idSala,fila,columna) references espacio (idFuncion,idSala,fila,columna) ON DELETE No Action ON UPDATE No Action,
 add constraint fk_boleta_compra foreign key (idCompra) references compra (idCompra) ON DELETE No Action ON UPDATE No Action,
-add constraint fk_boleta_historico foreign key (idHistoricoBoleta) references HistoricoBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action;
+add constraint fk_boleta_historico foreign key (idHistoricoBoleta) references HistoricoPreciosBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action;
 
 
 -- VIEWS

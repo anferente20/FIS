@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
 import javax.swing.SwingConstants;
@@ -42,33 +42,33 @@ public class IngresoCliente extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblIngreso = new JLabel("Ingreso");
 		lblIngreso.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIngreso.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		lblIngreso.setBounds(117, 20, 150, 30);
 		contentPane.add(lblIngreso);
-		
+
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		lblCorreo.setBounds(50, 60, 150, 30);
 		contentPane.add(lblCorreo);
-		
+
 		JLabel lblContrasena = new JLabel("Contrasena");
 		lblContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		lblContrasena.setBounds(50, 110, 150, 30);
 		contentPane.add(lblContrasena);
-		
+
 		txtCorreo = new JTextField();
 		txtCorreo.setBounds(180, 60, 150, 30);
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
-		
+
 		pswContrasena = new JPasswordField();
 		pswContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		pswContrasena.setBounds(180, 110, 150, 30);
 		contentPane.add(pswContrasena);
-		
+
 		JButton btnIngresar = new JButton("Ingresar");
 		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnIngresar.setBounds(142, 170, 100, 30);
@@ -96,9 +96,9 @@ public class IngresoCliente extends JFrame {
 		}else {
 			Funciones.mensajePantalla("Datos ingresados no existen.");
 		}
-		
-	}
-	
 
-	
+	}
+
+
+
 }
