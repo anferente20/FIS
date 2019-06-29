@@ -25,7 +25,9 @@ public class Cargador {
 					archivo.close();
 					Attributes atributos = m.getAttributes("COMPONENTE");
 					String nc = atributos.getValue("nombre");
+					System.out.println(nc);
 					String cl = atributos.getValue("clase");
+					System.out.println(cl);
 					//Lo minimo que tiene un elemento
 					urls[i] = archivos[i].toURI().toURL();
 					registro.put(nc,cl);

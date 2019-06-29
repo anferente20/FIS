@@ -9,6 +9,7 @@ import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.GestorDB;
 import edu.udistrital.fis.core.IRegistroCliente;
+import edu.udistrital.fis.core.ICompra;
 
 public class Componentes {
 	private HashMap<String,ArrayList<AbstractFrame>> presentacion;
@@ -26,28 +27,53 @@ public class Componentes {
 		ArrayList<AbstractFrame> cliente = verificarModuloCliente(cc,correo);
 		if(cliente!=null) presentacion.put("Mi cuenta",cliente);
 		
+		//Modulo confiteria
+		ArrayList<AbstractFrame> confiteria = verificarModuloConfiteria(cc,correo);
+		if(confiteria!=null) presentacion.put("Confiteria",confiteria);
+		
 		this.presentacion = presentacion;
 	}
 	//Verificacion de modulo cliente
 	private static ArrayList<AbstractFrame> verificarModuloCliente(Cargador cc,String correo) {
-	Class cls = cc.cargarUnaClaseDesdeSuDirectorio(IRegistroCliente.class.getName());
-	if(cls!=null) {
-		try {
-			IRegistroCliente cliente = (IRegistroCliente)cls.newInstance();
-			Funciones.mensajeConsola("Modulo cliente cargado");
-			return cliente.getPresentacion(correo);
-		} catch (Exception e) {
-			e.printStackTrace();
-			Funciones.mensajeConsola("Error al cargar modulo Cliente: "+e.getMessage());
-			return null;
+		Class cls = cc.cargarUnaClaseDesdeSuDirectorio(IRegistroCliente.class.getName());
+		if(cls!=null) {
+			try {
+				IRegistroCliente cliente = (IRegistroCliente)cls.newInstance();
+				Funciones.mensajeConsola("Modulo cliente cargado");
+				return cliente.getPresentacion(correo);
+			} catch (Exception e) {
+				e.printStackTrace();
+				Funciones.mensajeConsola("Error al cargar modulo Cliente: "+e.getMessage());
+				return null;
+			}
 		}
-	}
-	else {
-		Funciones.mensajeConsola("Modulo Cliente no encontrado");
-		Funciones.mensajePantalla("Modulo Cliente no encontrado");
-	}
-	return null;
+		else {
+			Funciones.mensajeConsola("Modulo Cliente no encontrado");
+			Funciones.mensajePantalla("Modulo Cliente no encontrado");
 		}
+		return null;
+	}
+	
+	//Verificacion de modulo confiteria
+	private static ArrayList<AbstractFrame> verificarModuloConfiteria(Cargador cc,String correo) {
+		Class cls = cc.cargarUnaClaseDesdeSuDirectorio(ICompra.class.getName());
+		if(cls!=null) {
+			try {
+				ICompra compra = (ICompra)cls.newInstance();
+				Funciones.mensajeConsola("Modulo Compra cargado");
+				return compra.getPresentacion(correo);
+			} catch (Exception e) {
+				e.printStackTrace();
+				Funciones.mensajeConsola("Error al cargar modulo Compra: "+e.getMessage());
+				return null;
+			}
+		}
+		else {
+			Funciones.mensajeConsola("Modulo Compra no encontrado");
+			Funciones.mensajePantalla("Modulo Compra no encontrado");
+		}
+		return null;
+	}
 	//Se verifica si el controlador de PostgreSQL está referenciado
 		private static void verificarJDBC() {
 			try {

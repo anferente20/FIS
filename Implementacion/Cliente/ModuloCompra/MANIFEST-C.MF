@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+
+Name: COMPONENTE
+nombre: edu.udistrital.fis.core.ICompra
+clase: edu.udistrital.fis.compra.logica.FCompra

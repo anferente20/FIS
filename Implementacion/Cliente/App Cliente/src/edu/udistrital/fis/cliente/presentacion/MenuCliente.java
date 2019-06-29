@@ -113,7 +113,7 @@ public class MenuCliente extends JFrame {
 		    Entry<String, ArrayList<AbstractFrame>> e = it.next();
 		    JMenu menu = new JMenu(e.getKey().toString());
 		    ArrayList<AbstractFrame> array = (ArrayList<AbstractFrame>)e.getValue();
-		    for(i=1;i<array.size();i++) {
+		    for(i=0;i<array.size();i++) {
 		    	JMenuItem menuI = new JMenuItem(array.get(i).getIdentificador());
 		    	JFrame frame = array.get(i);
 		    	menuI.addActionListener(new ActionListener() {
@@ -126,16 +126,16 @@ public class MenuCliente extends JFrame {
 		    	menu.add(menuI);
 		    }
 		    menuBar.add(menu);
-		    //System.out.println(e.getKey() + " " + e.getValue());
-		    JMenu menuSalir = new JMenu("Cerrar Sesion");
-			menuSalir.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					cerrarSesion();
-				}
-			});
-			menuBar.add(menuSalir);
 		}
+		//System.out.println(e.getKey() + " " + e.getValue());
+	    JMenu menuSalir = new JMenu("Cerrar Sesion");
+		menuSalir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				cerrarSesion();
+			}
+		});
+		menuBar.add(menuSalir);
 	}
 	public JLabel getUsuario() {
 		return usuario;
