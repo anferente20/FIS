@@ -1,7 +1,8 @@
 package edu.udistrital.fis.cliente.logica;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.swing.JFrame;
 
 import edu.udistrital.fis.api.logica.*;
 import edu.udistrital.fis.cliente.presentacion.CambiarContrasena;
@@ -20,12 +21,15 @@ public class FCliente implements IRegistroCliente {
 	@Override
 	public ArrayList<AbstractFrame> getPresentacion(String correo) {
 		ArrayList<AbstractFrame>array = new ArrayList<AbstractFrame>();
-		array.add(new RegistrarCliente());
 		array.add(new CambiarContrasena());
 		array.add(new CambiarCorreo());
-		System.out.println(correo);
 		array.add(new CambiarSuscripcion(correo));
 		return array;
+	}
+
+	@Override
+	public JFrame getVentanaRegistro() {
+		return new RegistrarCliente();
 	}
 
 

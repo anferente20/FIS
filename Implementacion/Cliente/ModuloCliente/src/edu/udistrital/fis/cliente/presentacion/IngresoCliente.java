@@ -31,9 +31,11 @@ public class IngresoCliente extends AbstractFrame {
 		createFrame();
 	}
 	private void createFrame() {
+		
 		setTitle("Bienvenido a Cine+");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 401, 253);
+		setBounds(100, 100, 401, 261);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -41,53 +43,56 @@ public class IngresoCliente extends AbstractFrame {
 		
 		JLabel lblIngreso = new JLabel("Ingreso");
 		lblIngreso.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIngreso.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblIngreso.setBounds(117, 20, 150, 30);
+		lblIngreso.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		lblIngreso.setBounds(154, 13, 74, 30);
 		contentPane.add(lblIngreso);
 		
 		JLabel lblCorreo = new JLabel("Correo");
-		lblCorreo.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblCorreo.setBounds(50, 60, 150, 30);
 		contentPane.add(lblCorreo);
 		
 		JLabel lblContrasena = new JLabel("Contrasena");
-		lblContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblContrasena.setBounds(50, 110, 150, 30);
 		contentPane.add(lblContrasena);
 		
 		txtCorreo = new JTextField();
+		txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtCorreo.setBounds(180, 60, 150, 30);
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
 		
 		pswContrasena = new JPasswordField();
-		pswContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		pswContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		pswContrasena.setBounds(180, 110, 150, 30);
 		contentPane.add(pswContrasena);
 		
 		JButton btnIngresar = new JButton("Ingresar");
-		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnIngresar.setBounds(142, 170, 100, 30);
+		btnIngresar.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		btnIngresar.setBounds(142, 170, 100, 31);
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					try {
-						ingresar();
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					ingresar();
 			}
 		}
 		);
 		contentPane.add(btnIngresar);
 	}
-	private void ingresar() throws SQLException {
-		if(FachadaCliente.getInstance().verificarIngreso(txtCorreo.getText(), pswContrasena.getText())) {
-			setIdentificador();
-			this.dispose();
-		}else {
-			Funciones.mensajePantalla("Datos ingresados no existen.");
+	private void ingresar(){
+		try {
+			if(FachadaCliente.getInstance().verificarIngreso(txtCorreo.getText(), pswContrasena.getText())) {
+				setIdentificador();
+				this.dispose();
+			}else {
+				Funciones.mensajePantalla("Datos ingresados no existen.");
+			}
 		}
+		catch(SQLException e) {
+			Funciones.mensajeConsola("Clase IngresoCliente: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
+		}
+		
 		
 	}
 

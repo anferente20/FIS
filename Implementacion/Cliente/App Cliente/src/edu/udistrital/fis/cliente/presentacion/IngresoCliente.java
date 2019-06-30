@@ -21,6 +21,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class IngresoCliente extends JFrame {
 
@@ -31,6 +33,14 @@ public class IngresoCliente extends JFrame {
 
 
 	public IngresoCliente(MenuCliente mc) {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				mc.setVisible(true);
+				mc.btnIngresar.setVisible(true);
+				mc.btnRegistrar.setVisible(true);
+			}
+		});
 		this.mc = mc;
 		createFrame();
 	}
@@ -45,57 +55,63 @@ public class IngresoCliente extends JFrame {
 		
 		JLabel lblIngreso = new JLabel("Ingreso");
 		lblIngreso.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIngreso.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblIngreso.setBounds(117, 20, 150, 30);
+		lblIngreso.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		lblIngreso.setBounds(141, 20, 100, 30);
 		contentPane.add(lblIngreso);
 		
 		JLabel lblCorreo = new JLabel("Correo");
-		lblCorreo.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblCorreo.setBounds(50, 60, 150, 30);
 		contentPane.add(lblCorreo);
 		
 		JLabel lblContrasena = new JLabel("Contrasena");
-		lblContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblContrasena.setBounds(50, 110, 150, 30);
+		lblContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		lblContrasena.setBounds(50, 109, 150, 30);
 		contentPane.add(lblContrasena);
 		
 		txtCorreo = new JTextField();
+		txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtCorreo.setBounds(180, 60, 150, 30);
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
 		
 		pswContrasena = new JPasswordField();
-		pswContrasena.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		pswContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		pswContrasena.setBounds(180, 110, 150, 30);
 		contentPane.add(pswContrasena);
 		
 		JButton btnIngresar = new JButton("Ingresar");
-		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnIngresar.setBounds(142, 170, 100, 30);
+		btnIngresar.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		btnIngresar.setBounds(141, 163, 100, 30);
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					try {
-						ingresar();
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					ingresar();
 			}
 		}
 		);
 		contentPane.add(btnIngresar);
+		setLocationRelativeTo(null);
 	}
-	private void ingresar() throws SQLException {
-		if(FachadaCine.getInstance().verificarIngreso(txtCorreo.getText(), pswContrasena.getText())) {
-			mc.getUsuario().setText( FachadaCine.getInstance().ingresar(txtCorreo.getText(), pswContrasena.getText()));
-			mc.setCorreo( txtCorreo.getText());
-			Componentes c = new Componentes(txtCorreo.getText());
-			mc.setPresentacion(c.getPresentacion());
-			mc.cargarFrames();
-			this.dispose();
-		}else {
-			Funciones.mensajePantalla("Datos ingresados no existen.");
+	private void ingresar() {
+		try {
+			if(FachadaCine.getInstance().verificarIngreso(txtCorreo.getText(), pswContrasena.getText())) {
+				mc.getUsuario().setText("Usuario: "+FachadaCine.getInstance().ingresar(txtCorreo.getText(), pswContrasena.getText()));
+				mc.setCorreo( txtCorreo.getText());
+				Componentes c = new Componentes(txtCorreo.getText());
+				mc.setPresentacion(c.getPresentacion());
+				mc.cargarFrames();
+				mc.setVisible(true);
+				mc.setNoVisible();
+				this.dispose();
+			}else {
+				Funciones.mensajePantalla("Datos ingresados no existen.");
+			}
 		}
+		catch(SQLException e) {
+			Funciones.mensajeConsola("Clase IngresoCliente: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
+		}
+		
 		
 	}
 	

@@ -24,17 +24,16 @@ public class GestorCliente extends Gestor{
 	 * @throws SQLException En caso de que haya un error al conectar a la base de datos
 	 */
 	public void insertarCliente(Cliente cliente) throws SQLException {
-		String consulta = "insert into  Cliente (idcliente,nombrecliente,apellidocliente,identificacioncliente,"
+		String consulta = "insert into Cliente (nombrecliente,apellidocliente,identificacioncliente,"
 				+ "tiposuscripcion,contrasena,correo) "
-				+ "values (?,?,?,?,?,?,?);";
+				+ "values (?,?,?,?,?,?);";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-		sentencia.setInt(1,cliente.getIdCliente());
-		sentencia.setString(2, cliente.getNombreCliente());
-		sentencia.setString(3, cliente.getApellidoCliente());
-		sentencia.setInt(4, cliente.getIdentificacionCliente());
-		sentencia.setInt(5,cliente.getTipoSuscripcion());
-		sentencia.setString(6, cliente.getContrasena());
-		sentencia.setString(7,cliente.getCorreo());
+		sentencia.setString(1, cliente.getNombreCliente());
+		sentencia.setString(2, cliente.getApellidoCliente());
+		sentencia.setInt(3, cliente.getIdentificacionCliente());
+		sentencia.setInt(4,cliente.getTipoSuscripcion());
+		sentencia.setString(5, cliente.getContrasena());
+		sentencia.setString(6,cliente.getCorreo());
 		sentencia.execute();
 	}
 	
@@ -97,5 +96,49 @@ public class GestorCliente extends Gestor{
 		}else {
 			return false;
 		}
+	}
+	
+	/**
+	 * Método que verifica que los datos ingresados correspondan a los datos registrados
+	 * @param correo Correo del cliente
+	 * @param contrasena contrasena del cliente
+	 * @return True si los datos existen , false si no existen
+	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
+	 */
+	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
+		String consulta = "select nombreCliente from Cliente"
+				+ " where correo = ? "
+				+ "and contrasena= ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		sentencia.setString(2, contrasena);
+		ResultSet resultado = sentencia.executeQuery();
+		if(resultado.next()==true) {
+			return true;
+		}else {
+			return false;
+		}	
+	}
+	
+	/**
+	 * Método que verifica que los datos ingresados correspondan a los datos registrados
+	 * @param correo Correo del cliente
+	 * @param contrasena contrasena del cliente
+	 * @return El nombre del usuario que ingreso
+	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
+	 */
+	public String ingresar(String correo, String contrasena) throws SQLException {
+		String consulta = "select nombreCliente||' '||apellidocliente from Cliente"
+				+ " where correo = ? "
+				+ "and contrasena= ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		sentencia.setString(2, contrasena);
+		ResultSet resultado = sentencia.executeQuery();
+		String res="";
+		if(resultado.next()) {
+			res = resultado.getString(1);
+		}
+		return res;
 	}
 }

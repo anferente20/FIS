@@ -25,13 +25,13 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.JTextField;
+
 
 public class CambiarSuscripcion extends AbstractFrame {
 
 	private JPanel contentPane;
 	private JTextArea txta1;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox;
 	private JLabel lblSus;
 	private ArrayList<String> desc;
 	private String correo;
@@ -51,7 +51,7 @@ public class CambiarSuscripcion extends AbstractFrame {
 		
 			
 		} catch (SQLException e) {
-			Funciones.mensajeConsola("Clase AgregarEmpleado: "+e.getMessage());
+			Funciones.mensajeConsola("Clase CambiarSuscripcion: "+e.getMessage());
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 			dispose();
 		}
@@ -72,23 +72,23 @@ public class CambiarSuscripcion extends AbstractFrame {
 		
 		
 		JLabel lblSuscripcion = new JLabel("Suscripcion Actual");
-		lblSuscripcion.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblSuscripcion.setBounds(20, 40, 150, 30);
+		lblSuscripcion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblSuscripcion.setBounds(69, 40, 150, 30);
 		panel.add(lblSuscripcion);
 		
 		lblSus = new JLabel("");
-		lblSus.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblSus.setBounds(180, 40, 150, 30);
+		lblSus.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblSus.setBounds(229, 40, 200, 30);
 		panel.add(lblSus);
 		
 		JLabel lblNueva = new JLabel("Nueva Suscripcion");
-		lblNueva.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblNueva.setBounds(20, 90, 150, 30);
+		lblNueva.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblNueva.setBounds(69, 90, 150, 30);
 		panel.add(lblNueva);
 		
 		comboBox = new JComboBox();
-		comboBox.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		comboBox.setBounds(180, 90, 200, 30);
+		comboBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		comboBox.setBounds(229, 90, 200, 30);
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					cambiarDescripcion();
@@ -98,16 +98,11 @@ public class CambiarSuscripcion extends AbstractFrame {
 		panel.add(comboBox);
 		
 		JButton btnCambiar = new JButton("Cambiar");
-		btnCambiar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnCambiar.setBounds(220, 140, 100, 30);
+		btnCambiar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnCambiar.setBounds(186, 140, 100, 33);
 		btnCambiar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					try {
-						cambiar();
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					cambiar();
 			}
 		}
 		);
@@ -121,28 +116,39 @@ public class CambiarSuscripcion extends AbstractFrame {
 		JPanel pane1 = new JPanel();
 		pane1.setLayout(new BorderLayout());
 		txta1 = new JTextArea();
+		txta1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		txta1.setBackground(new Color(240, 240, 240));
 		pane1.add(txta1,BorderLayout.CENTER);
 		sur.add(pane1);
-		try {
-			buscar();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		buscar();
+		setLocationRelativeTo(null);
 	}
-	private void buscar() throws SQLException {
+	private void buscar(){
 		String susc= "";
-		ResultSet res = FachadaSuscripcion.getInstance().getSuscripcion(this.correo);
-		while (res.next()) {
-			susc = res.getString(1);
+		try {
+			ResultSet res = FachadaSuscripcion.getInstance().getSuscripcion(this.correo);
+			while (res.next()) {
+				susc = res.getString(1);
+			}
+			lblSus.setText(susc);
 		}
-		lblSus.setText(susc);
+		catch(SQLException e) {
+			Funciones.mensajeConsola("Clase CambiarSuscripción: "+e.getMessage());
+			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
+		}
+		
 	}
 	
-	private void cambiar() throws SQLException {
-		FachadaCliente.getInstance().cambiarSuscripcion(comboBox.getSelectedIndex(),this.correo);
-		this.dispose();
+	private void cambiar(){
+		try {
+			FachadaCliente.getInstance().cambiarSuscripcion(comboBox.getSelectedIndex(),this.correo);
+			this.dispose();
+			Funciones.mensajePantalla("¡SUSCRIPCIÓN CAMBIADA CON ÉXITO!");
+		}
+		catch(SQLException e) {
+			
+		}
+		
 	}
 	private void cambiarDescripcion() {
 		if(comboBox.getSelectedIndex() != 0) {

@@ -4,8 +4,10 @@ package edu.udistrital.fis.compra.persistencia;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
+import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.Gestor;
 
 public class GestorCompra extends Gestor {
@@ -21,27 +23,12 @@ public class GestorCompra extends Gestor {
 	 * @throws SQLException Si hay problemas para conectar a la base de datos
 	 */
 	public void registrarCompra(int total,int idCliente,int id) throws SQLException {
-		Calendar fecha = new GregorianCalendar();
-		int año = fecha.get(Calendar.YEAR);
-        int mes = fecha.get(Calendar.MONTH);
-        int dia = fecha.get(Calendar.DAY_OF_MONTH);
-        int hora = fecha.get(Calendar.HOUR_OF_DAY);
-        int minuto = fecha.get(Calendar.MINUTE);
-        int segundo = fecha.get(Calendar.SECOND);
-        
-       String fec = dia+"/"+mes+"/"+año;
-       String hor = hora+":"+minuto+":"+segundo;
-       
-       
-       
-       String consulta = "insert into Compra (idcompra,idcliente,total,fecha,hora) values"
-				+ "(?,?,?,?,?);";
+		FuncionesTiempo ft = new FuncionesTiempo();
+       String consulta = "insert into Compra (idcliente,total,fecha) values "
+				+ "(?,?,'"+ft.DateToString(new Date())+"');";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
-		sentencia.setInt(1, id);
-		sentencia.setInt(2, idCliente);
-		sentencia.setInt(3, total);
-		sentencia.setString(4, fec);
-		sentencia.setString(5, hor);
+		sentencia.setInt(1, idCliente);
+		sentencia.setInt(2, total);
 		sentencia.execute();
 	}
 	
@@ -54,7 +41,7 @@ public class GestorCompra extends Gestor {
 	 * @throws SQLException Si hay problema para conectarse a la base de datos
 	 */
 	public void registrarCompraCombo(int idCompra,int cantidad, int idCombo,double d) throws SQLException {
-		 String consulta = "insert into combocompra (idcompra,idcombo,subtotal,cantidad) values"
+		 String consulta = "insert into combocompra (idcompra,idcombo,subtotal,cantidad) values "
 					+ "(?,?,?,?);";
 			PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 			sentencia.setInt(1, idCompra);

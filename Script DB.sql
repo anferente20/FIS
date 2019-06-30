@@ -139,7 +139,7 @@ CREATE TABLE Combo
 
 CREATE TABLE TipoSuscripcion
 (
-	ipSuscripcion SERIAL primary key,
+	idSuscripcion SERIAL primary key,
 	nombre text NOT NULL,
 	descripcion text NOT NULL
 )
@@ -147,68 +147,20 @@ CREATE TABLE TipoSuscripcion
 
 CREATE TABLE Cliente
 (
-	idCliente integer primary key,
+	idCliente serial primary key,
 	nombreCliente text NOT NULL,
 	apellidoCliente text NOT NULL,
 	identificacionCliente integer NOT NULL,
-	tipoSuscripcion integer NOT NULL,
+	idSuscripcion integer NOT NULL,
 	contrasnea text NOT NULL,
 	correo text NOT NULL
 )
 ;
 
 ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
-	FOREIGN KEY (ipSuscripcion) REFERENCES TipoSuscripcion (ipSuscripcion) ON DELETE No Action ON UPDATE No Action
+	FOREIGN KEY (idSuscripcion) REFERENCES TipoSuscripcion (idSuscripcion) ON DELETE No Action ON UPDATE No Action
 ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE Reserva
-(
-	idReserva integer primary key,
-	idFuncion integer NOT NULL,
-	estado boolean NOT NULL,
-	idCliente integer NOT NULL,
-	idCompra integer NOT NULL,
-	idHistoricoReserva integer NOT NULL
-)
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Cliente
-	FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Compra
-	FOREIGN KEY (idCompra) REFERENCES Compra (idCompra) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_Funcion
-	FOREIGN KEY (idFuncion) REFERENCES Funcion (idFuncion) ON DELETE No Action ON UPDATE No Action
-;
-
-ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_historicoValorReserva
-	FOREIGN KEY (idHistoricoReserva) REFERENCES HistoricoValorReserva (idHistoricoReserva) ON DELETE No Action ON UPDATE No Action
-;
-
-
-CREATE TABLE HistoricoValorReserva
-(
-	idHistoricoReserva SERIAL primary key,
-	valor decimal NOT NULL,
-	fecha date NOT NULL
-)
-;
 
 CREATE TABLE HistoricoPreciosBoleta
 (
@@ -223,9 +175,8 @@ CREATE TABLE HistoricoPreciosBoleta
 
 CREATE TABLE Compra
 (
-	idCompra integer primary key,
-	fecha text NOT NULL,
-	hora text NOT NULL,
+	idCompra serial primary key,
+	fecha date NOT NULL,
 	idCliente integer NOT NULL,
 	total decimal NOT NULL
 )
@@ -239,7 +190,7 @@ ALTER TABLE Compra ADD CONSTRAINT FK_Compra_Cliente
 CREATE TABLE ComboCompra
 (
 	cantidad integer NOT NULL,
-	subtotal numeric NOT NULL,
+	subtotal decimal NOT NULL,
 	idCompra integer NOT NULL,
 	idCombo integer NOT NULL
 )
