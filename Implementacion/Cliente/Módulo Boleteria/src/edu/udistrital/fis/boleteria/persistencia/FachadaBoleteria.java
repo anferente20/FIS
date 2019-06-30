@@ -68,8 +68,33 @@ public class FachadaBoleteria {
 	public ResultSet consultarAsientosOcupados(int idfuncion, String fila, String columna) throws SQLException {
 		return this.gestor.consultarAsientosOcupados(idfuncion, fila, columna);
 	}
-	
+	/**
+	 * Método que se encarga de registrar la compra de boletas para una funcion
+	 * @param funcion Funcion de la cual se comprarán las boletas
+	 * @param asientos Lista dinámica de los asientos que se comprarán para la función
+	 * @param idCliente ID del cliente que hará la compra
+	 * @param cantidadBoletas Cantidad de boletas que se venderán
+	 * @throws SQLException
+	 */
 	public void comprarBoletas (Funcion funcion,ArrayList<Asiento> asientos,int idCliente, int cantidadBoletas) throws SQLException {
 		this.gestor.comprarBoletas(funcion, asientos, idCliente, cantidadBoletas);
+	}
+	/**
+	 * Método que consulta las compras de boletas realizadas por un cliente
+	 * @param idCliente ID del cliente del cual se desean consultar las compras
+	 * @return Compras de boletas hechas por el cliente
+	 * @throws SQLException
+	 */
+	public ResultSet consultarComprasByCliente(int idCliente) throws SQLException {
+		return this.gestor.consultarComprasByCliente(idCliente);
+	}
+	/**
+	 * Método que consulta las boletas compradas en una compra
+	 * @param idCompra ID de la compra de la que se quieren consultar las boletas
+	 * @return Boletas compradas
+	 * @throws SQLException
+	 */
+	public ResultSet consultarBoletasByCompra(int idCompra) throws SQLException {
+		return this.gestor.consultarBoletasByCompra(idCompra);
 	}
 }

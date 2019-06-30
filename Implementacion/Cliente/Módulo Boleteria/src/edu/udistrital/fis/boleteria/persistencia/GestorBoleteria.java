@@ -131,7 +131,11 @@ public class GestorBoleteria extends Gestor{
 		sentencia.setString(3, columna);
 		return sentencia.executeQuery();
 	}
-	
+	/**
+	 * Método que consulta el historico de precios de boleta mas reciente
+	 * @return Consulta del ultimo historico de precios de boleta
+	 * @throws SQLException
+	 */
 	private ResultSet consultarPrecioBoleteria() throws SQLException {
 		String consulta = "select"
 				+ " precio, "
@@ -150,7 +154,14 @@ public class GestorBoleteria extends Gestor{
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		return sentencia.executeQuery();
 	}
-	
+	/**
+	 * Método que se encarga de registrar la compra de boletas para una funcion
+	 * @param funcion Funcion de la cual se comprarán las boletas
+	 * @param asientos Lista dinámica de los asientos que se comprarán para la función
+	 * @param idCliente ID del cliente que hará la compra
+	 * @param cantidadBoletas Cantidad de boletas que se venderán
+	 * @throws SQLException
+	 */
 	void comprarBoletas (Funcion funcion,ArrayList<Asiento> asientos,int idCliente, int cantidadBoletas) throws SQLException {
 		insertarEspacio(funcion,asientos);
 		insertarCompra(idCliente,cantidadBoletas);
@@ -222,8 +233,76 @@ public class GestorBoleteria extends Gestor{
 			sentencia.setInt(4, funcion.getIdSala());
 			sentencia.execute();
 		}
-		
-		
 	}
+	/**
+	 * Método que consulta las compras de boletas realizadas por un cliente
+	 * @param idCliente ID del cliente del cual se desean consultar las compras
+	 * @return Compras de boletas hechas por el cliente
+	 * @throws SQLException
+	 */
+	ResultSet consultarComprasByCliente(int idCliente) throws SQLException {
+		String consulta = 
+				"select "+
+				"compra.idcompra, " + 
+				"cliente.idcliente, " + 
+				"to_char(compra.fecha,'dd/MM/yyyy') fechacompra," + 
+				"compra.total, " + 
+				"historicopreciosboleta.precio precioporboleta, " + 
+				"to_char(funcion.fecha,'dd/MM/yyyy') fechafuncion, " + 
+				"funcion.hora horafuncion, " + 
+				"pelicula.nombrepelicula, " + 
+				"sala.consecutivo sala, " + 
+				"cine.nombrecine, " + 
+				"pelicula.img imagenPelicula, " + 
+				"count(*) cantidadBoletas " + 
+				"from " + 
+				"cliente, compra, historicopreciosboleta, funcion, pelicula, boleta, sala, cine " + 
+				"where " + 
+				"cliente.idcliente = compra.idcliente and " + 
+				"boleta.idcompra = compra.idcompra and " + 
+				"historicopreciosboleta.idhistoricoboleta = boleta.idhistoricoboleta and " + 
+				"boleta.idfuncion = funcion.idfuncion and " + 
+				"funcion.idpelicula = pelicula.idpelicula and " + 
+				"funcion.idsala = sala.idsala and " + 
+				"sala.idcine = cine.idcine and " + 
+				"cliente.idcliente = ? " + 
+				"group by " + 
+				"cliente.idcliente, compra.fecha, " + 
+				"compra.total, " + 
+				"historicopreciosboleta.precio, " + 
+				"funcion.fecha, " + 
+				"funcion.hora, " + 
+				"pelicula.nombrepelicula, " + 
+				"sala.consecutivo, " + 
+				"cine.nombrecine, " + 
+				"pelicula.img,"
+				+"compra.idcompra " + 
+				"order by " + 
+				"compra.fecha asc;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCliente);
+		return sentencia.executeQuery();
+	}
+	/**
+	 * Método que consulta las boletas compradas en una compra
+	 * @param idCompra ID de la compra de la que se quieren consultar las boletas
+	 * @return Boletas compradas
+	 * @throws SQLException
+	 */
+	ResultSet consultarBoletasByCompra(int idCompra) throws SQLException {
+		String consulta = 
+				"select " + 
+				"boleta.fila, " + 
+				"boleta.columna " + 
+				"from " + 
+				"compra, boleta " + 
+				"where " + 
+				"boleta.idcompra = compra.idcompra and " + 
+				"compra.idcompra = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setInt(1, idCompra);
+		return sentencia.executeQuery();
+	}
+	
 	
 }

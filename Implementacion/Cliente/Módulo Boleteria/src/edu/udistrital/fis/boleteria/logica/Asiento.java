@@ -17,8 +17,8 @@ public class Asiento extends JButton{
 	private SeleccionarAsientos target;
 	private boolean seleccionado;
 	
-	private static final ImageIcon sillaLibre = new ImageIcon("resource\\libre.png"); 
-	private static final ImageIcon sillaOcupada = new ImageIcon("resource\\ocupada.png");
+	public static final ImageIcon sillaLibre = new ImageIcon("resource\\libre.png"); 
+	public static final ImageIcon sillaOcupada = new ImageIcon("resource\\ocupada.png");
 	public static final ImageIcon colorLibre = new ImageIcon("resource\\color-libre.png");
 	public static final ImageIcon colorOcupada = new ImageIcon("resource\\color-ocupada.png");
 	
@@ -73,7 +73,7 @@ public class Asiento extends JButton{
 	}
 	
 	public static int letraToNumero(Character fila) {
-		return fila;
+		return fila-96;
 	}
 	
 	public static String numeroToLetra(int fila) {

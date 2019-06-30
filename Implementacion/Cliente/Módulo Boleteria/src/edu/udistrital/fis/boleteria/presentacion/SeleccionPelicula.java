@@ -145,7 +145,7 @@ public class SeleccionPelicula extends AbstractFrame {
 
 	@Override
 	protected void setIdentificador() {
-		this.identificador = "Comprar boletas";
+		this.identificador = "Compra tus boletas";
 		
 	}
 }

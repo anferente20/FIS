@@ -90,6 +90,7 @@ public class SeleccionarAsientos extends JFrame {
 		panelAsientos.setBounds(23, 84, 1033, 910);
 		panelAsientos.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		contentPane.add(panelAsientos);
+		panelAsientos.setLayout(null);
 		
 		lblColorLibre = new JLabel("");
 		lblColorLibre.setBounds(619, 21, 50, 50);
