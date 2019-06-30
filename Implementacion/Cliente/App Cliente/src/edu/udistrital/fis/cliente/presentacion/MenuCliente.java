@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import edu.udistrital.fis.api.logica.AbstractFrame;
+import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.cliente.utilidades.Componentes;
 
 import javax.swing.JButton;
@@ -37,6 +38,7 @@ public class MenuCliente extends JFrame {
 
 
 	public MenuCliente() {
+		setResizable(false);
 		setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		setTitle("MEN\u00DA");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -97,6 +99,7 @@ public class MenuCliente extends JFrame {
 		//Iterar sobre los elementos del HashMap
 		JFrame registro = Componentes.getVentanaRegistro();
 		if(registro!=null) registro.setVisible(true);
+		else Funciones.mensajePantalla("No es posible registrarse por el momento");
 	}
 	
 	public void cargarFrames() {

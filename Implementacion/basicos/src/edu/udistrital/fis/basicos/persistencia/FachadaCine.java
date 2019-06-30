@@ -63,7 +63,7 @@ public class FachadaCine{
 	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
 	 */
 	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
-		return this.gestor.verificarIngreso(correo, contrasena);
+		return gestor.verificarIngreso(correo, contrasena);
 	}
 	
 	/**
@@ -77,4 +77,21 @@ public class FachadaCine{
 		return gestor.ingresar(correo, contrasena);
 	}
 	
+	/**
+	 * Método que permite obtener el ide de un cliente a partir de su correo
+	 * @param correo Correo del cliente
+	 * @return id del cliente
+	 * @throws SQLException si hay problema para conectar a la base de Datos
+	 */
+	public int obtenerIdcliente(String correo) throws SQLException {
+		return gestor.obtenerIdCliente(correo);
+	}
+	
+	public int obtenerSuscripcion(String correo) throws SQLException {
+		return gestor.obtenerSuscripcion(correo);
+	}
+	
+	public int getIdCliente(String correo, String contrasena) throws SQLException {
+		return this.gestor.getIdCliente(correo, contrasena);
+	}
 }

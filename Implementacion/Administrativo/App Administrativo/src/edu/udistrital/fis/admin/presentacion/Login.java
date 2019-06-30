@@ -40,6 +40,7 @@ public class Login extends JFrame {
 	}
 	
 	private void createFrame() {
+		setResizable(false);
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("CINE+ Administrativo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

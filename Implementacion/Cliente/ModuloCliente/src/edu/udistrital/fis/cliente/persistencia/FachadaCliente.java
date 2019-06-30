@@ -96,7 +96,7 @@ public class FachadaCliente {
 	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
 	 */
 	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
-		return gestor.verificarIngreso(correo, contrasena);
+		return this.gestor.verificarIngreso(correo, contrasena);
 	}
 	
 	/**
@@ -107,6 +107,6 @@ public class FachadaCliente {
 	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
 	 */
 	public String ingresar(String correo, String contrasena) throws SQLException {
-		return gestor.ingresar(correo, contrasena);
+		return this.gestor.ingresar(correo, contrasena);
 	}
 }

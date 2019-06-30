@@ -30,6 +30,7 @@ public class AgregarEmpleado extends AbstractFrame {
 	private JComboBox<String> cbCine;
 
 	public AgregarEmpleado(){
+		setResizable(false);
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());

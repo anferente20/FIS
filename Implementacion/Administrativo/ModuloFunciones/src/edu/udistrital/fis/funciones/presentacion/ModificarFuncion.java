@@ -36,6 +36,7 @@ class ModificarFuncion extends JFrame {
 	private PanelFuncion target;
 	
 	public ModificarFuncion(Funcion funcion,PanelFuncion target) {
+		setResizable(false);
 		this.target = target;
 		this.funcion = funcion;
 		createFrame();
@@ -76,7 +77,7 @@ class ModificarFuncion extends JFrame {
 		contentPane.add(txtHora);
 		txtHora.setColumns(10);
 		
-		cbxSala = new JComboBox();
+		cbxSala = new JComboBox<String>();
 		cbxSala.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		cbxSala.setBounds(100, 110, 47, 25);
 		contentPane.add(cbxSala);

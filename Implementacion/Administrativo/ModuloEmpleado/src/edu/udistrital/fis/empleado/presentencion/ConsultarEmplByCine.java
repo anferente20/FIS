@@ -35,6 +35,7 @@ public class ConsultarEmplByCine extends AbstractFrame {
 	private JTable tablaEmpleados;
 
 	public ConsultarEmplByCine(int tipoAdmin, int idCine){
+		setResizable(false);
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbCine,FachadaCine.getInstance().consultarCines());

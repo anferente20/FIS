@@ -29,6 +29,7 @@ public class ModificarInventario extends AbstractFrame {
 	private JButton btnAceptar;
 
 	public ModificarInventario(int tipoAdmin,int idCine){
+		setResizable(false);
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbxCinema,FachadaCine.getInstance().consultarCines());

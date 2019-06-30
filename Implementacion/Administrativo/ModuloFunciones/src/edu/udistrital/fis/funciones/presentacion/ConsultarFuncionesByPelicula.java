@@ -38,6 +38,7 @@ public class ConsultarFuncionesByPelicula extends AbstractFrame {
 
 	
 	public ConsultarFuncionesByPelicula(int tipoAdmin, int idCine) {
+		setResizable(false);
 		setIdentificador();
 		createFrame();
 		try {

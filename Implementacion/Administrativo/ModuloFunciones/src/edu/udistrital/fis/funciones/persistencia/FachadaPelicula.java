@@ -121,4 +121,12 @@ public class FachadaPelicula {
 	public int getConsecutivoSala(int idSala) throws SQLException {
 		return this.gestor.getConsecutivoSala(idSala);
 	}
+	
+	public ResultSet consultarPrecioBoleteria() throws SQLException {
+		return this.gestor.consultarPrecioBoleteria();
+	}
+	
+	public void insertarPrecioBoleta(float precio) throws SQLException {
+		this.gestor.insertarPrecioBoleta(precio);
+	}
 }

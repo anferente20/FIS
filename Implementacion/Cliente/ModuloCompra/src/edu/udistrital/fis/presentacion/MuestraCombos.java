@@ -39,6 +39,7 @@ public class MuestraCombos extends AbstractFrame {
 	private String correo;
 	
 	public MuestraCombos(String correo) {
+		setResizable(false);
 		this.correo = correo;
 		compras = new Carrito();
 		addComponentListener(new ComponentAdapter() {
@@ -83,8 +84,8 @@ public class MuestraCombos extends AbstractFrame {
 		scrollPane.getViewport().setView(panelDinamico);
 		
 		btnComprar = new JButton("Ver");
-		btnComprar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnComprar.setBounds(340, 400, 100, 30);
+		btnComprar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnComprar.setBounds(362, 404, 100, 30);
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mostrar();
@@ -93,17 +94,18 @@ public class MuestraCombos extends AbstractFrame {
 		contentPane.add(btnComprar);
 		
 		JLabel lblCarrito = new JLabel ("Objetos carrito: ");
-		lblCarrito.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblCarrito.setBounds(10, 400, 100, 30);
+		lblCarrito.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblCarrito.setBounds(32, 404, 100, 30);
 		contentPane.add(lblCarrito);
 		
 		carrito = new JLabel("0");
-		carrito.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		carrito.setBounds(120, 400, 100, 30);
+		carrito.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		carrito.setBounds(142, 404, 100, 30);
 		contentPane.add(carrito);
 		
 		setTitle("Combos");
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		setLocationRelativeTo(null);
 	}
 
 	

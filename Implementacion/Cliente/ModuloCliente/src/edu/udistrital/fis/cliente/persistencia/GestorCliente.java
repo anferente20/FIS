@@ -25,7 +25,7 @@ public class GestorCliente extends Gestor{
 	 */
 	public void insertarCliente(Cliente cliente) throws SQLException {
 		String consulta = "insert into Cliente (nombrecliente,apellidocliente,identificacioncliente,"
-				+ "tiposuscripcion,contrasena,correo) "
+				+ "idsuscripcion,contrasnea,correo) "
 				+ "values (?,?,?,?,?,?);";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, cliente.getNombreCliente());
@@ -44,7 +44,7 @@ public class GestorCliente extends Gestor{
 	 * @throws SQLException Si existe algún error al conectarse a la base de datos
 	 */
 	public void cambiarContrasena(String contrasena, String correo) throws SQLException {
-		String consulta ="update cliente set contrasena = ? where correo = ?;";
+		String consulta ="update cliente set contrasnea = ? where correo = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, contrasena);
 		sentencia.setString(2, correo);
@@ -72,13 +72,14 @@ public class GestorCliente extends Gestor{
 	 * @throws SQLException Si existe un error al conectarse a la base de datos
 	 */
 	public void cambiarSuscripcion(int tipo, String correo) throws SQLException {
-		String consulta ="update cliente set tiposuscripcion = ? where correo = ?";
+		String consulta ="update cliente set idsuscripcion = ? where correo = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, tipo);
 		sentencia.setString(2, correo);
 		sentencia.execute();
 	}
 	
+
 	/**
 	 * Método que verifica la existencia de un correo 
 	 * @param correo correo a verificar
@@ -87,7 +88,7 @@ public class GestorCliente extends Gestor{
 	 */
 	public boolean verificarCorreo(String correo) throws SQLException {
 		String consulta = "select correo from Cliente"
-				+ " where correo = ? ";
+				+ " where correo = ?;";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		ResultSet resultado = sentencia.executeQuery();
@@ -108,7 +109,7 @@ public class GestorCliente extends Gestor{
 	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
 		String consulta = "select nombreCliente from Cliente"
 				+ " where correo = ? "
-				+ "and contrasena= ?";
+				+ "and contrasnea= ?";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		sentencia.setString(2, contrasena);
@@ -130,7 +131,7 @@ public class GestorCliente extends Gestor{
 	public String ingresar(String correo, String contrasena) throws SQLException {
 		String consulta = "select nombreCliente||' '||apellidocliente from Cliente"
 				+ " where correo = ? "
-				+ "and contrasena= ?";
+				+ "and contrasnea= ?";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		sentencia.setString(2, contrasena);

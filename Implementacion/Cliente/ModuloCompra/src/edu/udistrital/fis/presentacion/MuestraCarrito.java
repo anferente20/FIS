@@ -7,10 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.swing.BorderFactory;
@@ -27,9 +25,7 @@ import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.FachadaCine;
 import edu.udistrital.fis.compra.logica.Carrito;
 import edu.udistrital.fis.compra.logica.Combo;
-import edu.udistrital.fis.compra.persistencia.FachadaCombo;
 import edu.udistrital.fis.compra.persistencia.FachadaCompra;
-import edu.udistrital.imagen.Imagen;
 
 public class MuestraCarrito extends JFrame{
 
@@ -53,6 +49,7 @@ public class MuestraCarrito extends JFrame{
 	}
 
 	public MuestraCarrito(Carrito carrito,MuestraCombos mc) {
+		setResizable(false);
 		compras =carrito;
 		this.mc=mc;
 		addComponentListener(new ComponentAdapter() {
@@ -68,7 +65,7 @@ public class MuestraCarrito extends JFrame{
 	
 	private void createFrame() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 693, 494);
+		setBounds(100, 100, 693, 502);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,12 +73,12 @@ public class MuestraCarrito extends JFrame{
 		
 		Calendar fec = new GregorianCalendar();
 		JLabel lblFecha = new JLabel("Fecha: ");
-		lblFecha.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblFecha.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblFecha.setBounds(40, 10, 100, 30);
 		contentPane.add(lblFecha);
 		
 		JLabel fecha = new JLabel(fec.get(Calendar.DAY_OF_MONTH)+"/"+(fec.get(Calendar.MONTH)+1)+"/"+fec.get(Calendar.YEAR));
-		fecha.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		fecha.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		fecha.setBounds(150, 10, 100, 30);
 		contentPane.add(fecha);
 		
@@ -92,15 +89,15 @@ public class MuestraCarrito extends JFrame{
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(34, 32, 606, 350);
+		scrollPane.setBounds(34, 44, 606, 350);
 		contentPane.add(scrollPane);
 		
 		scrollPane.setViewportView(panelDinamico);
 		scrollPane.getViewport().setView(panelDinamico);
 		
 		btnComprar = new JButton("Comprar");
-		btnComprar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnComprar.setBounds(250, 400, 100, 30);
+		btnComprar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnComprar.setBounds(250, 407, 100, 30);
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -114,8 +111,8 @@ public class MuestraCarrito extends JFrame{
 		contentPane.add(btnComprar);
 		
 		btnVolver = new JButton("Volver");
-		btnVolver.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnVolver.setBounds(40, 400, 100, 30);
+		btnVolver.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnVolver.setBounds(40, 407, 100, 30);
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				volver();
@@ -124,17 +121,18 @@ public class MuestraCarrito extends JFrame{
 		contentPane.add(btnVolver);
 		
 		JLabel lblTotal = new JLabel("Total: ");
-		lblTotal.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblTotal.setBounds(380, 400, 100, 30);
+		lblTotal.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblTotal.setBounds(380, 407, 100, 30);
 		contentPane.add(lblTotal);
 		
 		total = new JLabel(String.valueOf(Tot));
-		total.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		total.setBounds(490, 400, 100, 30);
+		total.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		total.setBounds(492, 407, 100, 30);
 		contentPane.add(total);
 		
 		setTitle("Carrito de compras");
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		setLocationRelativeTo(null);
 	}
 
 	
@@ -165,7 +163,7 @@ public class MuestraCarrito extends JFrame{
 			
 			
 		} catch (SQLException e) {
-			Funciones.mensajeConsola("Clase GestionCombos: "+e.getMessage());
+			Funciones.mensajeConsola("Clase MuestraCarrito: "+e.getMessage());
 			this.dispose();
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operación");
 		}
@@ -182,7 +180,6 @@ public class MuestraCarrito extends JFrame{
 
 
 	public void comprar() throws SQLException {
-		compra = ((int)((Math.random()*100000)+1));
 		cliente = FachadaCine.getInstance().obtenerIdcliente(mc.getCorreo());
 		int suscripcion = FachadaCine.getInstance().obtenerSuscripcion(mc.getCorreo());
 		double des = 1;
@@ -194,12 +191,14 @@ public class MuestraCarrito extends JFrame{
 			des = 0.9;
 			break;
 		}
-		FachadaCompra.getInstance().insertarCompra(Tot, cliente,compra);
+		FachadaCompra.getInstance().insertarCompra(Tot, cliente);
+		compra = FachadaCompra.getInstance().getIdCompraByCliente(cliente);
 		
 		for(int i = 0;i<compras.getCombos().size();i++) {
 			FachadaCompra.getInstance().registrarComboCompra(compra, compras.getCombos().get(i).getCantidad(),
 					compras.getCombos().get(i).getIdCombo(),compras.getCombos().get(i).getCantidad()*compras.getCombos().get(i).getPrecio()*des);
 		}
+		Funciones.mensajePantalla("¡COMPRA REALIZADA CON ÉXITO, QUE LA DISFRUTES!");
 		this.dispose();
 		mc.dispose();
 	}

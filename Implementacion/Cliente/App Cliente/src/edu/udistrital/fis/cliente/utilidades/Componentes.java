@@ -11,6 +11,7 @@ import edu.udistrital.fis.api.logica.AbstractFrame;
 import edu.udistrital.fis.basicos.logica.Funciones;
 import edu.udistrital.fis.basicos.persistencia.GestorDB;
 import edu.udistrital.fis.core.IRegistroCliente;
+import edu.udistrital.fis.core.IBoleteria;
 import edu.udistrital.fis.core.ICompra;
 
 public class Componentes {
@@ -19,11 +20,11 @@ public class Componentes {
 	private static Cargador cc = new Cargador("componentes", ClassLoader.getSystemClassLoader());;
 
 	
-	public Componentes(String correo){
-		cargarComponentes(correo);
+	public Componentes(String correo, int idCliente){
+		cargarComponentes(correo,idCliente);
 		
 	}
-	public void cargarComponentes(String correo) {
+	public void cargarComponentes(String correo, int idCliente) {
 		//Conjuntos de frames agrupados por modulos
 		HashMap<String,ArrayList<AbstractFrame>> presentacion = new HashMap<String, ArrayList<AbstractFrame>>(); 
 				
@@ -36,6 +37,10 @@ public class Componentes {
 		//Modulo confiteria
 		ArrayList<AbstractFrame> confiteria = verificarModuloConfiteria(cc,correo);
 		if(confiteria!=null) presentacion.put("Confiteria",confiteria);
+		
+		//Módulo bolteria
+		ArrayList<AbstractFrame> boleteria = verificarModuloFunciones(cc, idCliente);
+		if(boleteria!=null) presentacion.put("Boletería", boleteria);
 		
 		this.presentacion = presentacion;
 	}
@@ -55,7 +60,6 @@ public class Componentes {
 		}
 		else {
 			Funciones.mensajeConsola("Modulo Cliente no encontrado");
-			Funciones.mensajePantalla("Modulo Cliente no encontrado");
 		}
 		return null;
 	}
@@ -76,10 +80,30 @@ public class Componentes {
 		}
 		else {
 			Funciones.mensajeConsola("Modulo Confiteria no encontrado");
-			Funciones.mensajePantalla("Modulo Confiteria no encontrado");
 		}
 		return null;
 	}
+	
+	//Verificacion de modulo Funciones
+	private static ArrayList<AbstractFrame> verificarModuloFunciones(Cargador cc,int idCliente) {
+		Class cls = cc.cargarUnaClaseDesdeSuDirectorio(IBoleteria.class.getName());
+		if(cls!=null) {
+			try {
+				IBoleteria boleteria = (IBoleteria)cls.newInstance();
+				Funciones.mensajeConsola("Modulo boleteria cargado");
+				return boleteria.getPresetacion(idCliente);
+			} catch (Exception e) {
+				e.printStackTrace();
+				Funciones.mensajeConsola("Error al cargar modulo Boleteria: "+e.getMessage());
+				return null;
+			}
+		}
+		else {
+			Funciones.mensajeConsola("Modulo Boleteria no encontrado");
+		}
+		return null;
+	}
+	
 	//Se verifica si el controlador de PostgreSQL está referenciado
 	private static void verificarJDBC() {
 		try {

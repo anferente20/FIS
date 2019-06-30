@@ -31,7 +31,7 @@ public class IngresoCliente extends AbstractFrame {
 		createFrame();
 	}
 	private void createFrame() {
-		
+		setResizable(false);
 		setTitle("Bienvenido a Cine+");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 401, 261);

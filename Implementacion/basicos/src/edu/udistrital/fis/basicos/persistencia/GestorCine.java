@@ -62,6 +62,7 @@ public class GestorCine extends Gestor{
 		return sentencia.executeQuery();
 	}
 	
+
 	/**
 	 * Método que verifica que los datos ingresados correspondan a los datos registrados
 	 * @param correo Correo del cliente
@@ -69,10 +70,10 @@ public class GestorCine extends Gestor{
 	 * @return True si los datos existen , false si no existen
 	 * @throws SQLException Si existe algún problema para conectarse a la base de datos
 	 */
-	boolean verificarIngreso(String correo, String contrasena) throws SQLException {
+	public boolean verificarIngreso(String correo, String contrasena) throws SQLException {
 		String consulta = "select nombreCliente from Cliente"
 				+ " where correo = ? "
-				+ "and contrasena= ?";
+				+ "and contrasnea= ?";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		sentencia.setString(2, contrasena);
@@ -83,7 +84,6 @@ public class GestorCine extends Gestor{
 			return false;
 		}	
 	}
-	
 	/**
 	 * Método que verifica que los datos ingresados correspondan a los datos registrados
 	 * @param correo Correo del cliente
@@ -94,7 +94,7 @@ public class GestorCine extends Gestor{
 	public String ingresar(String correo, String contrasena) throws SQLException {
 		String consulta = "select nombreCliente||' '||apellidocliente from Cliente"
 				+ " where correo = ? "
-				+ "and contrasena= ?";
+				+ "and contrasnea= ?";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1, correo);
 		sentencia.setString(2, contrasena);
@@ -104,6 +104,49 @@ public class GestorCine extends Gestor{
 			res = resultado.getString(1);
 		}
 		return res;
+	}
+	
+	/**
+	 * Método que permite obtener el ide de un cliente a partir de su correo
+	 * @param correo Correo del cliente
+	 * @return id del cliente
+	 * @throws SQLException si hay problema para conectar a la base de Datos
+	 */
+	public int obtenerIdCliente(String correo) throws SQLException {
+		String consulta = "select idcliente from cliente where correo = ?;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		ResultSet resultado = sentencia.executeQuery();
+		int res=-1;
+		if(resultado.next()) {
+			res = resultado.getInt(1);
+		}
+		return res;
+	}
+	
+	public int obtenerSuscripcion(String correo) throws SQLException {
+		String consulta = "select idsuscripcion from cliente where correo = ? ;";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		ResultSet resultado = sentencia.executeQuery();
+		int res=-1;
+		if(resultado.next()) {
+			res = resultado.getInt(1);
+		}
+		return res;
+		
+	}
+	
+	int getIdCliente(String correo, String contrasena) throws SQLException {
+		String consulta = "select idcliente from Cliente"
+				+ " where correo = ? "
+				+ "and contrasnea= ?";
+		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		sentencia.setString(1, correo);
+		sentencia.setString(2, contrasena);
+		ResultSet resultado = sentencia.executeQuery();
+		resultado.next();
+		return resultado.getInt("idcliente");
 	}
 }
 

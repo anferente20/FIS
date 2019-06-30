@@ -31,6 +31,7 @@ public class MenuAdmin extends JFrame {
 	}
 	
 	private void createFrame() {
+		setResizable(false);
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("MEN\u00DA");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

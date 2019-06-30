@@ -76,7 +76,7 @@ create table pelicula
 	sinopsis text not null,
 	fechaEstreno date not null,
 	duracion interval not null,
-	nombreDirector not null,
+	nombreDirector text not null,
 	img bytea not null
 );
 
@@ -117,8 +117,8 @@ add constraint pk_funcion_sala foreign key (idSala) references Sala (idSala) on 
 create table Espacio
 (
 	idFuncion integer,
-	fila char(1),
-	columna char(1),
+	fila text,
+	columna text,
 	idSala integer
 );
 alter table Espacio
@@ -161,7 +161,6 @@ ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_tipoSuscripcion
 	FOREIGN KEY (idSuscripcion) REFERENCES TipoSuscripcion (idSuscripcion) ON DELETE No Action ON UPDATE No Action
 ;
 
-
 CREATE TABLE HistoricoPreciosBoleta
 (
 	idHistoricoBoleta SERIAL primary key,
@@ -169,9 +168,6 @@ CREATE TABLE HistoricoPreciosBoleta
 	fecha date NOT NULL
 )
 ;
-
-
-
 
 CREATE TABLE Compra
 (
@@ -185,7 +181,6 @@ CREATE TABLE Compra
 ALTER TABLE Compra ADD CONSTRAINT FK_Compra_Cliente
 	FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON DELETE No Action ON UPDATE No Action
 ;
-
 
 CREATE TABLE ComboCompra
 (
@@ -209,9 +204,9 @@ ALTER TABLE ComboCompra ADD CONSTRAINT FK_ComboCompra_Compra
 
 CREATE TABLE Boleta
 (
-	idBoleta integer primary key,
-	fila char(1)	 NOT NULL,
-	columna char(1)	 NOT NULL,
+	idBoleta serial primary key,
+	fila text	 NOT NULL,
+	columna text	 NOT NULL,
 	idFuncion integer NOT NULL,
 	idCompra integer NOT NULL,
 	idHistoricoBoleta integer NOT NULL,
@@ -222,7 +217,7 @@ CREATE TABLE Boleta
 alter table boleta
 add constraint fk_boleta_espacio foreign key (idFuncion,idSala,fila,columna) references espacio (idFuncion,idSala,fila,columna) ON DELETE No Action ON UPDATE No Action,
 add constraint fk_boleta_compra foreign key (idCompra) references compra (idCompra) ON DELETE No Action ON UPDATE No Action,
-add constraint fk_boleta_historico foreign key (idHistoricoBoleta) references HistoricoBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action;
+add constraint fk_boleta_historico foreign key (idHistoricoBoleta) references HistoricoPreciosBoleta (idHistoricoBoleta) ON DELETE No Action ON UPDATE No Action;
 
 
 -- VIEWS

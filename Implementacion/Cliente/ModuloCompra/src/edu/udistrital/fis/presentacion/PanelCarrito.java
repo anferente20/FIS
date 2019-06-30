@@ -1,13 +1,11 @@
 package edu.udistrital.fis.presentacion;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 import edu.udistrital.fis.compra.logica.Combo;
 import java.awt.Font;
@@ -27,46 +25,46 @@ public class PanelCarrito extends JPanel {
 		this.combo= combo;
 		
 		JLabel lblIdCompra = new JLabel("Id Compra");
-		lblIdCompra.setFont(new Font("Segoe UI", Font.BOLD, 11));
-		lblIdCompra.setBounds(10, 10, 60, 20);
+		lblIdCompra.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblIdCompra.setBounds(10, 10, 71, 20);
 		add(lblIdCompra);
 		
 		lblRegistro = new JLabel(String.valueOf(idCompra+1));
-		lblRegistro.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblRegistro.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblRegistro.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRegistro.setBounds(10, 40, 60, 50);
 		add(lblRegistro);
 		
 		JLabel lblIdCombo = new JLabel("Id Combo");
-		lblIdCombo.setFont(new Font("Segoe UI", Font.BOLD, 11));
-		lblIdCombo.setBounds(80, 10, 60, 20);
+		lblIdCombo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblIdCombo.setBounds(93, 10, 71, 20);
 		add(lblIdCombo);
 		
 		JLabel lblCombo = new JLabel(String.valueOf(combo.getIdCombo()));
-		lblCombo.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblCombo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblCombo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCombo.setBounds(80, 40, 60, 50);
+		lblCombo.setBounds(93, 40, 60, 50);
 		add(lblCombo);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion");
-		lblDescripcion.setFont(new Font("Segoe UI", Font.BOLD, 11));
-		lblDescripcion.setBounds(150, 10, 150, 20);
+		lblDescripcion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblDescripcion.setBounds(176, 10, 150, 20);
 		add(lblDescripcion);
 		
 		JLabel lblDesc = new JLabel(combo.getDescripcion());
-		lblDesc.setFont(new Font("Segoe UI", Font.BOLD, 8));
-		lblDesc.setBounds(150, 40, 150, 50);
+		lblDesc.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblDesc.setBounds(176, 40, 150, 50);
 		add(lblDesc);
 		
 		JLabel lblPrecio = new JLabel("Precio");
-		lblPrecio.setFont(new Font("Segoe UI", Font.BOLD, 11));
-		lblPrecio.setBounds(310, 10, 60, 20);
+		lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblPrecio.setBounds(338, 10, 60, 20);
 		add(lblPrecio);
 		
 		JLabel lblPr = new JLabel(String.valueOf(combo.getPrecio()));
 		lblPr.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPr.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblPr.setBounds(310, 40, 60, 50);
+		lblPr.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblPr.setBounds(338, 40, 60, 50);
 		add(lblPr);
 		
 		JButton btnRemover = new JButton("Remover");
@@ -80,14 +78,14 @@ public class PanelCarrito extends JPanel {
 		add(btnRemover);
 		
 		JLabel lblCantidad = new JLabel("Cantidad");
-		lblCantidad.setFont(new Font("Segoe UI", Font.BOLD, 11));
-		lblCantidad.setBounds(380, 10, 60, 20);
+		lblCantidad.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblCantidad.setBounds(408, 10, 60, 20);
 		add(lblCantidad);
 		
 		JLabel lblCan = new JLabel(String.valueOf(combo.getCantidad()));
 		lblCan.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCan.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblCan.setBounds(380, 40, 60, 50);
+		lblCan.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		lblCan.setBounds(408, 40, 60, 50);
 		add(lblCan);
 		
 		this.mc.getTotal().setText(String.valueOf(this.mc.getTot()+calcularPrecio()));

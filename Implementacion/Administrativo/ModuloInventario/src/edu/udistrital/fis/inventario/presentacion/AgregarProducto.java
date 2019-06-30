@@ -28,6 +28,7 @@ public class AgregarProducto extends AbstractFrame {
 	}
 	
 	public void createFrame() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Agregar Producto");
 		setBounds(100, 100, 380, 272);

@@ -36,6 +36,7 @@ class MostrarFuncionesPelicula extends JFrame {
 	private Pelicula pelicula;
 	
 	public MostrarFuncionesPelicula(String nombrePelicula, byte[] img, ResultSet funciones, String fecha, String cine,Pelicula pelicula) {
+		setResizable(false);
 		this.pelicula = pelicula;
 		this.fecha = fecha;
 		createFrame();

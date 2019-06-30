@@ -2,10 +2,9 @@ package edu.udistrital.fis.compra.persistencia;
 
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import edu.udistrital.fis.basicos.logica.FuncionesTiempo;
 import edu.udistrital.fis.basicos.persistencia.Gestor;
@@ -22,13 +21,13 @@ public class GestorCompra extends Gestor {
 	 * @param idCliente id del cliente que realizó la compra
 	 * @throws SQLException Si hay problemas para conectar a la base de datos
 	 */
-	public void registrarCompra(int total,int idCliente,int id) throws SQLException {
+	public void registrarCompra(float total,int idCliente) throws SQLException {
 		FuncionesTiempo ft = new FuncionesTiempo();
        String consulta = "insert into Compra (idcliente,total,fecha) values "
 				+ "(?,?,'"+ft.DateToString(new Date())+"');";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setInt(1, idCliente);
-		sentencia.setInt(2, total);
+		sentencia.setFloat(2, total);
 		sentencia.execute();
 	}
 	
@@ -49,5 +48,22 @@ public class GestorCompra extends Gestor {
 			sentencia.setDouble(3, d);
 			sentencia.setInt(4, cantidad);
 			sentencia.execute();
+	}
+
+	public int getIdCompraByCliente(int idCliente) throws SQLException {
+		 String consulta = 
+				 "select " + 
+		 		"idcliente, " + 
+		 		"max(idcompra) idcompra " + 
+		 		"from " + 
+		 		"compra " + 
+		 		"where idcliente = ? " + 
+		 		"group by idcliente;";
+		 PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
+		 sentencia.setInt(1, idCliente);
+		 ResultSet resultado = sentencia.executeQuery();
+		 resultado.next();
+		 return resultado.getInt("idcompra");
+		 
 	}
 }

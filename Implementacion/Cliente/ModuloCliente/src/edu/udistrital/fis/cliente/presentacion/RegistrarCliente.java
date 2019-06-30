@@ -38,6 +38,7 @@ public class RegistrarCliente extends AbstractFrame {
 		setIdentificador();
 	}
 	private void createFrame() {
+		setResizable(false);
 		setTitle("Registro Usuario");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 396, 404);
@@ -53,55 +54,55 @@ public class RegistrarCliente extends AbstractFrame {
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblNombre.setBounds(36, 63, 150, 30);
+		lblNombre.setBounds(25, 63, 150, 30);
 		contentPane.add(lblNombre);
 		
 		JLabel lblApellido = new JLabel("Apellido");
 		lblApellido.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblApellido.setBounds(36, 103, 150, 30);
+		lblApellido.setBounds(25, 103, 150, 30);
 		contentPane.add(lblApellido);
 		
 		JLabel lblIdentificacion = new JLabel("Identificacion");
 		lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblIdentificacion.setBounds(36, 143, 150, 30);
+		lblIdentificacion.setBounds(25, 143, 150, 30);
 		contentPane.add(lblIdentificacion);
 		
 		JLabel lblContrasena = new JLabel("Contrase\u00F1a");
 		lblContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblContrasena.setBounds(36, 223, 150, 30);
+		lblContrasena.setBounds(25, 223, 150, 30);
 		contentPane.add(lblContrasena);
 		
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblCorreo.setBounds(36, 183, 150, 30);
+		lblCorreo.setBounds(25, 183, 150, 30);
 		contentPane.add(lblCorreo);
 		
 		JLabel lblConfirmarContrasena = new JLabel("Confirmar Contrase\u00F1a");
 		lblConfirmarContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblConfirmarContrasena.setBounds(36, 263, 150, 30);
+		lblConfirmarContrasena.setBounds(25, 263, 150, 30);
 		contentPane.add(lblConfirmarContrasena);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		txtNombre.setBounds(216, 63, 150, 30);
+		txtNombre.setBounds(205, 63, 150, 30);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		txtApellido = new JTextField();
 		txtApellido.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		txtApellido.setBounds(216, 103, 150, 30);
+		txtApellido.setBounds(205, 103, 150, 30);
 		contentPane.add(txtApellido);
 		txtApellido.setColumns(10);
 		
 		txtIdentificacion = new JTextField();
 		txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		txtIdentificacion.setBounds(216, 143, 150, 30);
+		txtIdentificacion.setBounds(205, 143, 150, 30);
 		contentPane.add(txtIdentificacion);
 		txtIdentificacion.setColumns(10);
 		
 		txtCorreo = new JTextField();
 		txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		txtCorreo.setBounds(216, 183, 150, 30);
+		txtCorreo.setBounds(205, 183, 150, 30);
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
 		
@@ -119,12 +120,12 @@ public class RegistrarCliente extends AbstractFrame {
 		
 		pswContrasena = new JPasswordField();
 		pswContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		pswContrasena.setBounds(216, 223, 150, 30);
+		pswContrasena.setBounds(205, 223, 150, 30);
 		contentPane.add(pswContrasena);
 		
 		pswConfirmar = new JPasswordField();
 		pswConfirmar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		pswConfirmar.setBounds(216, 263, 150, 30);
+		pswConfirmar.setBounds(205, 263, 150, 30);
 		contentPane.add(pswConfirmar);
 		
 		setLocationRelativeTo(null);
@@ -158,10 +159,10 @@ public class RegistrarCliente extends AbstractFrame {
 			cli.setTipoSuscripcion(1);
 			try {
 				FachadaCliente.getInstance().insertarCliente(cli);
-				Funciones.mensajeConsola("¡TE HAS REGISTRADO CON ÉXITO!");
+				Funciones.mensajePantalla("¡TE HAS REGISTRADO CON ÉXITO!");
 				this.dispose();
 			} catch (SQLException e) {
-				Funciones.mensajeConsola("Clase AgregarEmpleado: "+e.getMessage());
+				Funciones.mensajeConsola("Clase RegistrarCliente: "+e.getMessage());
 				Funciones.mensajePantalla("Error, el ID o la identificacion ya estan registrados con otro usuario");
 			}
 		}else {

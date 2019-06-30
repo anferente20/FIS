@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
 import javax.swing.SwingConstants;
@@ -45,6 +45,7 @@ public class IngresoCliente extends JFrame {
 		createFrame();
 	}
 	private void createFrame() {
+		setResizable(false);
 		setTitle("Bienvenido a Cine+");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 401, 253);
@@ -52,34 +53,34 @@ public class IngresoCliente extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblIngreso = new JLabel("Ingreso");
 		lblIngreso.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIngreso.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblIngreso.setBounds(141, 20, 100, 30);
 		contentPane.add(lblIngreso);
-		
+
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblCorreo.setBounds(50, 60, 150, 30);
 		contentPane.add(lblCorreo);
-		
+
 		JLabel lblContrasena = new JLabel("Contrasena");
 		lblContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblContrasena.setBounds(50, 109, 150, 30);
 		contentPane.add(lblContrasena);
-		
+
 		txtCorreo = new JTextField();
 		txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtCorreo.setBounds(180, 60, 150, 30);
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
-		
+
 		pswContrasena = new JPasswordField();
 		pswContrasena.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		pswContrasena.setBounds(180, 110, 150, 30);
 		contentPane.add(pswContrasena);
-		
+
 		JButton btnIngresar = new JButton("Ingresar");
 		btnIngresar.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		btnIngresar.setBounds(141, 163, 100, 30);
@@ -97,7 +98,8 @@ public class IngresoCliente extends JFrame {
 			if(FachadaCine.getInstance().verificarIngreso(txtCorreo.getText(), pswContrasena.getText())) {
 				mc.getUsuario().setText("Usuario: "+FachadaCine.getInstance().ingresar(txtCorreo.getText(), pswContrasena.getText()));
 				mc.setCorreo( txtCorreo.getText());
-				Componentes c = new Componentes(txtCorreo.getText());
+				int idCliente = FachadaCine.getInstance().getIdCliente(txtCorreo.getText(), pswContrasena.getText());
+				Componentes c = new Componentes(txtCorreo.getText(),idCliente);
 				mc.setPresentacion(c.getPresentacion());
 				mc.cargarFrames();
 				mc.setVisible(true);
@@ -111,10 +113,8 @@ public class IngresoCliente extends JFrame {
 			Funciones.mensajeConsola("Clase IngresoCliente: "+e.getMessage());
 			Funciones.mensajePantalla("Error, no fue posible llevar a cabo la operacion");
 		}
-		
-		
 	}
-	
 
-	
+
+
 }

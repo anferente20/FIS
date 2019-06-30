@@ -49,7 +49,7 @@ public class AgregarPelicula extends AbstractFrame{
 	}
 	
 	private void createFrame() {
-		
+		setResizable(false);
 		setIdentificador();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 782, 688);

@@ -38,6 +38,7 @@ public class InsertarCombo extends JFrame {
 	}
 	
 	private void createFrame() {
+		setResizable(false);
 		setTitle("Insertar Combo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 605, 331);

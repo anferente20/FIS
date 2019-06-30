@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -15,7 +14,7 @@ import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.SpinnerNumberModel;
 
-import edu.udistrital.fis.basicos.logica.Funciones;
+
 import edu.udistrital.fis.compra.logica.Combo;
 
 import edu.udistrital.imagen.Imagen;
@@ -51,14 +50,14 @@ public class PanelCombo extends JPanel{
 		add(lblCantidad);
 		
 		spinner = new JSpinner();
-		spinner.setBounds(151, 181, 60, 20);
-		spinner.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		spinner.setBounds(151, 181, 70, 30);
+		spinner.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		spinner.setModel(new SpinnerNumberModel(0,0,100,1));
 		add(spinner);
 		
 		btnAgregar = new JButton("Agregar");
-		btnAgregar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnAgregar.setBounds(171, 231, 100, 30);
+		btnAgregar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnAgregar.setBounds(232, 226, 100, 37);
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				agregar();
@@ -67,16 +66,17 @@ public class PanelCombo extends JPanel{
 		add(btnAgregar);
 		
 		lblImg = new JLabel("");
-		lblImg.setBounds(384, 53, 157, 172);
+		lblImg.setBounds(384, 64, 157, 172);
 		lblImg.setBorder(BorderFactory.createLineBorder(Color.black, 2));
 		add(lblImg);
 		
 		txtDescripcion = new JTextArea();
+		txtDescripcion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		txtDescripcion.setEnabled(false);
 		txtDescripcion.setBounds(151, 42, 173, 93);
 		
 		lblPrecio = new JLabel("");
-		lblPrecio.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblPrecio.setBounds(151, 151, 107, 20);
 		add(lblPrecio);
 		
@@ -102,9 +102,12 @@ public class PanelCombo extends JPanel{
 	
 	
 	private void agregar() {
-		this.combo.setCantidad(Integer.valueOf(spinner.getValue().toString()));
-		mc.getCompras().getCombos().add(this.combo);
-		mc.actualizar();
+		if(!(spinner.getValue().toString()=="")){
+			this.combo.setCantidad(Integer.valueOf(spinner.getValue().toString()));
+			mc.getCompras().getCombos().add(this.combo);
+			mc.actualizar();
+		}
+		
 	}
 	void setModificada(Combo combo) {
 		this.combo = combo;

@@ -34,6 +34,7 @@ public class ConsultarInventario extends AbstractFrame{
 	private DefaultTableModel modeloTabla;
 
 	public ConsultarInventario(int tipoAdmin,int idCine){
+		setResizable(false);
 		createFrame();
 		try {
 			Funciones.cargarDatosCbx(cbxCines, FachadaCine.getInstance().consultarCines());

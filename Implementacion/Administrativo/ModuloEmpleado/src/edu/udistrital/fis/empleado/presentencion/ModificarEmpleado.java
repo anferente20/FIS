@@ -44,6 +44,7 @@ public class ModificarEmpleado extends AbstractFrame {
 	private JTextField txtTipoEmpleado;
 
 	public ModificarEmpleado() {
+		setResizable(false);
 		setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		setTitle("Modificar informaci\u00F3n de un empleado");
 		createFrame();

@@ -47,6 +47,7 @@ public class GestionCombos extends AbstractFrame {
 	}
 	
 	private void createFrame() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 693, 494);
 		contentPane = new JPanel();

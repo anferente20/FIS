@@ -38,6 +38,7 @@ public class CambiarSuscripcion extends AbstractFrame {
 
 	
 	public CambiarSuscripcion(String correo) {
+		setResizable(false);
 		this.correo = correo;
 		createFrame();
 		setIdentificador();
@@ -86,7 +87,7 @@ public class CambiarSuscripcion extends AbstractFrame {
 		lblNueva.setBounds(69, 90, 150, 30);
 		panel.add(lblNueva);
 		
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<String>();
 		comboBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		comboBox.setBounds(229, 90, 200, 30);
 		comboBox.addActionListener(new ActionListener() {

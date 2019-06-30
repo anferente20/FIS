@@ -46,6 +46,7 @@ class ModificarCombo extends JFrame {
 	}
 	
 	private void createFrame() {
+		setResizable(false);
 		setTitle("Modificar Combo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 605, 331);;

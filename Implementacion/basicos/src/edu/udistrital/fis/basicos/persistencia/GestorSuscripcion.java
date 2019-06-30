@@ -46,7 +46,7 @@ public class GestorSuscripcion extends Gestor{
 	 */
 	ResultSet getSuscripcion(String correo) throws SQLException {
 		String consulta = "select ts.nombre from cliente cli, tiposuscripcion ts where cli.correo = ?"
-				+ " and cli.tiposuscripcion = ts.idsuscripcion";
+				+ " and cli.idsuscripcion = ts.idsuscripcion";
 		PreparedStatement sentencia = this.gestor.getConector().prepareStatement(consulta);
 		sentencia.setString(1,correo);
 		ResultSet resultado = sentencia.executeQuery();

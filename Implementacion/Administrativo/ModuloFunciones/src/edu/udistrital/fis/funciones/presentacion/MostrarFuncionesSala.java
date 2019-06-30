@@ -37,6 +37,7 @@ public class MostrarFuncionesSala extends JFrame {
 
 
 	public MostrarFuncionesSala(int sala,String fecha, int idCine, ResultSet funciones) throws SQLException {
+		setResizable(false);
 		this.fecha = fecha;
 		createFrame();
 		lblSala.setText("Sala: "+sala);

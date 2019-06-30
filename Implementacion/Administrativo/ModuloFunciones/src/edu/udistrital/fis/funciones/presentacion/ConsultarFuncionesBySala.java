@@ -30,6 +30,7 @@ public class ConsultarFuncionesBySala extends AbstractFrame {
 
 
 	public ConsultarFuncionesBySala(int tipoAdmin, int idCine) {
+		setResizable(false);
 		setIdentificador();
 		createFrame();
 		try {

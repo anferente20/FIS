@@ -20,11 +20,15 @@ public class FachadaCompra {
 	}
 
 
-	public void insertarCompra(int total,int idCliente,int id) throws SQLException {
-		gestorC.registrarCompra(total, idCliente, id);
+	public void insertarCompra(float total,int idCliente) throws SQLException {
+		gestorC.registrarCompra(total, idCliente);
 	}
 	
 	public void registrarComboCompra(int idCompra,int cantidad, int idCombo,double d) throws SQLException {
 		gestorC.registrarCompraCombo(idCompra, cantidad, idCombo, d);
+	}
+
+	public int getIdCompraByCliente(int idCliente) throws SQLException {
+		return this.gestorC.getIdCompraByCliente(idCliente);
 	}
 }

@@ -40,6 +40,7 @@ public class DarBajaEmpl extends AbstractFrame {
 	}
 
 	private void createFrame() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 797, 355);
 		contentPane = new JPanel();
