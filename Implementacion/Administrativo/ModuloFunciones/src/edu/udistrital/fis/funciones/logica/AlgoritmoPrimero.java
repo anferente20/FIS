@@ -53,8 +53,8 @@ public class AlgoritmoPrimero extends AlgoritmoFunciones{
 						//se verifica si la funcion puede ingresarse en alguna sala en una hora en específico
 						while(bandera==false) {
 							bandera = verificarEnSalas(pelicula, fecha, hora, cine, consecutivoSala);
-							if(bandera==false) hora = this.ft.modulo(Pelicula.HORA_MAS_TARDE, //Se intenta mirar una hora más tarde
-									Pelicula.HORA_MAS_TEMPRANO, 
+							if(bandera==false) hora = this.ft.modulo(this.ft.intervalToTime(Pelicula.HORA_MAS_TARDE), //Se intenta mirar una hora más tarde
+									this.ft.intervalToTime(Pelicula.HORA_MAS_TEMPRANO), 
 									this.ft.sumarHoras(hora, "1:00"));
 						}
 						//hora de inicio de la siguiente funcion del dia
